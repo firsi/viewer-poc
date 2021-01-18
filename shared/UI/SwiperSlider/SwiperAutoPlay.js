@@ -1,5 +1,5 @@
-import React from 'react';
-import Swiper from 'react-id-swiper';
+import React from "react";
+import Swiper from "react-id-swiper";
 
 export default function SwiperAutoPlay(props) {
   const { children } = props;
@@ -11,12 +11,12 @@ export default function SwiperAutoPlay(props) {
       disableOnInteraction: false,
     },
     pagination: {
-      el: '.swiper-pagination',
+      el: ".swiper-pagination",
       clickable: true,
     },
     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
     },
   };
 

@@ -1,7 +1,7 @@
-import styled from 'styled-components';
-import { palette } from 'styled-theme';
-import bgImage from '@iso/assets/images/image3.jpg';
-import WithDirection from '@iso/lib/helpers/rtl';
+import styled from "styled-components";
+import { palette } from "styled-theme";
+import bgImage from "@iso/assets/images/image3.jpg";
+import WithDirection from "@iso/lib/helpers/rtl";
 
 const ForgotPasswordStyleWrapper = styled.div`
   width: 100%;
@@ -15,7 +15,7 @@ const ForgotPasswordStyleWrapper = styled.div`
   background-size: cover;
 
   &:before {
-    content: '';
+    content: "";
     width: 100%;
     height: 100%;
     display: flex;
@@ -23,8 +23,8 @@ const ForgotPasswordStyleWrapper = styled.div`
     position: absolute;
     z-index: 1;
     top: 0;
-    left: ${(props) => (props['data-rtl'] === 'rtl' ? 'inherit' : '0')};
-    right: ${(props) => (props['data-rtl'] === 'rtl' ? '0' : 'inherit')};
+    left: ${(props) => (props["data-rtl"] === "rtl" ? "inherit" : "0")};
+    right: ${(props) => (props["data-rtl"] === "rtl" ? "0" : "inherit")};
   }
 
   .isoFormContentWrapper {
@@ -59,7 +59,7 @@ const ForgotPasswordStyleWrapper = styled.div`
         font-weight: 300;
         line-height: 1;
         text-transform: uppercase;
-        color: ${palette('secondary', 2)};
+        color: ${palette("secondary", 2)};
       }
     }
 
@@ -75,7 +75,7 @@ const ForgotPasswordStyleWrapper = styled.div`
         font-weight: 500;
         line-height: 1.2;
         margin: 0 0 7px;
-        color: ${palette('text', 0)};
+        color: ${palette("text", 0)};
       }
 
       p {
@@ -83,7 +83,7 @@ const ForgotPasswordStyleWrapper = styled.div`
         font-weight: 400;
         line-height: 1.2;
         margin: 0;
-        color: ${palette('text', 2)};
+        color: ${palette("text", 2)};
       }
     }
 
@@ -102,18 +102,18 @@ const ForgotPasswordStyleWrapper = styled.div`
 
         input {
           &::-webkit-input-placeholder {
-            color: ${palette('grayscale', 0)};
+            color: ${palette("grayscale", 0)};
           }
 
           &:-moz-placeholder {
-            color: ${palette('grayscale', 0)};
+            color: ${palette("grayscale", 0)};
           }
 
           &::-moz-placeholder {
-            color: ${palette('grayscale', 0)};
+            color: ${palette("grayscale", 0)};
           }
           &:-ms-input-placeholder {
-            color: ${palette('grayscale', 0)};
+            color: ${palette("grayscale", 0)};
           }
         }
 

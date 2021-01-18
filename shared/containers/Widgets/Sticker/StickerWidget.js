@@ -1,5 +1,5 @@
-import React from 'react';
-import { StickerWidgetWrapper } from './StickerWidget.styles';
+import React from "react";
+import { StickerWidgetWrapper } from "./StickerWidget.styles";
 
 export default function ({ fontColor, bgColor, width, icon, number, text }) {
   const textColor = {

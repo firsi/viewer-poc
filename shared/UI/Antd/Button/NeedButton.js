@@ -1,5 +1,5 @@
-import { Button } from 'antd';
-import { Buttons, ButtonsGroup } from './Button.style';
+import { Button } from "antd";
+import { Buttons, ButtonsGroup } from "./Button.style";
 
 const AntButton = Buttons(Button);
 const isoButton = AntButton;

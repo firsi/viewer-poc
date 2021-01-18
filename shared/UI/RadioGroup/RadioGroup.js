@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import React, { useState } from "react";
+import PropTypes from "prop-types";
 
 const RadioGroup = ({ className, name, onUpdate, items, value }) => {
   // RadioGroup State
   const [state, setState] = useState(value);
 
   // Add all classs to an array
-  const addAllClasses = ['radio_group'];
+  const addAllClasses = ["radio_group"];
 
   // className prop checking
   if (className) {
@@ -21,13 +21,13 @@ const RadioGroup = ({ className, name, onUpdate, items, value }) => {
   };
 
   return (
-    <div className={addAllClasses.join(' ')}>
+    <div className={addAllClasses.join(" ")}>
       {items.map((item) => (
         <label
           htmlFor={item.id}
           key={`${name}_${item.id}`}
-          className={`${item.disabled ? 'label disabled' : 'label'} 
-        ${state === item.value ? 'active' : ''}`}
+          className={`${item.disabled ? "label disabled" : "label"} 
+        ${state === item.value ? "active" : ""}`}
         >
           <input
             type="radio"

@@ -1,9 +1,9 @@
-import styled from 'styled-components';
-import { font, palette } from 'styled-theme';
+import styled from "styled-components";
+import { font, palette } from "styled-theme";
 
 const AppHolder = styled.div`
   ::selection {
-    background: ${palette('primary', 0)};
+    background: ${palette("primary", 0)};
     color: #fff;
   }
 
@@ -33,18 +33,18 @@ const AppHolder = styled.div`
   }
 
   body {
-    font-family: ${font('primary')};
+    font-family: ${font("primary")};
   }
 `;
 
 export const rowStyle = {
-  width: '100%',
-  display: 'flex',
-  flexFlow: 'row wrap',
+  width: "100%",
+  display: "flex",
+  flexFlow: "row wrap",
 };
 
 export const colStyle = {
-  marginBottom: '16px',
+  marginBottom: "16px",
 };
 
 export const gutter = 16;

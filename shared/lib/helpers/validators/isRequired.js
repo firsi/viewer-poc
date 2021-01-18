@@ -1,1 +1,1 @@
-export const isRequired = (value) => (!value ? 'Required!' : '');
+export const isRequired = (value) => (!value ? "Required!" : "");

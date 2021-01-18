@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const InputIncDecWrapper = styled.div`
   width: 104px;
@@ -8,7 +8,7 @@ const InputIncDecWrapper = styled.div`
   position: relative;
   overflow: hidden;
 
-  input[type='number'] {
+  input[type="number"] {
     width: calc(100% - 54px);
     position: absolute;
     left: 27px;

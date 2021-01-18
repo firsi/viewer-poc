@@ -1,25 +1,22 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import Spin from '@iso/ui/Antd/Spin/Spin';
-import Modal from '@iso/ui/Antd/Modal/Modal';
-import Container from '@iso/ui/UI/Container/Container';
-import AvatarCard from '@iso/components/AvatarCard/AvatarCard';
-import Posts from './Posts/Posts';
-import Followers from './Followers/Followers';
-import Following from './Following/Following';
-import Wrapper, { Banner, Navigation, ContentWrapper } from './Profile.styles';
-import { useSelector, useDispatch } from 'react-redux';
-import profileActions from '@iso/redux/profile/actions';
+import React, { useState, useEffect, useCallback } from "react";
+import Spin from "@iso/ui/Antd/Spin/Spin";
+import Modal from "@iso/ui/Antd/Modal/Modal";
+import Container from "@iso/ui/UI/Container/Container";
+import AvatarCard from "@iso/components/AvatarCard/AvatarCard";
+import Posts from "./Posts/Posts";
+import Followers from "./Followers/Followers";
+import Following from "./Following/Following";
+import Wrapper, { Banner, Navigation, ContentWrapper } from "./Profile.styles";
+import { useSelector, useDispatch } from "react-redux";
+import profileActions from "@iso/redux/profile/actions";
 
 const MyProfile = () => {
   const data = useSelector((state) => state.profile.data);
   const loading = useSelector((state) => state.profile.loading);
   const dispatch = useDispatch();
-  const getProfile = useCallback(
-    () => dispatch(profileActions.fetchProfileDataStart()),
-    [dispatch]
-  );
+  const getProfile = useCallback(() => dispatch(profileActions.fetchProfileDataStart()), [dispatch]);
 
-  const [active, setActive] = useState('post');
+  const [active, setActive] = useState("post");
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -27,14 +24,14 @@ const MyProfile = () => {
   }, [getProfile]);
 
   const handleMenu = (type) => {
-    if (type === 'post') {
+    if (type === "post") {
       setActive(type);
     }
-    if (type === 'followers') {
+    if (type === "followers") {
       setActive(type);
       setVisible(true);
     }
-    if (type === 'following') {
+    if (type === "following") {
       setActive(type);
       setVisible(true);
     }
@@ -42,45 +39,29 @@ const MyProfile = () => {
 
   const handleCancel = () => {
     setVisible(false);
-    setActive('post');
+    setActive("post");
   };
 
   return (
     <Wrapper>
       {loading !== true ? (
         <>
-          <Banner
-            className="profile-banner"
-            style={{ backgroundImage: `url(${data.profile_bg})` }}
-          >
+          <Banner className="profile-banner" style={{ backgroundImage: `url(${data.profile_bg})` }}>
             <Container className="container">
-              <AvatarCard
-                avatar={data.avatar}
-                name={data.name}
-                username={data.username}
-              />
+              <AvatarCard avatar={data.avatar} name={data.name} username={data.username} />
             </Container>
           </Banner>
 
           <Navigation className="navigation">
             <Container className="container">
               <ul className="menu">
-                <li
-                  className={active === 'post' ? 'active' : ''}
-                  onClick={() => handleMenu('post')}
-                >
+                <li className={active === "post" ? "active" : ""} onClick={() => handleMenu("post")}>
                   <strong>{data.post.length}</strong> Posts
                 </li>
-                <li
-                  className={active === 'followers' ? 'active' : ''}
-                  onClick={() => handleMenu('followers')}
-                >
+                <li className={active === "followers" ? "active" : ""} onClick={() => handleMenu("followers")}>
                   <strong>{data.followers.length}</strong> Followers
                 </li>
-                <li
-                  className={active === 'following' ? 'active' : ''}
-                  onClick={() => handleMenu('following')}
-                >
+                <li className={active === "following" ? "active" : ""} onClick={() => handleMenu("following")}>
                   <strong>{data.following.length}</strong> Following
                 </li>
               </ul>
@@ -89,19 +70,10 @@ const MyProfile = () => {
 
           <ContentWrapper>
             <Container className="container">
-              <Posts
-                avatar={data.avatar}
-                username={data.username}
-                data={data.post}
-              />
-              <Modal
-                wrapClassName="follow-modal"
-                visible={visible}
-                onCancel={handleCancel}
-                footer={null}
-              >
-                {active === 'followers' && <Followers data={data.followers} />}
-                {active === 'following' && <Following data={data.following} />}
+              <Posts avatar={data.avatar} username={data.username} data={data.post} />
+              <Modal wrapClassName="follow-modal" visible={visible} onCancel={handleCancel} footer={null}>
+                {active === "followers" && <Followers data={data.followers} />}
+                {active === "following" && <Following data={data.following} />}
               </Modal>
             </Container>
           </ContentWrapper>
@@ -109,10 +81,10 @@ const MyProfile = () => {
       ) : (
         <div
           style={{
-            minHeight: '150px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
+            minHeight: "150px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
           }}
         >
           <Spin />

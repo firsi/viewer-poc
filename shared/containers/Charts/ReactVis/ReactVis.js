@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Row, Col } from 'antd';
+import React, { Component } from "react";
+import { Row, Col } from "antd";
 import {
   LineSeries,
   LineMark,
@@ -20,14 +20,14 @@ import {
   CandleStick,
   ComplexChart,
   StreamGraph,
-} from './Charts';
-import * as configs from './config';
-import PageHeader from '@iso/components/utility/pageHeader';
-import Box from '@iso/components/utility/box';
-import LayoutWrapper from '@iso/components/utility/layoutWrapper';
-import ContentHolder from '@iso/components/utility/contentHolder';
-import basicStyle from '@iso/assets/styles/constants';
-import 'react-vis/dist/style.css';
+} from "./Charts";
+import * as configs from "./config";
+import PageHeader from "@iso/components/utility/pageHeader";
+import Box from "@iso/components/utility/box";
+import LayoutWrapper from "@iso/components/utility/layoutWrapper";
+import ContentHolder from "@iso/components/utility/contentHolder";
+import basicStyle from "@iso/assets/styles/constants";
+import "react-vis/dist/style.css";
 
 export default class ReactVis extends Component {
   render() {
@@ -62,9 +62,7 @@ export default class ReactVis extends Component {
           <Col md={12} xs={24} style={colStyle}>
             <Box title={configs.StackedHorizontalBarChart.title}>
               <ContentHolder>
-                <StackedHorizontalBarChart
-                  {...configs.StackedHorizontalBarChart}
-                />
+                <StackedHorizontalBarChart {...configs.StackedHorizontalBarChart} />
               </ContentHolder>
             </Box>
           </Col>
@@ -73,9 +71,7 @@ export default class ReactVis extends Component {
           <Col md={12} xs={24} style={colStyle}>
             <Box title={configs.ClusteredStackedBarChart.title}>
               <ContentHolder>
-                <ClusteredStackedBarChart
-                  {...configs.ClusteredStackedBarChart}
-                />
+                <ClusteredStackedBarChart {...configs.ClusteredStackedBarChart} />
               </ContentHolder>
             </Box>
           </Col>
@@ -98,9 +94,7 @@ export default class ReactVis extends Component {
           <Col md={12} xs={24} style={colStyle}>
             <Box title={configs.DynamicProgrammaticRightedgehints.title}>
               <ContentHolder>
-                <DynamicProgrammaticRightedgehints
-                  {...configs.DynamicProgrammaticRightedgehints}
-                />
+                <DynamicProgrammaticRightedgehints {...configs.DynamicProgrammaticRightedgehints} />
               </ContentHolder>
             </Box>
           </Col>
@@ -109,9 +103,7 @@ export default class ReactVis extends Component {
           <Col md={12} xs={24} style={colStyle}>
             <Box title={configs.DynamicCrosshairScatterplot.title}>
               <ContentHolder>
-                <DynamicCrosshairScatterplot
-                  {...configs.DynamicCrosshairScatterplot}
-                />
+                <DynamicCrosshairScatterplot {...configs.DynamicCrosshairScatterplot} />
               </ContentHolder>
             </Box>
           </Col>

@@ -1,19 +1,16 @@
-import React from 'react';
-import Loader from '@iso/components/utility/loader';
-import HelperText from '@iso/components/utility/helper-text';
-import Pagination from '@iso/components/uielements/pagination';
-import { per_page } from '@iso/redux/githubSearch/sagas';
-import {
-  GithubResultListStyleWrapper,
-  GithubResultStyleWrapper,
-} from './GithubSearchResult.styles';
+import React from "react";
+import Loader from "@iso/components/utility/loader";
+import HelperText from "@iso/components/utility/helper-text";
+import Pagination from "@iso/components/uielements/pagination";
+import { per_page } from "@iso/redux/githubSearch/sagas";
+import { GithubResultListStyleWrapper, GithubResultStyleWrapper } from "./GithubSearchResult.styles";
 
 function SearchList(result) {
   return (
     <GithubResultListStyleWrapper className="isoGithubResultList">
       {result.map((item) => {
         const onClick = () => {
-          window.open(item.html_url, '_blank');
+          window.open(item.html_url, "_blank");
         };
         const updateDate = new Date(item.updated_at).toDateString();
         return (
@@ -25,18 +22,10 @@ function SearchList(result) {
                 </a>
               </h3>
 
-              {item.language ? (
-                <span className="language">{item.language}</span>
-              ) : (
-                ''
-              )}
-              {item.stargazers_count ? (
-                <span className="totalStars">{item.stargazers_count}</span>
-              ) : (
-                ''
-              )}
+              {item.language ? <span className="language">{item.language}</span> : ""}
+              {item.stargazers_count ? <span className="totalStars">{item.stargazers_count}</span> : ""}
             </div>
-            {item.description ? <p>{item.description}</p> : ''}
+            {item.description ? <p>{item.description}</p> : ""}
             <span className="updateDate">Updated on {updateDate}</span>
           </div>
         );

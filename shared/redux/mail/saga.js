@@ -1,5 +1,5 @@
-import { all, takeEvery, fork } from 'redux-saga/effects';
-import actions from './actions';
+import { all, takeEvery, fork } from "redux-saga/effects";
+import actions from "./actions";
 
 export function* filterAction() {
   yield takeEvery(actions.FILTER_ATTRIBUTE, function* () {});

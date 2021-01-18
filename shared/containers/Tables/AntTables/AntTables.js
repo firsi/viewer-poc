@@ -1,10 +1,10 @@
-import React from 'react';
-import Tabs, { TabPane } from '@iso/components/uielements/tabs';
-import LayoutContentWrapper from '@iso/components/utility/layoutWrapper';
-import TableDemoStyle from './Demo.styles';
-import fakeData from '../data';
-import { tableinfos } from './configs';
-import * as TableViews from './TableViews/TableViews';
+import React from "react";
+import Tabs, { TabPane } from "@iso/components/uielements/tabs";
+import LayoutContentWrapper from "@iso/components/utility/layoutWrapper";
+import TableDemoStyle from "./Demo.styles";
+import fakeData from "../data";
+import { tableinfos } from "./configs";
+import * as TableViews from "./TableViews/TableViews";
 
 const dataList = new fakeData(10);
 
@@ -12,19 +12,19 @@ export default function AntTable() {
   function renderTable(tableInfo) {
     let Component;
     switch (tableInfo.value) {
-      case 'sortView':
+      case "sortView":
         Component = TableViews.SortView;
         break;
-      case 'filterView':
+      case "filterView":
         Component = TableViews.FilterView;
         break;
-      case 'editView':
+      case "editView":
         Component = TableViews.EditView;
         break;
-      case 'groupView':
+      case "groupView":
         Component = TableViews.GroupView;
         break;
-      case 'customizedView':
+      case "customizedView":
         Component = TableViews.CustomizedView;
         break;
       default:

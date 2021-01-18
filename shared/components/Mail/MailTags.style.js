@@ -1,19 +1,19 @@
-import styled from 'styled-components';
-import { palette } from 'styled-theme';
-import { borderRadius, transition } from '@iso/lib/helpers/style_utils';
-import WithDirection from '@iso/lib/helpers/rtl';
+import styled from "styled-components";
+import { palette } from "styled-theme";
+import { borderRadius, transition } from "@iso/lib/helpers/style_utils";
+import WithDirection from "@iso/lib/helpers/rtl";
 const MailTagsList = styled.ul`
   padding: 30px 0;
-  text-align: ${(props) => (props['data-rtl'] === 'rtl' ? 'right' : 'left')};
+  text-align: ${(props) => (props["data-rtl"] === "rtl" ? "right" : "left")};
 
   .isoSectionLabel {
     font-size: 16px;
     font-weight: 500;
-    color: ${palette('secondary', 2)};
+    color: ${palette("secondary", 2)};
     line-height: 1.1;
     margin-bottom: 20px;
     padding: 15px 30px;
-    background-color: ${palette('grayscale', 6)};
+    background-color: ${palette("grayscale", 6)};
   }
 
   .isoMailTag {
@@ -28,32 +28,30 @@ const MailTagsList = styled.ul`
       width: 10px;
       height: 10px;
       display: flex;
-      margin: ${(props) =>
-        props['data-rtl'] === 'rtl' ? '0 5px 0 0' : '0 0 0 5px'};
-      ${borderRadius('50%')};
+      margin: ${(props) => (props["data-rtl"] === "rtl" ? "0 5px 0 0" : "0 0 0 5px")};
+      ${borderRadius("50%")};
     }
 
     span {
       font-size: 14px;
       font-weight: 400;
-      color: ${palette('secondary', 2)};
+      color: ${palette("secondary", 2)};
       cursor: pointer;
       line-height: 1.1;
-      margin: ${(props) =>
-        props['data-rtl'] === 'rtl' ? '0 20px 0 0' : '0 0 0 20px'};
+      margin: ${(props) => (props["data-rtl"] === "rtl" ? "0 20px 0 0" : "0 0 0 20px")};
       ${transition()};
     }
 
     &.active {
       span {
         font-weight: 500;
-        color: ${palette('primary', 0)};
+        color: ${palette("primary", 0)};
       }
     }
 
     &:hover {
       span {
-        color: ${palette('primary', 0)};
+        color: ${palette("primary", 0)};
       }
     }
   }

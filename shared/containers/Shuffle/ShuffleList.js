@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import moment from 'moment';
-import { CloseOutlined } from '@ant-design/icons';
-import { SingleCardWrapper } from './Shuffle.styles';
+import React, { Component } from "react";
+import moment from "moment";
+import { CloseOutlined } from "@ant-design/icons";
+import { SingleCardWrapper } from "./Shuffle.styles";
 
 export default class extends Component {
   render() {
@@ -15,9 +15,7 @@ export default class extends Component {
         </div>
         <div className="isoCardContent">
           <h3 className="isoCardTitle">{this.props.desc}</h3>
-          <span className="isoCardDate">
-            {moment(this.props.timestamp).format('MMM Do, YYYY')}
-          </span>
+          <span className="isoCardDate">{moment(this.props.timestamp).format("MMM Do, YYYY")}</span>
         </div>
         <button className="isoDeleteBtn" onClick={this.props.clickHandler}>
           <CloseOutlined />

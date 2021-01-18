@@ -1,16 +1,16 @@
-import React from 'react';
-import { Row, Col, Input } from 'antd';
-import Tags from '@iso/components/uielements/tag';
+import React from "react";
+import { Row, Col, Input } from "antd";
+import Tags from "@iso/components/uielements/tag";
 // import Input from '@iso/components/uielements/input';
-import Tooltip from '@iso/components/uielements/tooltip';
-import Button from '@iso/components/uielements/button';
-import PageHeader from '@iso/components/utility/pageHeader';
-import Box from '@iso/components/utility/box';
-import LayoutWrapper from '@iso/components/utility/layoutWrapper';
-import ContentHolder from '@iso/components/utility/contentHolder';
-import IntlMessages from '@iso/components/utility/intlMessages';
-import basicStyle from '@iso/assets/styles/constants';
-import TagWrapper from './Tag.styles';
+import Tooltip from "@iso/components/uielements/tooltip";
+import Button from "@iso/components/uielements/button";
+import PageHeader from "@iso/components/utility/pageHeader";
+import Box from "@iso/components/utility/box";
+import LayoutWrapper from "@iso/components/utility/layoutWrapper";
+import ContentHolder from "@iso/components/utility/contentHolder";
+import IntlMessages from "@iso/components/utility/intlMessages";
+import basicStyle from "@iso/assets/styles/constants";
+import TagWrapper from "./Tag.styles";
 
 const CheckableTag = Tags.CheckableTag;
 
@@ -20,19 +20,17 @@ const Tag = (props) => (
   </TagWrapper>
 );
 
-const tagsFromServer = ['Movie', 'Books', 'Music'];
+const tagsFromServer = ["Movie", "Books", "Music"];
 
 export default function () {
   const [selectedTags, setSelectedTags] = React.useState([]);
-  const [tags, setTags] = React.useState(['Unremovable', 'Tag 2', 'Tag 3']);
+  const [tags, setTags] = React.useState(["Unremovable", "Tag 2", "Tag 3"]);
   const [inputVisible, setInputVisible] = React.useState(false);
-  const [inputValue, setInputValue] = React.useState('');
+  const [inputValue, setInputValue] = React.useState("");
   let inputRef = React.useRef(null);
   const log = (e) => {};
   const handleChange = (tag, checked) => {
-    const nextSelectedTags = checked
-      ? [...selectedTags, tag]
-      : selectedTags.filter((t) => t !== tag);
+    const nextSelectedTags = checked ? [...selectedTags, tag] : selectedTags.filter((t) => t !== tag);
     setSelectedTags(nextSelectedTags);
   };
   const preventDefault = (e) => {
@@ -62,7 +60,7 @@ export default function () {
     }
     setTags(newTags);
     setInputVisible(false);
-    setInputValue('');
+    setInputValue("");
   };
 
   const { rowStyle, colStyle, gutter } = basicStyle;
@@ -73,16 +71,12 @@ export default function () {
         <Col md={12} sm={12} xs={24} style={colStyle}>
           <Box
             title={<IntlMessages id="uiElements.tags.basicExample" />}
-            subtitle={
-              <IntlMessages id="uiElements.tags.basicExampleSubTitle" />
-            }
+            subtitle={<IntlMessages id="uiElements.tags.basicExampleSubTitle" />}
           >
             <ContentHolder>
               <Tag>{<IntlMessages id="uiElements.tags.tagOne" />}</Tag>
               <Tag>
-                <a href="https://isomorphic.redq.io/dashboard/op_tag">
-                  {<IntlMessages id="uiElements.tags.link" />}
-                </a>
+                <a href="https://isomorphic.redq.io/dashboard/op_tag">{<IntlMessages id="uiElements.tags.link" />}</a>
               </Tag>
               <Tag closable onClose={log}>
                 {<IntlMessages id="uiElements.tags.tagTwo" />}
@@ -127,27 +121,17 @@ export default function () {
         <Col md={12} sm={12} xs={24} style={colStyle}>
           <Box
             title={<IntlMessages id="uiElements.tags.addRemoveDynamically" />}
-            subtitle={
-              <IntlMessages id="uiElements.tags.addRemoveDynamicallySubTitle" />
-            }
+            subtitle={<IntlMessages id="uiElements.tags.addRemoveDynamicallySubTitle" />}
           >
             <ContentHolder>
               {tags.map((tag, index) => {
                 const isLongTag = tag.length > 20;
                 const tagElem = (
-                  <Tag
-                    key={tag}
-                    closable={index !== 0}
-                    onClose={() => handleClose(tag)}
-                  >
+                  <Tag key={tag} closable={index !== 0} onClose={() => handleClose(tag)}>
                     {isLongTag ? `${tag.slice(0, 20)}...` : tag}
                   </Tag>
                 );
-                return isLongTag ? (
-                  <Tooltip title={tag}>{tagElem}</Tooltip>
-                ) : (
-                  tagElem
-                );
+                return isLongTag ? <Tooltip title={tag}>{tagElem}</Tooltip> : tagElem;
               })}
               {inputVisible && (
                 <Input

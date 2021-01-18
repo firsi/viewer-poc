@@ -1,11 +1,11 @@
-import React from 'react';
-import Popconfirm from '../Feedback/Popconfirm';
+import React from "react";
+import Popconfirm from "../Feedback/Popconfirm";
 // import Button from '../uielements/button';
-import { Button } from 'antd';
-import notification from '../Notification';
-import { CloseOutlined } from '@ant-design/icons';
+import { Button } from "antd";
+import notification from "../Notification";
+import { CloseOutlined } from "@ant-design/icons";
 export default function ({ contact, deleteContact }) {
-  let name = '';
+  let name = "";
   if (contact.firstName) {
     name = `${contact.firstName} `;
   }
@@ -13,7 +13,7 @@ export default function ({ contact, deleteContact }) {
     name = `${name}${contact.lastName}`;
   }
   if (!name) {
-    name = 'No Name';
+    name = "No Name";
   }
   return (
     <Popconfirm
@@ -21,15 +21,11 @@ export default function ({ contact, deleteContact }) {
       okText="DELETE"
       cancelText="No"
       onConfirm={() => {
-        notification('error', `${name} Deleted`, '');
+        notification("error", `${name} Deleted`, "");
         deleteContact(contact.id);
       }}
     >
-      <Button
-        icon={<CloseOutlined />}
-        type="default"
-        className="isoDeleteBtn"
-      />
+      <Button icon={<CloseOutlined />} type="default" className="isoDeleteBtn" />
     </Popconfirm>
   );
 }

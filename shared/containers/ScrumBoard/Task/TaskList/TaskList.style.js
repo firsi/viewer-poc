@@ -1,12 +1,11 @@
-import styled from 'styled-components';
-import { grid } from '@iso/assets/styles/constants';
+import styled from "styled-components";
+import { grid } from "@iso/assets/styles/constants";
 
 export const Wrapper = styled.div`
-  background-color: ${({ isDraggingOver }) =>
-    isDraggingOver ? '#e6eaf8' : 'inherit'};
+  background-color: ${({ isDraggingOver }) => (isDraggingOver ? "#e6eaf8" : "inherit")};
   display: flex;
   flex-direction: column;
-  opacity: ${({ isDropDisabled }) => (isDropDisabled ? 0.5 : 'inherit')};
+  opacity: ${({ isDropDisabled }) => (isDropDisabled ? 0.5 : "inherit")};
   padding: 0 20px 20px;
   transition: background-color 0.1s ease, opacity 0.1s ease;
   user-select: none;

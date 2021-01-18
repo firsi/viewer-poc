@@ -1,8 +1,8 @@
-import React from 'react';
-import { posts } from '../config';
-import googleConfig from '@iso/config/google_map.config';
-import { GoogleApiWrapper } from 'google-maps-react';
-import BasicMapWrapper from './Maps.styles';
+import React from "react";
+import { posts } from "../config";
+import googleConfig from "@iso/config/google_map.config";
+import { GoogleApiWrapper } from "google-maps-react";
+import BasicMapWrapper from "./Maps.styles";
 
 function BasicMap(props) {
   const [state] = React.useState({
@@ -30,11 +30,7 @@ function BasicMap(props) {
     <div>
       {loaded ? (
         <BasicMapWrapper>
-          <div
-            className="isoGoogleMap"
-            style={{ height: '650px', width: '100%' }}
-            ref={loadMap}
-          />
+          <div className="isoGoogleMap" style={{ height: "650px", width: "100%" }} ref={loadMap} />
         </BasicMapWrapper>
       ) : (
         <span>API is Loading</span>

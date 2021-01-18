@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import { palette } from 'styled-theme';
-import WithDirection from '@iso/lib/helpers/rtl';
+import styled from "styled-components";
+import { palette } from "styled-theme";
+import WithDirection from "@iso/lib/helpers/rtl";
 
 const InvoicePageWrapper = styled.div`
   .PageHeader {
@@ -35,9 +35,8 @@ const InvoicePageWrapper = styled.div`
       margin-right: 15px;
     }
     .isoInvoPrint {
-      background: ${palette('blue', 14)};
-      margin: ${(props) =>
-        props['data-rtl'] === 'rtl' ? '0 15px 0 0' : '0 0 0 15px'};
+      background: ${palette("blue", 14)};
+      margin: ${(props) => (props["data-rtl"] === "rtl" ? "0 15px 0 0" : "0 0 0 15px")};
       @media (max-width: 500px) {
         margin-top: 15px;
       }
@@ -48,9 +47,8 @@ const InvoicePageWrapper = styled.div`
       }
     }
     .saveBtn {
-      background: ${palette('blue', 14)};
-      margin: ${(props) =>
-        props['data-rtl'] === 'rtl' ? '0 15px 0 0' : '0 0 0 15px'};
+      background: ${palette("blue", 14)};
+      margin: ${(props) => (props["data-rtl"] === "rtl" ? "0 15px 0 0" : "0 0 0 15px")};
     }
   }
 
@@ -73,7 +71,7 @@ const InvoicePageWrapper = styled.div`
       -ms-flex-pack: justify;
       justify-content: space-between;
       padding-bottom: 30px;
-      border-bottom: 1px dashed ${palette('grayscale', 2)};
+      border-bottom: 1px dashed ${palette("grayscale", 2)};
 
       @media (max-width: 560px) {
         flex-direction: column;
@@ -82,7 +80,7 @@ const InvoicePageWrapper = styled.div`
       .Title {
         font-size: 16px;
         font-weight: 500;
-        color: ${palette('grey', 8)};
+        color: ${palette("grey", 8)};
         margin: 0 0 20px;
         line-height: 1;
       }
@@ -90,7 +88,7 @@ const InvoicePageWrapper = styled.div`
       span.InvoiceNumber {
         font-size: 16px;
         font-weight: 400;
-        color: ${palette('blue', 11)};
+        color: ${palette("blue", 11)};
         margin: 0;
       }
 
@@ -108,19 +106,17 @@ const InvoicePageWrapper = styled.div`
 
         p {
           font-size: 14px;
-          color: ${palette('grey', 8)};
+          color: ${palette("grey", 8)};
           margin: 0 0 15px;
           font-weight: 500;
 
           span.orderStatus {
-            margin-left: ${(props) =>
-              props['data-rtl'] === 'rtl' ? '0 8px 0 0' : '0 0 0 8px'};
+            margin-left: ${(props) => (props["data-rtl"] === "rtl" ? "0 8px 0 0" : "0 0 0 8px")};
             font-weight: 400;
           }
           span.orderDate {
             font-weight: 400;
-            margin-left: ${(props) =>
-              props['data-rtl'] === 'rtl' ? '0 8px 0 0' : '0 0 0 8px'};
+            margin-left: ${(props) => (props["data-rtl"] === "rtl" ? "0 8px 0 0" : "0 0 0 8px")};
           }
 
           &:last-child {
@@ -128,16 +124,15 @@ const InvoicePageWrapper = styled.div`
           }
           .orderStatusSpan {
             font-size: 14px;
-            color: ${palette('grey', 8)};
+            color: ${palette("grey", 8)};
             margin: 0 0 15px;
             font-weight: 500;
           }
           .orderDateSpan {
             font-size: 14px;
-            color: ${palette('grey', 8)};
+            color: ${palette("grey", 8)};
             margin: 0 0 15px;
-            margin-left: ${(props) =>
-              props['data-rtl'] === 'rtl' ? '0 13px 0 0' : '0 0 0 13px'};
+            margin-left: ${(props) => (props["data-rtl"] === "rtl" ? "0 13px 0 0" : "0 0 0 13px")};
             font-weight: 500;
 
             @media (max-width: 420px) {
@@ -150,19 +145,17 @@ const InvoicePageWrapper = styled.div`
           flex-direction: row;
           align-items: center;
           font-size: 14px;
-          color: ${palette('grey', 8)};
+          color: ${palette("grey", 8)};
 
           @media (max-width: 560px) {
             margin-bottom: 10px;
           }
 
           .RightSideStatusSpan {
-            margin: ${(props) =>
-              props['data-rtl'] === 'rtl' ? '0 -10px 0 7px' : '0 7px 0 -10px'};
+            margin: ${(props) => (props["data-rtl"] === "rtl" ? "0 -10px 0 7px" : "0 7px 0 -10px")};
 
             @media (max-width: 560px) {
-              margin: ${(props) =>
-                props['data-rtl'] === 'rtl' ? '0 0 0 10px' : '0 10px 0 0'};
+              margin: ${(props) => (props["data-rtl"] === "rtl" ? "0 0 0 10px" : "0 10px 0 0")};
             }
           }
           #order-drop-list {
@@ -175,20 +168,17 @@ const InvoicePageWrapper = styled.div`
           align-items: center;
           margin-top: 15px;
           font-size: 14px;
-          color: ${palette('grey', 8)};
+          color: ${palette("grey", 8)};
           > span {
-            margin: ${(props) =>
-              props['data-rtl'] === 'rtl' ? '0 10px 0 0' : '0 0 0 10px'};
+            margin: ${(props) => (props["data-rtl"] === "rtl" ? "0 10px 0 0" : "0 0 0 10px")};
           }
 
           @media (max-width: 560px) {
-            margin: ${(props) =>
-              props['data-rtl'] === 'rtl' ? '0 13px 0 0' : '0 0 0 13px'};
+            margin: ${(props) => (props["data-rtl"] === "rtl" ? "0 13px 0 0" : "0 0 0 13px")};
           }
 
           > div {
-            margin: ${(props) =>
-              props['data-rtl'] === 'rtl' ? '0 7px 0 0' : '0 0 0 7px'};
+            margin: ${(props) => (props["data-rtl"] === "rtl" ? "0 7px 0 0" : "0 0 0 7px")};
             > div {
               &::before {
                 background-color: #ececec;
@@ -283,8 +273,7 @@ const InvoicePageWrapper = styled.div`
       .LeftSideContent,
       .RightSideContent {
         width: calc(50% - 50px);
-        margin: ${(props) =>
-          props['data-rtl'] === 'rtl' ? '0 0 0 10px' : '0 10px 0 0'};
+        margin: ${(props) => (props["data-rtl"] === "rtl" ? "0 0 0 10px" : "0 10px 0 0")};
 
         @media (max-width: 500px) {
           width: 100%;
@@ -296,24 +285,19 @@ const InvoicePageWrapper = styled.div`
 
         input,
         textarea {
-          text-align: ${(props) =>
-            props['data-rtl'] === 'rtl' ? 'left' : 'right'};
+          text-align: ${(props) => (props["data-rtl"] === "rtl" ? "left" : "right")};
 
           &::-webkit-input-placeholder {
-            text-align: ${(props) =>
-              props['data-rtl'] === 'rtl' ? 'left' : 'right'};
+            text-align: ${(props) => (props["data-rtl"] === "rtl" ? "left" : "right")};
           }
           &:-moz-placeholder {
-            text-align: ${(props) =>
-              props['data-rtl'] === 'rtl' ? 'left' : 'right'};
+            text-align: ${(props) => (props["data-rtl"] === "rtl" ? "left" : "right")};
           }
           &::-moz-placeholder {
-            text-align: ${(props) =>
-              props['data-rtl'] === 'rtl' ? 'left' : 'right'};
+            text-align: ${(props) => (props["data-rtl"] === "rtl" ? "left" : "right")};
           }
           &:-ms-input-placeholder {
-            text-align: ${(props) =>
-              props['data-rtl'] === 'rtl' ? 'left' : 'right'};
+            text-align: ${(props) => (props["data-rtl"] === "rtl" ? "left" : "right")};
           }
         }
       }
@@ -327,13 +311,13 @@ const InvoicePageWrapper = styled.div`
       .BillFormTitle {
         font-size: 16px;
         font-weight: 500;
-        color: ${palette('grey', 9)};
+        color: ${palette("grey", 9)};
         margin: 0 0 10px;
         line-height: 1;
         label {
           font-size: 19px;
           font-weight: 500;
-          color: ${palette('grey', 9)};
+          color: ${palette("grey", 9)};
           margin: 0 0 10px;
           line-height: 1;
         }
@@ -344,7 +328,7 @@ const InvoicePageWrapper = styled.div`
         }
         input {
           font-size: 15px;
-          color: ${palette('grey', 7)};
+          color: ${palette("grey", 7)};
           font-weight: 400;
           display: block;
           margin-top: 10px;
@@ -361,7 +345,7 @@ const InvoicePageWrapper = styled.div`
           height: 100%;
           overflow: hidden;
           font-size: 14px;
-          color: ${palette('grey', 7)};
+          color: ${palette("grey", 7)};
           font-weight: 300;
           font-style: normal;
         }
@@ -372,21 +356,21 @@ const InvoicePageWrapper = styled.div`
       p.NameEmail {
         span.Name {
           font-size: 15px;
-          color: ${palette('grey', 7)};
+          color: ${palette("grey", 7)};
           font-weight: 400;
           display: block;
         }
 
         span.Email {
           font-size: 14px;
-          color: ${palette('grey', 7)};
+          color: ${palette("grey", 7)};
           font-weight: 300;
         }
       }
 
       address {
         font-size: 14px;
-        color: ${palette('grey', 7)};
+        color: ${palette("grey", 7)};
         font-weight: 300;
         font-style: normal;
       }
@@ -401,10 +385,10 @@ const InvoicePageWrapper = styled.div`
     .InvoiceTable {
       table {
         thead {
-          background-color: ${palette('grey', 2)};
+          background-color: ${palette("grey", 2)};
           tr {
             th {
-              color: ${palette('grey', 8)};
+              color: ${palette("grey", 8)};
             }
           }
         }
@@ -412,7 +396,7 @@ const InvoicePageWrapper = styled.div`
         tbody {
           tr {
             td {
-              color: ${palette('grey', 7)};
+              color: ${palette("grey", 7)};
               > div {
                 > div {
                   &::before {
@@ -421,7 +405,7 @@ const InvoicePageWrapper = styled.div`
                 }
               }
               input {
-                color: ${palette('grey', 7)};
+                color: ${palette("grey", 7)};
                 font-size: 0.8125rem;
               }
               .material-icons {
@@ -433,13 +417,11 @@ const InvoicePageWrapper = styled.div`
       }
       .InvoiceTableBtn {
         display: flex;
-        justify-content: ${(props) =>
-          props['data-rtl'] === 'rtl' ? 'flex-start' : 'flex-end'};
-        align-items: ${(props) =>
-          props['data-rtl'] === 'rtl' ? 'flex-start' : 'flex-end'};
+        justify-content: ${(props) => (props["data-rtl"] === "rtl" ? "flex-start" : "flex-end")};
+        align-items: ${(props) => (props["data-rtl"] === "rtl" ? "flex-start" : "flex-end")};
         margin-top: 15px;
         .InvoiceEditAddBtn {
-          background: ${palette('blue', 14)};
+          background: ${palette("blue", 14)};
           color: #fff;
         }
       }
@@ -450,32 +432,27 @@ const InvoicePageWrapper = styled.div`
         display: -ms-flexbox;
         display: flex;
         width: 100%;
-        align-items: ${(props) =>
-          props['data-rtl'] === 'rtl' ? 'flex-start' : 'flex-end'};
-        text-align: ${(props) =>
-          props['data-rtl'] === 'rtl' ? 'left' : 'right'};
+        align-items: ${(props) => (props["data-rtl"] === "rtl" ? "flex-start" : "flex-end")};
+        text-align: ${(props) => (props["data-rtl"] === "rtl" ? "left" : "right")};
         flex-direction: column;
         padding-left: inherit;
 
         p {
           margin-top: 0;
           font-size: 14px;
-          color: ${palette('grey', 7)};
+          color: ${palette("grey", 7)};
           margin-bottom: 15px;
           width: 250px;
           display: flex;
-          justify-content: ${(props) =>
-            props['data-rtl'] === 'rtl' ? 'flex-start' : 'flex-end'};
-          text-align: ${(props) =>
-            props['data-rtl'] === 'rtl' ? 'left' : 'right'};
+          justify-content: ${(props) => (props["data-rtl"] === "rtl" ? "flex-start" : "flex-end")};
+          text-align: ${(props) => (props["data-rtl"] === "rtl" ? "left" : "right")};
 
           span {
             width: 120px;
           }
         }
         .TotalBillTitle {
-          margin: ${(props) =>
-            props['data-rtl'] === 'rtl' ? '0 0 0 -10px' : '0 -10px 0 0'};
+          margin: ${(props) => (props["data-rtl"] === "rtl" ? "0 0 0 -10px" : "0 -10px 0 0")};
         }
         .totalVat {
           width: 186px;
@@ -484,8 +461,7 @@ const InvoicePageWrapper = styled.div`
           > div {
             margin-top: -12px;
             width: 25px;
-            margin: ${(props) =>
-              props['data-rtl'] === 'rtl' ? '0 15px 0 0' : '0 0 0 15px'};
+            margin: ${(props) => (props["data-rtl"] === "rtl" ? "0 15px 0 0" : "0 0 0 15px")};
             > div {
               &::before {
                 background-color: #ececec;
@@ -493,30 +469,24 @@ const InvoicePageWrapper = styled.div`
             }
           }
           input {
-            color: ${palette('grey', 7)};
+            color: ${palette("grey", 7)};
             font-size: 14px;
           }
           > span {
             width: 70px;
-            margin: ${(props) =>
-              props['data-rtl'] === 'rtl' ? '-7px 10px 0 0' : '-7px 0 0 10px'};
+            margin: ${(props) => (props["data-rtl"] === "rtl" ? "-7px 10px 0 0" : "-7px 0 0 10px")};
           }
           .ant-input-group-wrapper {
             width: auto;
-            margin: ${(props) =>
-              props['data-rtl'] === 'rtl' ? '-7px 0 0 0' : '-7px 0 0 0'};
+            margin: ${(props) => (props["data-rtl"] === "rtl" ? "-7px 0 0 0" : "-7px 0 0 0")};
           }
           .vatRateCalcWrap {
             > span:last-child {
-              margin: ${(props) =>
-                props['data-rtl'] === 'rtl'
-                  ? '-7px 10px 0 0'
-                  : '-7px 0 0 10px'};
+              margin: ${(props) => (props["data-rtl"] === "rtl" ? "-7px 10px 0 0" : "-7px 0 0 10px")};
             }
           }
           .ant-input-wrapper.ant-input-group {
-            margin: ${(props) =>
-              props['data-rtl'] === 'rtl' ? '0 -22px 0 0' : '0 0 0 -22px'};
+            margin: ${(props) => (props["data-rtl"] === "rtl" ? "0 -22px 0 0" : "0 0 0 -22px")};
             margin-top: 0;
             input.ant-input {
               width: 50px;
@@ -531,21 +501,19 @@ const InvoicePageWrapper = styled.div`
           }
           input,
           label {
-            color: ${palette('grey', 7)};
+            color: ${palette("grey", 7)};
             font-size: 14px;
           }
         }
         h3 {
           font-size: 18px;
-          color: ${palette('grey', 9)};
+          color: ${palette("grey", 9)};
           margin: 0;
           font-weight: 400;
           width: 250px;
           display: flex;
-          justify-content: ${(props) =>
-            props['data-rtl'] === 'rtl' ? 'flex-start' : 'flex-end'};
-          text-align: ${(props) =>
-            props['data-rtl'] === 'rtl' ? 'left' : 'right'};
+          justify-content: ${(props) => (props["data-rtl"] === "rtl" ? "flex-start" : "flex-end")};
+          text-align: ${(props) => (props["data-rtl"] === "rtl" ? "left" : "right")};
 
           span {
             width: 120px;
@@ -556,8 +524,7 @@ const InvoicePageWrapper = styled.div`
             width: 100%;
           }
           .currencySign {
-            margin: ${(props) =>
-              props['data-rtl'] === 'rtl' ? '0 10px 0 0' : '0 0 0 10px'};
+            margin: ${(props) => (props["data-rtl"] === "rtl" ? "0 10px 0 0" : "0 0 0 10px")};
             width: 50px;
             margin-top: -5px;
           }
@@ -575,10 +542,10 @@ const InvoicePageWrapper = styled.div`
             width: 760px;
           }
           thead {
-            background-color: ${palette('secondary', 1)};
+            background-color: ${palette("secondary", 1)};
             tr {
               th {
-                color: ${palette('secondary', 2)};
+                color: ${palette("secondary", 2)};
               }
             }
           }
@@ -586,7 +553,7 @@ const InvoicePageWrapper = styled.div`
           tbody {
             tr {
               td {
-                color: ${palette('text', 1)};
+                color: ${palette("text", 1)};
                 border-bottom: 0;
                 padding: 8px 15px;
                 > div {
@@ -597,7 +564,7 @@ const InvoicePageWrapper = styled.div`
                   }
                 }
                 input {
-                  color: ${palette('text', 1)};
+                  color: ${palette("text", 1)};
                   font-size: 0.8125rem;
                   height: 28px;
                 }
@@ -611,48 +578,38 @@ const InvoicePageWrapper = styled.div`
         .TotalBill {
           p {
             width: 300px;
-            justify-content: ${(props) =>
-              props['data-rtl'] === 'rtl' ? 'flex-start' : 'flex-end'};
-            text-align: ${(props) =>
-              props['data-rtl'] === 'rtl' ? 'left' : 'right'};
+            justify-content: ${(props) => (props["data-rtl"] === "rtl" ? "flex-start" : "flex-end")};
+            text-align: ${(props) => (props["data-rtl"] === "rtl" ? "left" : "right")};
             span {
               width: 50%;
             }
             span.TotalBillTitle {
-              margin-right: ${(props) =>
-                props['data-rtl'] === 'rtl' ? 'inherit' : '0'};
-              margin-left: ${(props) =>
-                props['data-rtl'] === 'rtl' ? '0' : 'inherit'};
+              margin-right: ${(props) => (props["data-rtl"] === "rtl" ? "inherit" : "0")};
+              margin-left: ${(props) => (props["data-rtl"] === "rtl" ? "0" : "inherit")};
             }
           }
           .vatRateCalc {
             width: 300px;
             display: flex;
-            justify-content: ${(props) =>
-              props['data-rtl'] === 'rtl' ? 'flex-end' : 'flex-start'};
+            justify-content: ${(props) => (props["data-rtl"] === "rtl" ? "flex-end" : "flex-start")};
             .vatRateCalcSpan {
               width: 50%;
             }
             .vatRateCalcWrap {
               width: 50%;
               margin-top: -5px;
-              margin-left: ${(props) =>
-                props['data-rtl'] === 'rtl' ? 'inherit' : '0'};
-              margin-right: ${(props) =>
-                props['data-rtl'] === 'rtl' ? '0' : 'inherit'};
+              margin-left: ${(props) => (props["data-rtl"] === "rtl" ? "inherit" : "0")};
+              margin-right: ${(props) => (props["data-rtl"] === "rtl" ? "0" : "inherit")};
               .ant-input-wrapper.ant-input-group {
-                margin-left: ${(props) =>
-                  props['data-rtl'] === 'rtl' ? 'inherit' : '0'};
-                margin-right: ${(props) =>
-                  props['data-rtl'] === 'rtl' ? '0' : 'inherit'};
+                margin-left: ${(props) => (props["data-rtl"] === "rtl" ? "inherit" : "0")};
+                margin-right: ${(props) => (props["data-rtl"] === "rtl" ? "0" : "inherit")};
               }
             }
           }
           .currencySignWithTotal {
             width: 300px;
             display: flex;
-            justify-content: ${(props) =>
-              props['data-rtl'] === 'rtl' ? 'flex-end' : 'flex-start'};
+            justify-content: ${(props) => (props["data-rtl"] === "rtl" ? "flex-end" : "flex-start")};
             margin-top: 15px;
             .grandTotalSpan {
               width: 50%;
@@ -663,17 +620,13 @@ const InvoicePageWrapper = styled.div`
             .currencySignWrap {
               width: 50%;
               .currencySign {
-                margin-left: ${(props) =>
-                  props['data-rtl'] === 'rtl' ? 'inherit' : '0'};
-                margin-right: ${(props) =>
-                  props['data-rtl'] === 'rtl' ? '0' : 'inherit'};
+                margin-left: ${(props) => (props["data-rtl"] === "rtl" ? "inherit" : "0")};
+                margin-right: ${(props) => (props["data-rtl"] === "rtl" ? "0" : "inherit")};
                 width: 36px;
               }
               .currencySignSpan {
-                margin-left: ${(props) =>
-                  props['data-rtl'] === 'rtl' ? 'inherit' : '15px'};
-                margin-right: ${(props) =>
-                  props['data-rtl'] === 'rtl' ? '15px' : 'inherit'};
+                margin-left: ${(props) => (props["data-rtl"] === "rtl" ? "inherit" : "15px")};
+                margin-right: ${(props) => (props["data-rtl"] === "rtl" ? "15px" : "inherit")};
               }
             }
           }
@@ -684,16 +637,13 @@ const InvoicePageWrapper = styled.div`
   .ButtonWrapper {
     width: 100%;
     display: flex;
-    justify-content: ${(props) =>
-      props['data-rtl'] === 'rtl' ? 'flex-start' : 'flex-end'};
+    justify-content: ${(props) => (props["data-rtl"] === "rtl" ? "flex-start" : "flex-end")};
     margin-top: 30px;
   }
   .mateInvoPrint {
-    background: ${palette('blue', 14)};
-    margin-left: ${(props) =>
-      props['data-rtl'] === 'rtl' ? 'inherit' : '15px'};
-    margin-right: ${(props) =>
-      props['data-rtl'] === 'rtl' ? '15px' : 'inherit'};
+    background: ${palette("blue", 14)};
+    margin-left: ${(props) => (props["data-rtl"] === "rtl" ? "inherit" : "15px")};
+    margin-right: ${(props) => (props["data-rtl"] === "rtl" ? "15px" : "inherit")};
   }
 `;
 

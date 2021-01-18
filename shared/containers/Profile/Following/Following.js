@@ -1,7 +1,7 @@
-import React from 'react';
-import Button from '@iso/ui/Antd/Button/Button';
-import AvatarCard from '@iso/components/AvatarCard/AvatarCard';
-import Wrapper, { FollowingList, ListItem } from './Following.styles';
+import React from "react";
+import Button from "@iso/ui/Antd/Button/Button";
+import AvatarCard from "@iso/components/AvatarCard/AvatarCard";
+import Wrapper, { FollowingList, ListItem } from "./Following.styles";
 
 const Following = ({ data }) => {
   return (

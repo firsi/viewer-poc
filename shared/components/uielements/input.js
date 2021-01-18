@@ -1,11 +1,6 @@
-import { Input } from 'antd';
-import {
-  InputWrapper,
-  InputGroupWrapper,
-  InputSearchWrapper,
-  TextAreaWrapper,
-} from './styles/input.style';
-import WithDirection from '@iso/lib/helpers/rtl';
+import { Input } from "antd";
+import { InputWrapper, InputGroupWrapper, InputSearchWrapper, TextAreaWrapper } from "./styles/input.style";
+import WithDirection from "@iso/lib/helpers/rtl";
 const { Search, TextArea, Group } = Input;
 
 const WDStyledInput = InputWrapper(Input);

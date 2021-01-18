@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { IoIosStar, IoIosStarOutline } from 'react-icons/io';
+import React from "react";
+import PropTypes from "prop-types";
+import { IoIosStar, IoIosStarOutline } from "react-icons/io";
 
 const Rating = (props) => {
   const { rating, ratingCount, type, ratingFieldName } = props;
@@ -18,29 +18,29 @@ const Rating = (props) => {
   }
   let listingCondition;
   if (rating && rating === 5) {
-    listingCondition = 'Awesome';
+    listingCondition = "Awesome";
   } else if (4 <= rating && rating < 5) {
-    listingCondition = 'Good';
+    listingCondition = "Good";
   } else if (3 <= rating && rating < 4) {
-    listingCondition = 'Average';
+    listingCondition = "Average";
   } else if (2 <= rating && rating < 3) {
-    listingCondition = 'Bad';
+    listingCondition = "Bad";
   } else if (rating >= 1) {
-    listingCondition = 'Terrible';
+    listingCondition = "Terrible";
   } else {
-    listingCondition = '';
+    listingCondition = "";
   }
 
   let showRatingCount;
   if (ratingCount) {
     showRatingCount = `(` + ratingCount + `)`;
   } else {
-    showRatingCount = '';
+    showRatingCount = "";
   }
 
   return (
     <>
-      {type && type === 'bulk' ? (
+      {type && type === "bulk" ? (
         <>
           {ratingView}
           <strong>

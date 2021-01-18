@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const PendingPool = {};
 const ReadyPool = {};
@@ -47,9 +47,9 @@ export default function ImageCell({ src }) {
   const style = src
     ? {
         backgroundImage: `url(${src})`,
-        width: '70px',
-        height: '70px',
-        backgroundSize: 'cover',
+        width: "70px",
+        height: "70px",
+        backgroundSize: "cover",
       }
     : undefined;
   return <div className="exampleImage" style={style} />;

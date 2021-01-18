@@ -1,12 +1,12 @@
-import styled from 'styled-components';
-import { borderRadius } from '@iso/lib/helpers/style_utils';
+import styled from "styled-components";
+import { borderRadius } from "@iso/lib/helpers/style_utils";
 
 const StickerWidgetWrapper = styled.div`
   width: 100%;
   display: flex;
   align-items: stretch;
   overflow: hidden;
-  ${borderRadius('5px')};
+  ${borderRadius("5px")};
 
   .isoIconWrapper {
     display: flex;

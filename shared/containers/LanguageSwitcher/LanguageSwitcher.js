@@ -1,8 +1,8 @@
-import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import IntlMessages from '@iso/components/utility/intlMessages';
-import actions from '@iso/redux/languageSwitcher/actions';
-import config from './config';
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import IntlMessages from "@iso/components/utility/intlMessages";
+import actions from "@iso/redux/languageSwitcher/actions";
+import config from "./config";
 
 const { changeLanguage } = actions;
 
@@ -17,10 +17,7 @@ export default function LanguageSwitcher() {
       <div className="themeSwitchBtnWrapper">
         {config.options.map((option) => {
           const { languageId, icon } = option;
-          const customClass =
-            languageId === language.languageId
-              ? 'selectedTheme languageSwitch'
-              : 'languageSwitch';
+          const customClass = languageId === language.languageId ? "selectedTheme languageSwitch" : "languageSwitch";
 
           return (
             <button

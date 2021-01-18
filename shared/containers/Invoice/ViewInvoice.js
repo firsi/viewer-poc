@@ -1,14 +1,14 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import Box from '@iso/components/utility/box';
-import Button from '@iso/components/uielements/button';
-import LayoutWrapper from '@iso/components/utility/layoutWrapper';
-import InvoicePageWrapper from './SingleInvoice.styles';
-import Invoice from './Invoice';
+import React from "react";
+import { Link } from "react-router-dom";
+import Box from "@iso/components/utility/box";
+import Button from "@iso/components/uielements/button";
+import LayoutWrapper from "@iso/components/utility/layoutWrapper";
+import InvoicePageWrapper from "./SingleInvoice.styles";
+import Invoice from "./Invoice";
 
 export default function (props) {
   const { currentInvoice, toggleView, redirectPath } = props;
-  console.log(props, 'props');
+  console.log(props, "props");
 
   return (
     <LayoutWrapper>

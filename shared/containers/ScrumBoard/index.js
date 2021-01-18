@@ -1,11 +1,11 @@
-import React from 'react';
-import { Switch, Route, useRouteMatch } from 'react-router-dom';
+import React from "react";
+import { Switch, Route, useRouteMatch } from "react-router-dom";
 
-import Board from './Board/Board';
-import ModalRoot from './rootModal';
-import DrawerRoot from './rootDrawer';
-import BoardLists from './Board/BoardList/BoardList';
-import CreateBoard from './Board/BoardCreateOrUpdate/BoardCreateOrUpdate';
+import Board from "./Board/Board";
+import ModalRoot from "./rootModal";
+import DrawerRoot from "./rootDrawer";
+import BoardLists from "./Board/BoardList/BoardList";
+import CreateBoard from "./Board/BoardCreateOrUpdate/BoardCreateOrUpdate";
 
 export default function ScrumBoard() {
   const match = useRouteMatch();

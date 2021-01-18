@@ -1,20 +1,19 @@
-import React, { useEffect, useRef } from 'react';
-import L from 'leaflet';
-import Wrapper from './LeafletMap.styles';
+import React, { useEffect, useRef } from "react";
+import L from "leaflet";
+import Wrapper from "./LeafletMap.styles";
 const style = {
-  width: '100%',
-  height: '400px',
+  width: "100%",
+  height: "400px",
 };
 const config = {
-  tileLayer: 'http://{s}.tile.osm.org/{z}/{x}/{y}.png',
+  tileLayer: "http://{s}.tile.osm.org/{z}/{x}/{y}.png",
   maxZoom: 18,
-  attribution:
-    '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+  attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
   defaultZoom: 11,
   center: [40.706877, -74.011265],
 };
 export default function LeafletMap({
-  id = 'leaflet-map',
+  id = "leaflet-map",
   center = [40.706877, -74.011265],
   zoom = 11,
   markerList = [],
@@ -51,35 +50,33 @@ export default function LeafletMap({
         );
       }
       if (htmlMarkerList.length !== 0) {
-        markerRef.current = htmlMarkerList.map(
-          ({ className, html, position, popupText }) =>
-            L.marker(position, {
-              icon: L.divIcon({
-                className: className,
-                popupAnchor: [15, -15], // point from which the popup should open relative to the iconAnchor
-                html: html,
-              }),
-            })
-              .addTo(mapRef.current)
-              .bindPopup(popupText)
+        markerRef.current = htmlMarkerList.map(({ className, html, position, popupText }) =>
+          L.marker(position, {
+            icon: L.divIcon({
+              className: className,
+              popupAnchor: [15, -15], // point from which the popup should open relative to the iconAnchor
+              html: html,
+            }),
+          })
+            .addTo(mapRef.current)
+            .bindPopup(popupText)
         );
       }
       if (customIconMarkerList.length !== 0) {
-        markerRef.current = customIconMarkerList.map(
-          ({ shadowUrl, iconUrl, position, popupText }) =>
-            L.marker(position, {
-              icon: L.icon({
-                iconUrl: iconUrl,
-                shadowUrl: shadowUrl,
-                iconSize: [40, 40], // size of the icon
-                shadowSize: [40, 40], // size of the shadow
-                // iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
-                shadowAnchor: [12, 20], // the same for the shadow
-                popupAnchor: [0, -20], // point from which the popup should open relative to the iconAnchor
-              }),
-            })
-              .addTo(mapRef.current)
-              .bindPopup(popupText)
+        markerRef.current = customIconMarkerList.map(({ shadowUrl, iconUrl, position, popupText }) =>
+          L.marker(position, {
+            icon: L.icon({
+              iconUrl: iconUrl,
+              shadowUrl: shadowUrl,
+              iconSize: [40, 40], // size of the icon
+              shadowSize: [40, 40], // size of the shadow
+              // iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
+              shadowAnchor: [12, 20], // the same for the shadow
+              popupAnchor: [0, -20], // point from which the popup should open relative to the iconAnchor
+            }),
+          })
+            .addTo(mapRef.current)
+            .bindPopup(popupText)
         );
       }
     }

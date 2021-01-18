@@ -1,2 +1,2 @@
-import { Col } from 'antd';
+import { Col } from "antd";
 export default Col;

@@ -1,5 +1,5 @@
-import React from 'react';
-import { Scrollbars } from 'react-custom-scrollbars';
+import React from "react";
+import { Scrollbars } from "react-custom-scrollbars";
 export default ({ id, style, children, className }) => (
   <Scrollbars
     id={id}

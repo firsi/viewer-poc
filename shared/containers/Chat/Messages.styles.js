@@ -1,10 +1,10 @@
-import styled from 'styled-components';
-import { palette } from 'styled-theme';
+import styled from "styled-components";
+import { palette } from "styled-theme";
 // import Buttons from '@iso/components/uielements/button';
-import Inputs from '@iso/components/uielements/input';
-import { Textarea as Textareas } from '@iso/components/uielements/input';
-import ReactDrawers from 'react-motion-drawer';
-import { Button as Buttons } from 'antd';
+import Inputs from "@iso/components/uielements/input";
+import { Textarea as Textareas } from "@iso/components/uielements/input";
+import ReactDrawers from "react-motion-drawer";
+import { Button as Buttons } from "antd";
 const Input = styled(Inputs)``;
 const Textarea = styled(Textareas)``;
 const ReactDrawer = styled(ReactDrawers)`
@@ -52,7 +52,7 @@ const MessageSingle = styled.div`
       vertical-align: top;
       display: inline-block;
       padding: 10px 15px;
-      ${'' /* overflow: hidden; */} word-break: break-word;
+      ${"" /* overflow: hidden; */} word-break: break-word;
 
       p {
         margin: 0;
@@ -60,18 +60,18 @@ const MessageSingle = styled.div`
     }
     .messageTime {
       font-size: 12px;
-      color: ${palette('text', 3)};
+      color: ${palette("text", 3)};
       margin-top: 5px;
     }
     &.isUser {
       align-items: flex-end;
       .messageContentText {
-        background: ${palette('primary', 1)};
+        background: ${palette("primary", 1)};
         color: #ffffff;
         border-radius: 3px 0 3px 3px;
 
         &:after {
-          content: '';
+          content: "";
           position: absolute;
           border-style: solid;
           display: block;
@@ -81,7 +81,7 @@ const MessageSingle = styled.div`
           left: auto;
           right: -9px;
           border-width: 0px 0 10px 10px;
-          border-color: transparent ${palette('primary', 1)};
+          border-color: transparent ${palette("primary", 1)};
           margin-top: 0;
         }
       }
@@ -93,12 +93,12 @@ const MessageSingle = styled.div`
       align-items: flex-start;
 
       .messageContentText {
-        background: ${palette('grayscale', 4)};
-        color: ${palette('text', 0)};
+        background: ${palette("grayscale", 4)};
+        color: ${palette("text", 0)};
         border-radius: 0 3px 3px 3px;
 
         &:after {
-          content: '';
+          content: "";
           position: absolute;
           border-style: solid;
           display: block;
@@ -107,7 +107,7 @@ const MessageSingle = styled.div`
           bottom: auto;
           left: -9px;
           border-width: 0px 10px 10px 0;
-          border-color: transparent ${palette('grayscale', 4)};
+          border-color: transparent ${palette("grayscale", 4)};
           margin-top: 0;
         }
       }
@@ -134,7 +134,7 @@ const ChatWindow = styled.div`
 const ChatBox = styled.div`
   width: calc(100% - 350px);
   background-color: #ffffff;
-  border: 1px solid ${palette('border', 0)};
+  border: 1px solid ${palette("border", 0)};
   border-left-width: 0;
   display: flex;
   flex-direction: column;
@@ -149,7 +149,7 @@ const ChatBox = styled.div`
 `;
 const ChatSidebar = styled.div`
   flex-shrink: 0;
-  border: 1px solid ${palette('border', 0)};
+  border: 1px solid ${palette("border", 0)};
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -201,9 +201,9 @@ const Button = styled(Buttons)`
 `;
 
 const ComposeMessageWrapper = styled.div`
-  background: ${palette('grayscale', 5)};
+  background: ${palette("grayscale", 5)};
   flex-shrink: 0;
-  border-top: 1px solid ${palette('border', 0)};
+  border-top: 1px solid ${palette("border", 0)};
   border-bottom: 0;
 
   ${Textarea} {
@@ -265,7 +265,7 @@ const UserLists = styled.div`
   }
 
   &:hover {
-    background-color: ${palette('grayscale', 3)};
+    background-color: ${palette("grayscale", 3)};
   }
 
   .userListsGravatar {
@@ -295,7 +295,7 @@ const UserLists = styled.div`
       align-items: flex-start;
 
       p {
-        color: ${palette('text', 1)};
+        color: ${palette("text", 1)};
         margin: 0;
         font-size: 12px;
         white-space: nowrap;
@@ -306,7 +306,7 @@ const UserLists = styled.div`
       }
 
       .userListsTime {
-        color: ${palette('grayscale', 0)};
+        color: ${palette("grayscale", 0)};
         font-size: 10px;
         flex-shrink: 0;
       }
@@ -324,7 +324,7 @@ const ToggleViewProfile = styled.div`
 
   > span {
     font-size: 17px;
-    color: ${palette('text', 0)};
+    color: ${palette("text", 0)};
     cursor: pointer;
   }
 
@@ -350,7 +350,7 @@ const ToggleViewProfile = styled.div`
 
     i {
       font-size: 12px;
-      color: ${palette('text', 0)};
+      color: ${palette("text", 0)};
     }
   }
 `;
@@ -362,7 +362,7 @@ const SidebarSearchBox = styled.div`
   flex-shrink: 0;
   align-items: center;
   justify-content: center;
-  border-bottom: 1px solid ${palette('border', 2)};
+  border-bottom: 1px solid ${palette("border", 2)};
 
   ${Input} {
     padding: 0;
@@ -382,7 +382,7 @@ const MessageChatWrapper = styled.div`
   overflow: hidden;
   overflow-y: auto;
   background: #ffffff;
-  border-top: 1px solid ${palette('border', 0)};
+  border-top: 1px solid ${palette("border", 0)};
 
   ::-webkit-scrollbar {
     display: none;
@@ -401,7 +401,7 @@ const ChatViewWrapper = styled.div`
 const MessageDialog = styled.div`
   h5 {
     font-size: 13px;
-    color: ${palette('text', 0)};
+    color: ${palette("text", 0)};
     margin-bottom: 10px;
   }
 
@@ -412,7 +412,7 @@ const MessageDialog = styled.div`
 
     ${Textarea} {
       padding: 4px 10px;
-      border: 1px solid ${palette('border', 0)};
+      border: 1px solid ${palette("border", 0)};
       margin-bottom: 10px;
 
       &:focus {
@@ -451,7 +451,7 @@ const Fieldset = styled.div`
 
 const Label = styled.label`
   font-size: 12px;
-  color: ${palette('text', 0)};
+  color: ${palette("text", 0)};
   line-height: 1.5;
   font-weight: 400;
   padding: 0;

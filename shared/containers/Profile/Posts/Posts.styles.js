@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { palette } from 'styled-theme';
+import styled from "styled-components";
+import { palette } from "styled-theme";
 
 const PostsWrapper = styled.div`
   display: flex;
@@ -147,20 +147,20 @@ export const ContentWrapper = styled.article`
               overflow: hidden;
               text-overflow: ellipsis;
               white-space: nowrap;
-              color: ${palette('secondary', 5)};
+              color: ${palette("secondary", 5)};
               margin: 0;
             }
           }
         }
         span {
           font-weight: 600;
-          color: ${palette('secondary', 5)};
+          color: ${palette("secondary", 5)};
           margin-left: -7px;
           margin-right: 5px;
         }
         a {
           font-weight: 600;
-          color: ${palette('primary', 0)};
+          color: ${palette("primary", 0)};
         }
       }
       button {
@@ -223,19 +223,19 @@ export const ContentWrapper = styled.article`
               overflow: hidden;
               text-overflow: ellipsis;
               white-space: nowrap;
-              color: ${palette('secondary', 5)};
+              color: ${palette("secondary", 5)};
               font-size: 14px;
             }
             span {
-              color: ${palette('secondary', 5)};
+              color: ${palette("secondary", 5)};
               margin-left: 5px;
               a {
-                color: ${palette('secondary', 4)};
+                color: ${palette("secondary", 4)};
               }
             }
             .time {
               margin-top: 12px;
-              color: ${palette('text', 2)};
+              color: ${palette("text", 2)};
               button {
                 border: 0;
                 cursor: pointer;
@@ -268,7 +268,7 @@ export const ContentWrapper = styled.article`
           border: 0;
           font-size: 20px;
           background-color: transparent;
-          color: ${palette('secondary', 5)};
+          color: ${palette("secondary", 5)};
           display: inline-flex;
           cursor: pointer;
           &:hover,
@@ -288,13 +288,13 @@ export const ContentWrapper = styled.article`
         padding-top: 5px;
         padding-bottom: 9px;
         h5 {
-          color: ${palette('secondary', 5)};
+          color: ${palette("secondary", 5)};
           font-size: 14px;
           font-weight: 600;
         }
         time {
           font-size: 10px;
-          color: ${palette('text', 3)};
+          color: ${palette("text", 3)};
         }
       }
     }

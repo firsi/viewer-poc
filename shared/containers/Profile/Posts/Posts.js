@@ -1,24 +1,13 @@
-import React, { useState, Fragment } from 'react';
-import { Link } from 'react-router-dom';
-import {
-  IoIosArrowBack,
-  IoIosArrowForward,
-  IoIosArrowDropleftCircle,
-  IoIosArrowDroprightCircle,
-} from 'react-icons/io';
-import {
-  FiHeart,
-  FiShare,
-  FiBookmark,
-  FiMessageCircle,
-  FiMoreHorizontal,
-} from 'react-icons/fi';
-import GlideCarousel, { GlideSlide } from '@iso/ui/GlideCarousel/GlideCarousel';
-import Modal from '@iso/ui/Antd/Modal/Modal';
-import PostCard from '@iso/components/PostCard';
-import AvatarCard from '@iso/components/AvatarCard/AvatarCard';
-import Comments from './Comments';
-import PostsWrapper, { Button, ContentWrapper } from './Posts.styles';
+import React, { useState, Fragment } from "react";
+import { Link } from "react-router-dom";
+import { IoIosArrowBack, IoIosArrowForward, IoIosArrowDropleftCircle, IoIosArrowDroprightCircle } from "react-icons/io";
+import { FiHeart, FiShare, FiBookmark, FiMessageCircle, FiMoreHorizontal } from "react-icons/fi";
+import GlideCarousel, { GlideSlide } from "@iso/ui/GlideCarousel/GlideCarousel";
+import Modal from "@iso/ui/Antd/Modal/Modal";
+import PostCard from "@iso/components/PostCard";
+import AvatarCard from "@iso/components/AvatarCard/AvatarCard";
+import Comments from "./Comments";
+import PostsWrapper, { Button, ContentWrapper } from "./Posts.styles";
 
 const galleryOptions = {
   gap: 0,
@@ -72,12 +61,7 @@ const Posts = ({ data, avatar, username }) => {
         />
       ))}
 
-      <Modal
-        wrapClassName="instagram-modal"
-        visible={visible}
-        onCancel={handleCancel}
-        footer={null}
-      >
+      <Modal wrapClassName="instagram-modal" visible={visible} onCancel={handleCancel} footer={null}>
         {currentPost > 1 && (
           <Button className="prev" onClick={handlePrevPost}>
             <IoIosArrowBack />
@@ -91,11 +75,9 @@ const Posts = ({ data, avatar, username }) => {
 
         <ContentWrapper>
           <div className="media">
-            {newData.type === 'image' && (
-              <img src={newData.thumb_url} alt={'post'} />
-            )}
+            {newData.type === "image" && <img src={newData.thumb_url} alt={"post"} />}
 
-            {newData.type === 'gallery' && (
+            {newData.type === "gallery" && (
               <GlideCarousel
                 options={galleryOptions}
                 bullets={true}
@@ -107,18 +89,15 @@ const Posts = ({ data, avatar, username }) => {
                 <Fragment>
                   {newData.gallery.map((item, index) => (
                     <GlideSlide key={`gallery-key${index}`}>
-                      <img src={item} alt={'post'} />
+                      <img src={item} alt={"post"} />
                     </GlideSlide>
                   ))}
                 </Fragment>
               </GlideCarousel>
             )}
 
-            {newData.type === 'video' && (
-              <div
-                className="video-container"
-                dangerouslySetInnerHTML={renderHtml(newData.video)}
-              ></div>
+            {newData.type === "video" && (
+              <div className="video-container" dangerouslySetInnerHTML={renderHtml(newData.video)}></div>
             )}
           </div>
 
@@ -147,21 +126,11 @@ const Posts = ({ data, avatar, username }) => {
                         name={item.username}
                         content={item.comment}
                         time={item.time}
-                        handleLike={() =>
-                          console.log(
-                            'Write like function for post.',
-                            newData.id
-                          )
-                        }
-                        handleReply={() =>
-                          console.log(
-                            'Write reply function for post.',
-                            newData.id
-                          )
-                        }
+                        handleLike={() => console.log("Write like function for post.", newData.id)}
+                        handleReply={() => console.log("Write reply function for post.", newData.id)}
                       />
                     ))
-                  : ''}
+                  : ""}
               </div>
             </div>
 

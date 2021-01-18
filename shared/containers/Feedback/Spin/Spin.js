@@ -1,14 +1,14 @@
-import React from 'react';
-import { Row, Col } from 'antd';
-import Alert from '@iso/components/Feedback/Alert';
-import Switch from '@iso/components/uielements/switch';
-import PageHeader from '@iso/components/utility/pageHeader';
-import Box from '@iso/components/utility/box';
-import LayoutWrapper from '@iso/components/utility/layoutWrapper';
-import ContentHolder from '@iso/components/utility/contentHolder';
-import IntlMessages from '@iso/components/utility/intlMessages';
-import basicStyle from '@iso/assets/styles/constants';
-import Spin from './Spin.styles';
+import React from "react";
+import { Row, Col } from "antd";
+import Alert from "@iso/components/Feedback/Alert";
+import Switch from "@iso/components/uielements/switch";
+import PageHeader from "@iso/components/utility/pageHeader";
+import Box from "@iso/components/utility/box";
+import LayoutWrapper from "@iso/components/utility/layoutWrapper";
+import ContentHolder from "@iso/components/utility/contentHolder";
+import IntlMessages from "@iso/components/utility/intlMessages";
+import basicStyle from "@iso/assets/styles/constants";
+import Spin from "./Spin.styles";
 
 export default function () {
   const [loading, setLoading] = React.useState(false);
@@ -23,9 +23,9 @@ export default function () {
     />
   );
   const style = {
-    textAlign: 'center',
-    background: '#f1f3f6',
-    padding: '30px 50px',
+    textAlign: "center",
+    background: "#f1f3f6",
+    padding: "30px 50px",
   };
 
   const { rowStyle, colStyle, gutter } = basicStyle;
@@ -57,13 +57,9 @@ export default function () {
       </Row>
       <Row style={rowStyle} gutter={gutter} justify="start">
         <Col md={12} sm={12} xs={24} style={colStyle}>
-          <Box
-            title={
-              <IntlMessages id="feedback.alert.spin.backgroundDescription" />
-            }
-          >
+          <Box title={<IntlMessages id="feedback.alert.spin.backgroundDescription" />}>
             <ContentHolder>
-              <div style={{ marginBottom: '20px' }}>
+              <div style={{ marginBottom: "20px" }}>
                 <Spin spinning={loading}>{container}</Spin>
               </div>
               {<IntlMessages id="feedback.alert.spin.loadingState" />}

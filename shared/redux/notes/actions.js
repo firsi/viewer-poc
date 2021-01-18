@@ -1,15 +1,14 @@
 const notesAction = {
-  CHANGE_NOTE: 'CHANGE_NOTE',
-  ADD_NOTE: 'ADD_NOTE',
-  EDIT_NOTE: 'EDIT_NOTE',
-  DELETE_NOTE: 'DELETE_NOTE',
-  CHANGE_COLOR: 'CHANGE_COLOR',
+  CHANGE_NOTE: "CHANGE_NOTE",
+  ADD_NOTE: "ADD_NOTE",
+  EDIT_NOTE: "EDIT_NOTE",
+  DELETE_NOTE: "DELETE_NOTE",
+  CHANGE_COLOR: "CHANGE_COLOR",
 
   changeNote: (id) => {
     return (dispatch, getState) => {
       const notes = getState().Notes.notes;
-      const seectedColor =
-        notes[notes.findIndex((note) => note.id === id)].color;
+      const seectedColor = notes[notes.findIndex((note) => note.id === id)].color;
       dispatch({
         type: notesAction.CHANGE_NOTE,
         selectedId: id,
@@ -21,7 +20,7 @@ const notesAction = {
     return (dispatch, getState) => {
       const newNote = {
         id: new Date(),
-        note: 'New Note',
+        note: "New Note",
         createTime: new Date(),
         color: getState().Notes.seectedColor,
       };

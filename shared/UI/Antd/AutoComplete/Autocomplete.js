@@ -1,4 +1,4 @@
-import { AntAutoComplete } from '.autoComplete.style';
+import { AntAutoComplete } from ".autoComplete.style";
 
 const AutoCompletes = AntAutoComplete;
 const AutoCompleteOption = AutoComplete.Option;

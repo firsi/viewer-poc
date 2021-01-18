@@ -1,6 +1,6 @@
 const boxActions = {
-  DELETE_BOX: 'DELETE_BOX',
-  SAVE_BOX: 'SAVE_BOX',
+  DELETE_BOX: "DELETE_BOX",
+  SAVE_BOX: "SAVE_BOX",
   deleteBox: (uid) => ({
     type: boxActions.DELETE_BOX,
     uid,

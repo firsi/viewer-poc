@@ -1,5 +1,5 @@
-import React from 'react';
-import CardWidgetWrapper from './CardWidget.styles';
+import React from "react";
+import CardWidgetWrapper from "./CardWidget.styles";
 
 export default function ({ icon, number, text }) {
   return (

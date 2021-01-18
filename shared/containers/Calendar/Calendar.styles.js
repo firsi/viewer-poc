@@ -1,9 +1,9 @@
-import styled from 'styled-components';
-import { palette } from 'styled-theme';
-import { transition, borderRadius } from '@iso/lib/helpers/style_utils';
-import WithDirection from '@iso/lib/helpers/rtl';
+import styled from "styled-components";
+import { palette } from "styled-theme";
+import { transition, borderRadius } from "@iso/lib/helpers/style_utils";
+import WithDirection from "@iso/lib/helpers/rtl";
 
-const WDCalendarStyleWrapper = styled('div')`
+const WDCalendarStyleWrapper = styled("div")`
   position: relative;
   height: calc(100vh - 70px);
   padding: 35px;
@@ -15,7 +15,7 @@ const WDCalendarStyleWrapper = styled('div')`
     background: #fff;
     border-radius: 10px;
     flex-shrink: 0;
-    border: 1px solid ${palette('border', 0)};
+    border: 1px solid ${palette("border", 0)};
   }
   .rbc-btn {
     color: inherit;
@@ -75,7 +75,7 @@ const WDCalendarStyleWrapper = styled('div')`
     direction: rtl;
   }
   .rbc-off-range {
-    color: ${palette('text', 2)};
+    color: ${palette("text", 2)};
   }
   .rbc-off-range-bg {
     background: #e5e5e5;
@@ -93,7 +93,7 @@ const WDCalendarStyleWrapper = styled('div')`
     font-weight: bold;
     font-size: 11px;
     min-height: 0;
-    color: ${palette('secondary', 2)};
+    color: ${palette("secondary", 2)};
   }
   .rbc-header + .rbc-header {
     border-left: 1px solid #ddd;
@@ -119,7 +119,7 @@ const WDCalendarStyleWrapper = styled('div')`
     z-index: 4;
   }
   .rbc-today {
-    background-color: ${palette('grayscale', 11)};
+    background-color: ${palette("grayscale", 11)};
   }
   .rbc-toolbar {
     display: -webkit-flex;
@@ -147,17 +147,17 @@ const WDCalendarStyleWrapper = styled('div')`
     padding: 0 10px;
     text-align: center;
     font-size: 15px;
-    color: ${palette('secondary', 2)};
+    color: ${palette("secondary", 2)};
   }
   .rbc-toolbar button {
-    color: ${palette('secondary', 2)};
+    color: ${palette("secondary", 2)};
     display: inline-block;
     margin: 0;
     text-align: center;
     vertical-align: middle;
     background: none;
     background-image: none;
-    border: 1px solid ${palette('border', 2)};
+    border: 1px solid ${palette("border", 2)};
     padding: 0.375rem 1rem;
     border-radius: 0;
     outline: 0;
@@ -172,8 +172,8 @@ const WDCalendarStyleWrapper = styled('div')`
   .rbc-toolbar button.rbc-active {
     background-image: none;
     box-shadow: none;
-    background-color: ${palette('primary', 0)};
-    border-color: ${palette('primary', 0)};
+    background-color: ${palette("primary", 0)};
+    border-color: ${palette("primary", 0)};
     color: #ffffff;
   }
   .rbc-toolbar button:active:hover,
@@ -181,18 +181,18 @@ const WDCalendarStyleWrapper = styled('div')`
   .rbc-toolbar button:active:focus,
   .rbc-toolbar button.rbc-active:focus {
     color: #ffffff;
-    background-color: ${palette('primary', 0)};
-    border-color: ${palette('primary', 0)};
+    background-color: ${palette("primary", 0)};
+    border-color: ${palette("primary", 0)};
   }
   .rbc-toolbar button:focus {
-    color: ${palette('secondary', 2)};
+    color: ${palette("secondary", 2)};
     background-color: transparent;
-    border-color: ${palette('border', 2)};
+    border-color: ${palette("border", 2)};
   }
   .rbc-toolbar button:hover {
     color: #ffffff;
-    background-color: ${palette('primary', 0)};
-    border-color: ${palette('primary', 0)};
+    background-color: ${palette("primary", 0)};
+    border-color: ${palette("primary", 0)};
   }
   .rbc-btn-group {
     display: inline-block;
@@ -225,8 +225,7 @@ const WDCalendarStyleWrapper = styled('div')`
     border-radius: 0;
   }
   .rbc-btn-group button + button {
-    margin: ${(props) =>
-      props['data-rtl'] === 'rtl' ? '0 -1px 0 0' : '0 0 0 -1px'};
+    margin: ${(props) => (props["data-rtl"] === "rtl" ? "0 -1px 0 0" : "0 0 0 -1px")};
   }
   .rbc-rtl .rbc-btn-group button + button {
     margin-left: 0;
@@ -241,19 +240,19 @@ const WDCalendarStyleWrapper = styled('div')`
     box-shadow: none;
     margin: 0;
     padding: 3px 15px;
-    background-color: ${palette('primary', 0)};
+    background-color: ${palette("primary", 0)};
     color: #fff;
     cursor: pointer;
     width: 100%;
     text-align: left;
-    ${borderRadius('5px')};
+    ${borderRadius("5px")};
   }
   .rbc-slot-selecting .rbc-event {
     cursor: inherit;
     pointer-events: none;
   }
   .rbc-event.rbc-selected {
-    background-color: ${palette('primary', 12)};
+    background-color: ${palette("primary", 12)};
   }
   /* .rbc-event:focus {
     outline: 5px auto #3b99fc;
@@ -302,7 +301,7 @@ const WDCalendarStyleWrapper = styled('div')`
     height: auto;
     line-height: normal;
     white-space: nowrap;
-    color: ${palette('secondary', 2)};
+    color: ${palette("secondary", 2)};
     ${transition()};
   }
   .rbc-month-view {
@@ -324,10 +323,10 @@ const WDCalendarStyleWrapper = styled('div')`
     -webkit-user-select: none;
     height: 100%;
     .rbc-header {
-      border-bottom: 1px solid ${palette('border', 2)};
+      border-bottom: 1px solid ${palette("border", 2)};
     }
     .rbc-header + .rbc-header {
-      border-left: 1px solid ${palette('border', 2)};
+      border-left: 1px solid ${palette("border", 2)};
     }
   }
   .rbc-month-header {
@@ -356,7 +355,7 @@ const WDCalendarStyleWrapper = styled('div')`
     height: 100%;
   }
   .rbc-month-row + .rbc-month-row {
-    border-top: 1px solid ${palette('border', 2)};
+    border-top: 1px solid ${palette("border", 2)};
   }
   .rbc-date-cell {
     -webkit-flex: 1 1 0;
@@ -393,14 +392,12 @@ const WDCalendarStyleWrapper = styled('div')`
     flex: 1 0 0%;
   }
   .rbc-day-bg + .rbc-day-bg {
-    border-left: ${(props) => (props['data-rtl'] === 'rtl' ? '0' : '1px')} solid
-      ${palette('border', 2)};
-    border-right: ${(props) => (props['data-rtl'] === 'rtl' ? '1px' : '0')}
-      solid ${palette('border', 2)};
+    border-left: ${(props) => (props["data-rtl"] === "rtl" ? "0" : "1px")} solid ${palette("border", 2)};
+    border-right: ${(props) => (props["data-rtl"] === "rtl" ? "1px" : "0")} solid ${palette("border", 2)};
   }
   .rbc-rtl .rbc-day-bg + .rbc-day-bg {
     border-left-width: 0;
-    border-right: 1px solid ${palette('border', 2)};
+    border-right: 1px solid ${palette("border", 2)};
   }
   .rbc-overlay {
     position: absolute;
@@ -429,11 +426,11 @@ const WDCalendarStyleWrapper = styled('div')`
     -ms-flex: 1 0 0px;
     flex: 1 0 0;
     overflow: auto;
-    color: ${palette('secondary', 2)};
+    color: ${palette("secondary", 2)};
   }
   .rbc-agenda-view table.rbc-agenda-table {
     width: 100%;
-    border: 1px solid ${palette('border', 2)};
+    border: 1px solid ${palette("border", 2)};
     border-spacing: 0;
     border-collapse: collapse;
   }
@@ -447,19 +444,19 @@ const WDCalendarStyleWrapper = styled('div')`
     text-transform: lowercase;
   }
   .rbc-agenda-view table.rbc-agenda-table tbody > tr > td + td {
-    border-left: 1px solid ${palette('border', 2)};
+    border-left: 1px solid ${palette("border", 2)};
   }
   .rbc-rtl .rbc-agenda-view table.rbc-agenda-table tbody > tr > td + td {
     border-left-width: 0;
-    border-right: 1px solid ${palette('border', 2)};
+    border-right: 1px solid ${palette("border", 2)};
   }
   .rbc-agenda-view table.rbc-agenda-table tbody > tr + tr {
-    border-top: 1px solid ${palette('border', 2)};
+    border-top: 1px solid ${palette("border", 2)};
   }
   .rbc-agenda-view table.rbc-agenda-table thead > tr > th {
     padding: 3px 5px;
-    text-align: ${(props) => (props['data-rtl'] === 'rtl' ? 'right' : 'left')};
-    border-bottom: 1px solid ${palette('border', 2)};
+    text-align: ${(props) => (props["data-rtl"] === "rtl" ? "right" : "left")};
+    border-bottom: 1px solid ${palette("border", 2)};
   }
   .rbc-rtl .rbc-agenda-view table.rbc-agenda-table thead > tr > th {
     text-align: right;
@@ -468,10 +465,10 @@ const WDCalendarStyleWrapper = styled('div')`
     text-transform: lowercase;
   }
   .rbc-agenda-time-cell .rbc-continues-after:after {
-    content: ' »';
+    content: " »";
   }
   .rbc-agenda-time-cell .rbc-continues-prior:before {
-    content: '« ';
+    content: "« ";
   }
   .rbc-agenda-date-cell,
   .rbc-agenda-time-cell {
@@ -497,7 +494,7 @@ const WDCalendarStyleWrapper = styled('div')`
     flex: 1;
   }
   .rbc-timeslot-group {
-    border-bottom: 1px solid ${palette('border', 2)};
+    border-bottom: 1px solid ${palette("border", 2)};
     min-height: 40px;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -514,7 +511,7 @@ const WDCalendarStyleWrapper = styled('div')`
   }
   .rbc-label {
     padding: 0 5px;
-    color: ${palette('secondary', 2)};
+    color: ${palette("secondary", 2)};
   }
   .rbc-day-slot {
     position: relative;
@@ -532,7 +529,7 @@ const WDCalendarStyleWrapper = styled('div')`
     right: 0;
   }
   .rbc-day-slot .rbc-event {
-    border: 1px solid ${palette('primary', 12)};
+    border: 1px solid ${palette("primary", 12)};
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
@@ -642,7 +639,7 @@ const WDCalendarStyleWrapper = styled('div')`
     -ms-flex: 1;
     flex: 1;
     width: 100%;
-    border: 1px solid ${palette('border', 2)};
+    border: 1px solid ${palette("border", 2)};
     min-height: 0;
   }
   .rbc-time-view .rbc-time-gutter {
@@ -677,17 +674,17 @@ const WDCalendarStyleWrapper = styled('div')`
     flex-direction: row;
   }
   .rbc-time-header.rbc-overflowing {
-    border-right: 1px solid ${palette('border', 2)};
+    border-right: 1px solid ${palette("border", 2)};
   }
   .rbc-rtl .rbc-time-header.rbc-overflowing {
     border-right-width: 0;
-    border-left: 1px solid ${palette('border', 2)};
+    border-left: 1px solid ${palette("border", 2)};
   }
   .rbc-time-header > .rbc-row:first-child {
-    border-bottom: 1px solid ${palette('border', 2)};
+    border-bottom: 1px solid ${palette("border", 2)};
   }
   .rbc-time-header > .rbc-row.rbc-row-resource {
-    border-bottom: 1px solid ${palette('border', 2)};
+    border-bottom: 1px solid ${palette("border", 2)};
   }
   .rbc-time-header-cell-single-day {
     display: none;
@@ -703,11 +700,11 @@ const WDCalendarStyleWrapper = styled('div')`
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column;
-    border-left: 1px solid ${palette('border', 2)};
+    border-left: 1px solid ${palette("border", 2)};
   }
   .rbc-rtl .rbc-time-header-content {
     border-left-width: 0;
-    border-right: 1px solid ${palette('border', 2)};
+    border-right: 1px solid ${palette("border", 2)};
   }
   .rbc-time-content {
     display: -webkit-flex;
@@ -720,7 +717,7 @@ const WDCalendarStyleWrapper = styled('div')`
     -ms-flex-align: start;
     align-items: flex-start;
     width: 100%;
-    border-top: 1px solid ${palette('border', 2)};
+    border-top: 1px solid ${palette("border", 2)};
     overflow-y: auto;
     position: relative;
   }
@@ -730,11 +727,11 @@ const WDCalendarStyleWrapper = styled('div')`
     flex: none;
   }
   .rbc-time-content > * + * > * {
-    border-left: 1px solid ${palette('border', 2)};
+    border-left: 1px solid ${palette("border", 2)};
   }
   .rbc-rtl .rbc-time-content > * + * > * {
     border-left-width: 0;
-    border-right: 1px solid ${palette('border', 2)};
+    border-right: 1px solid ${palette("border", 2)};
   }
   .rbc-time-content > .rbc-day-slot {
     width: 100%;
@@ -744,7 +741,7 @@ const WDCalendarStyleWrapper = styled('div')`
     -webkit-user-select: none;
   }
   .rbc-time-header-cell {
-    border-bottom: 1px solid ${palette('border', 2)};
+    border-bottom: 1px solid ${palette("border", 2)};
   }
   .rbc-current-time-indicator {
     position: absolute;
@@ -752,7 +749,7 @@ const WDCalendarStyleWrapper = styled('div')`
     left: 0;
     right: 0;
     height: 1px;
-    background-color: ${palette('primary', 0)};
+    background-color: ${palette("primary", 0)};
     pointer-events: none;
   }
 `;
@@ -771,15 +768,14 @@ const WDCalendarModalBody = styled.div`
       border-radius: 4px;
       border-top-right-radius: 0;
       border-bottom-right-radius: 0;
-      border-color: ${palette('border', 0)};
+      border-color: ${palette("border", 0)};
     }
 
     .ant-calendar-picker {
       width: calc(100% - 35px) !important;
 
       .ant-input {
-        border-radius: ${(props) =>
-          props['data-rtl'] === 'rtl' ? '0 4px 4px 0' : '4px 0 0 4px'};
+        border-radius: ${(props) => (props["data-rtl"] === "rtl" ? "0 4px 4px 0" : "4px 0 0 4px")};
       }
 
       &:hover {
@@ -793,12 +789,10 @@ const WDCalendarModalBody = styled.div`
       padding: 0;
       display: flex;
       flex-shrink: 0;
-      margin: ${(props) =>
-        props['data-rtl'] === 'rtl' ? '0 -1px 0 0' : '0 0 0 -1px'};
+      margin: ${(props) => (props["data-rtl"] === "rtl" ? "0 -1px 0 0" : "0 0 0 -1px")};
       align-items: center;
       justify-content: center;
-      border-radius: ${(props) =>
-        props['data-rtl'] === 'rtl' ? '4px 0 0 4px' : '0 4px 4px 0'};
+      border-radius: ${(props) => (props["data-rtl"] === "rtl" ? "4px 0 0 4px" : "0 4px 4px 0")};
 
       &:hover {
         z-index: 1;

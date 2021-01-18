@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
-import { RadialBarChart, RadialBar, Legend } from 'recharts';
-import ChartWrapper from '../../Charts.styles';
+import React, { Component } from "react";
+import { RadialBarChart, RadialBar, Legend } from "recharts";
+import ChartWrapper from "../../Charts.styles";
 
 const style = {
   top: 0,
   left: 350,
-  lineHeight: '24px',
+  lineHeight: "24px",
 };
 export default class extends Component {
   render() {
@@ -22,13 +22,7 @@ export default class extends Component {
           barSize={10}
           data={datas}
         >
-          <RadialBar
-            minAngle={15}
-            label
-            background
-            clockWise={true}
-            dataKey="uv"
-          />
+          <RadialBar minAngle={15} label background clockWise={true} dataKey="uv" />
           <Legend
             iconSize={10}
             width={120}

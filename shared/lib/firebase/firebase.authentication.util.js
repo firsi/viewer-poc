@@ -1,4 +1,4 @@
-import firebase, { auth } from './firebase';
+import firebase, { auth } from "./firebase";
 
 export const getCurrentUser = () => {
   return new Promise((resolve, reject) => {
@@ -9,7 +9,7 @@ export const getCurrentUser = () => {
   });
 };
 export const googleProvider = new firebase.auth.GoogleAuthProvider();
-googleProvider.setCustomParameters({ prompt: 'select_account' });
+googleProvider.setCustomParameters({ prompt: "select_account" });
 export const facebookProvider = new firebase.auth.FacebookAuthProvider();
 export const githubProvider = new firebase.auth.GithubAuthProvider();
 export const twitterProvider = new firebase.auth.TwitterAuthProvider();
@@ -34,8 +34,7 @@ export const signInWithFacebook = () =>
     });
 export const signInWithGithub = () => auth.signInWithPopup(githubProvider);
 export const signInWithTwitter = () => auth.signInWithPopup(twitterProvider);
-export const signInWithEmail = async (email, password) =>
-  await auth.signInWithEmailAndPassword(email, password);
+export const signInWithEmail = async (email, password) => await auth.signInWithEmailAndPassword(email, password);
 export const signUpWithEmailAndPassword = async (email, password) =>
   await auth.createUserWithEmailAndPassword(email, password);
 

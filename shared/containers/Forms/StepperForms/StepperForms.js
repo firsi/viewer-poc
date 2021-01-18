@@ -1,50 +1,50 @@
-import React from 'react';
-import IsomorphicTransfer from '../Transfer/Transfer';
-import AntdUpload from '../Upload/Upload';
-import AntdCheckbox from '../Checkbox/Checkbox';
-import AntdAutocomplete from '../AutoComplete/AutoComplete';
-import AntdRadiobox from '../Radiobox/Radiobox';
-import AntdSelectBox from '../Select/Select';
-import AntdMention from '../Mention/Mention';
-import AntdRater from '../Rating/Rating';
-import AntdSlider from '../Slider/Slider';
-import AntdInputNumber from '../InputNumber/InputNumber';
-import Button from '@iso/components/uielements/button';
-import Steps from '@iso/components/uielements/steps';
-import message from '@iso/components/uielements/message';
-import Input from '@iso/components/uielements/input';
-import PageHeader from '@iso/components/utility/pageHeader';
-import ContentHolder from '@iso/components/utility/contentHolder';
-import LayoutWrapper from '@iso/components/utility/layoutWrapper';
-import { FormFieldTitle } from './StepperForms.styles';
+import React from "react";
+import IsomorphicTransfer from "../Transfer/Transfer";
+import AntdUpload from "../Upload/Upload";
+import AntdCheckbox from "../Checkbox/Checkbox";
+import AntdAutocomplete from "../AutoComplete/AutoComplete";
+import AntdRadiobox from "../Radiobox/Radiobox";
+import AntdSelectBox from "../Select/Select";
+import AntdMention from "../Mention/Mention";
+import AntdRater from "../Rating/Rating";
+import AntdSlider from "../Slider/Slider";
+import AntdInputNumber from "../InputNumber/InputNumber";
+import Button from "@iso/components/uielements/button";
+import Steps from "@iso/components/uielements/steps";
+import message from "@iso/components/uielements/message";
+import Input from "@iso/components/uielements/input";
+import PageHeader from "@iso/components/utility/pageHeader";
+import ContentHolder from "@iso/components/utility/contentHolder";
+import LayoutWrapper from "@iso/components/utility/layoutWrapper";
+import { FormFieldTitle } from "./StepperForms.styles";
 const Step = Steps.Step;
 
 const steps = [
   {
-    title: 'First',
+    title: "First",
     content: (
       <div className="isoExampleWrapper">
-        <div style={{ padding: '10px 20px' }}>
+        <div style={{ padding: "10px 20px" }}>
           <FormFieldTitle className="isoFormFieldTitle">Input</FormFieldTitle>
           <Input className="isomorphicInputBox" />
         </div>
 
-        <div style={{ padding: '20px' }}>
+        <div style={{ padding: "20px" }}>
           <IsomorphicTransfer />
         </div>
 
-        <div style={{ padding: '20px' }}>
+        <div style={{ padding: "20px" }}>
           <AntdUpload className="isomorphicUpload" />
         </div>
 
-        <div style={{ padding: '20px' }}>
+        <div style={{ padding: "20px" }}>
           <AntdCheckbox className="isomorphicCheckbox" />
         </div>
       </div>
     ),
   },
   {
-    title: 'Second',
+    title: "Second",
     content: (
       <div className="isoExampleWrapper">
         <AntdAutocomplete />
@@ -55,7 +55,7 @@ const steps = [
     ),
   },
   {
-    title: 'Last',
+    title: "Last",
     content: (
       <div className="isoExampleWrapper">
         <AntdRater />
@@ -93,10 +93,7 @@ export default function () {
             </Button>
           )}
           {current === steps.length - 1 && (
-            <Button
-              type="primary"
-              onClick={() => message.success('Processing complete!')}
-            >
+            <Button type="primary" onClick={() => message.success("Processing complete!")}>
               Done
             </Button>
           )}

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const ProjectInfo = styled.div`
   display: flex;
@@ -14,7 +14,7 @@ export const Avatar = styled.img`
 `;
 
 export const InfoWrapper = styled.div`
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-weight: 500;
 `;
 export const Title = styled.h2`

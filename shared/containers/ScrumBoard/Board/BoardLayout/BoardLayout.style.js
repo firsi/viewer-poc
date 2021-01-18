@@ -1,9 +1,9 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const DropdownHeader = styled.div`
   font-size: 16px;
   color: #788195;
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-weight: 500;
   padding: 10px 20px;
 `;
@@ -12,7 +12,7 @@ export const ViewAll = styled.div`
   a {
     font-size: 14px;
     color: #1f92fa;
-    font-family: 'Roboto';
+    font-family: "Roboto";
     font-weight: 500;
     display: inline-block;
     text-transform: capitalize;
@@ -23,7 +23,7 @@ export const CreateProject = styled.div`
   a {
     font-size: 14px;
     color: #788195;
-    font-family: 'Roboto';
+    font-family: "Roboto";
     font-weight: 500;
     display: inline-block;
   }
@@ -44,7 +44,7 @@ export const Avatar = styled.img`
 `;
 
 export const InfoWrapper = styled.div`
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-weight: 500;
 `;
 
@@ -72,7 +72,7 @@ export const Assignee = styled.h2`
   font-size: 14px;
   line-height: 30px;
   color: #788195;
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-weight: 500;
   margin-right: 1rem;
 `;
@@ -81,7 +81,7 @@ export const Filters = styled.div`
   font-size: 14px;
   line-height: 30px;
   color: #2d3446;
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-weight: 500;
   display: flex;
   justify-content: space-around;

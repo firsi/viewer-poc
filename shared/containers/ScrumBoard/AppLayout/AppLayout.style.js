@@ -1,16 +1,16 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Title = styled.h2`
   font-size: 19px;
   color: #788195;
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-weight: 500;
   margin: 0;
 `;
 export const Filters = styled.h2`
   font-size: 14px;
   color: #788195;
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-weight: 500;
   display: flex;
   align-items: center;

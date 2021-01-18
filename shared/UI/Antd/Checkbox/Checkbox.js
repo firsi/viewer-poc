@@ -1,4 +1,4 @@
-import { Checkbox } from 'antd';
+import { Checkbox } from "antd";
 // import AntCheckbox from './Checkbox.style';
 
 // const checkbox = AntCheckbox(Checkbox);

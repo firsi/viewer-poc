@@ -1,9 +1,9 @@
-import React, { Fragment } from 'react';
-import { UserOutlined } from '@ant-design/icons';
-import { Badge, Button, Avatar } from 'antd';
-import TaskForm from '@iso/components/scrumBoard/TaskForm';
-import Comments from '@iso/components/scrumBoard/Comments';
-import { CardHeader } from './style';
+import React, { Fragment } from "react";
+import { UserOutlined } from "@ant-design/icons";
+import { Badge, Button, Avatar } from "antd";
+import TaskForm from "@iso/components/scrumBoard/TaskForm";
+import Comments from "@iso/components/scrumBoard/Comments";
+import { CardHeader } from "./style";
 const TaskDetials = ({ task, onDelete, onEdit, onCancel }) => {
   return (
     <div style={{ marginTop: 24 }}>
@@ -17,11 +17,7 @@ const TaskDetials = ({ task, onDelete, onEdit, onCancel }) => {
               <Button type="warning" onClick={onEdit}>
                 Edit Task
               </Button>
-              <Button
-                type="danger"
-                onClick={onDelete}
-                style={{ marginLeft: 16 }}
-              >
+              <Button type="danger" onClick={onDelete} style={{ marginLeft: 16 }}>
                 Delete
               </Button>
             </p>

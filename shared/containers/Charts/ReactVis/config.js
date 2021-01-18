@@ -1,5 +1,5 @@
-import { curveCatmullRom } from 'd3-shape';
-import TreeData from './largeData.json';
+import { curveCatmullRom } from "d3-shape";
+import TreeData from "./largeData.json";
 
 const width = 300;
 const height = 300;
@@ -8,12 +8,7 @@ const buildCSData = (total) => {
   const result = Array(total)
     .fill(0)
     .map((x, i) => {
-      const values = [
-        Math.random(),
-        Math.random(),
-        Math.random(),
-        Math.random(),
-      ]
+      const values = [Math.random(), Math.random(), Math.random(), Math.random()]
         .sort()
         .map((d) => Math.floor(d * 100));
       const y = (values[2] + values[1]) / 2;
@@ -24,21 +19,21 @@ const buildCSData = (total) => {
         yOpen: values[2],
         yClose: values[1],
         yLow: values[0],
-        color: y < 25 ? '#ff6384' : '#48A6F2',
+        color: y < 25 ? "#ff6384" : "#48A6F2",
         opacity: y > 75 ? 0.7 : 1,
       };
     });
   return result;
 };
 const LineSeries = {
-  componentName: 'LineSeries',
-  key: 'LineSeries',
-  title: 'Line Series',
+  componentName: "LineSeries",
+  key: "LineSeries",
+  title: "Line Series",
   width,
   height,
   datas: [
     {
-      className: 'first-series',
+      className: "first-series",
       data: [
         { x: 1, y: 3 },
         { x: 2, y: 5 },
@@ -47,13 +42,13 @@ const LineSeries = {
       ],
     },
     {
-      className: 'second-series',
+      className: "second-series",
       data: null,
     },
     {
-      className: 'third-series',
-      curve: 'curveMonotoneX',
-      strokeDasharray: '7, 3',
+      className: "third-series",
+      curve: "curveMonotoneX",
+      strokeDasharray: "7, 3",
       data: [
         { x: 1, y: 10 },
         { x: 2, y: 4 },
@@ -62,9 +57,9 @@ const LineSeries = {
       ],
     },
     {
-      className: 'fourth-series',
+      className: "fourth-series",
       curve: curveCatmullRom.alpha(0.5),
-      strokeDasharray: '7, 3',
+      strokeDasharray: "7, 3",
       data: [
         { x: 1, y: 7 },
         { x: 2, y: 11 },
@@ -75,14 +70,14 @@ const LineSeries = {
   ],
 };
 const LineMark = {
-  componentName: 'LineMark',
-  key: 'LineMark',
-  title: 'Line Mark Series',
+  componentName: "LineMark",
+  key: "LineMark",
+  title: "Line Mark Series",
   width,
   height,
   datas: [
     {
-      className: 'linemark-series-example',
+      className: "linemark-series-example",
       data: [
         { x: 1, y: 10 },
         { x: 2, y: 5 },
@@ -90,8 +85,8 @@ const LineMark = {
       ],
     },
     {
-      className: 'linemark-series-example-2',
-      curve: 'curveMonotoneX',
+      className: "linemark-series-example-2",
+      curve: "curveMonotoneX",
       data: [
         { x: 1, y: 11 },
         { x: 1.5, y: 29 },
@@ -101,15 +96,15 @@ const LineMark = {
   ],
 };
 const AreaChartElevated = {
-  componentName: 'AreaChartElevated',
-  key: 'AreaChartElevated',
-  title: 'Area Chart Elevated',
+  componentName: "AreaChartElevated",
+  key: "AreaChartElevated",
+  title: "Area Chart Elevated",
   width,
   height,
   datas: [
     {
-      className: 'area-elevated-line-series',
-      color: 'rgba(72,166,242,0.4)',
+      className: "area-elevated-line-series",
+      color: "rgba(72,166,242,0.4)",
       data: [
         { x: 1, y: 10, y0: 1 },
         { x: 2, y: 25, y0: 5 },
@@ -117,8 +112,8 @@ const AreaChartElevated = {
       ],
     },
     {
-      className: 'area-elevated-line-series-2',
-      color: 'rgba(255,99,132,0.4)',
+      className: "area-elevated-line-series-2",
+      color: "rgba(255,99,132,0.4)",
       data: [
         { x: 1, y: 5, y0: 6 },
         { x: 2, y: 20, y0: 11 },
@@ -126,8 +121,8 @@ const AreaChartElevated = {
       ],
     },
     {
-      className: 'area-elevated-line-series-3',
-      color: 'rgba(72,166,242,0.4)',
+      className: "area-elevated-line-series-3",
+      color: "rgba(72,166,242,0.4)",
       data: [
         { x: 1, y: 5.5 },
         { x: 2, y: 15 },
@@ -137,14 +132,14 @@ const AreaChartElevated = {
   ],
 };
 const StackedHorizontalBarChart = {
-  componentName: 'StackedHorizontalBarChart',
-  key: 'StackedHorizontalBarChart',
-  title: 'Stacked Horizontal Bar Chart',
+  componentName: "StackedHorizontalBarChart",
+  key: "StackedHorizontalBarChart",
+  title: "Stacked Horizontal Bar Chart",
   width,
   height,
   datas: [
     {
-      color: 'rgba(72,166,242,0.4)',
+      color: "rgba(72,166,242,0.4)",
       data: [
         { y: 2, x: 10 },
         { y: 4, x: 5 },
@@ -152,7 +147,7 @@ const StackedHorizontalBarChart = {
       ],
     },
     {
-      color: 'rgba(255,99,132,0.4)',
+      color: "rgba(255,99,132,0.4)",
       data: [
         { y: 2, x: 12 },
         { y: 4, x: 2 },
@@ -162,68 +157,68 @@ const StackedHorizontalBarChart = {
   ],
 };
 const ClusteredStackedBarChart = {
-  componentName: 'ClusteredStackedBarChart',
-  key: 'ClusteredStackedBarChart',
-  title: 'Clustered Stacked Bar Chart',
+  componentName: "ClusteredStackedBarChart",
+  key: "ClusteredStackedBarChart",
+  title: "Clustered Stacked Bar Chart",
   width,
   height: 300,
   orientationItems: [
     {
-      title: 'Apples',
-      color: 'rgba(255,99,132,0.4)',
+      title: "Apples",
+      color: "rgba(255,99,132,0.4)",
     },
     {
-      title: 'Oranges',
-      color: 'rgba(72,166,242,0.4)',
+      title: "Oranges",
+      color: "rgba(72,166,242,0.4)",
     },
   ],
   datas: [
     {
-      cluster: '2015',
-      color: 'rgba(255,99,132,0.4)',
+      cluster: "2015",
+      color: "rgba(255,99,132,0.4)",
       data: [
-        { x: 'Q1', y: 10 },
-        { x: 'Q2', y: 5 },
-        { x: 'Q3', y: 15 },
-        { x: 'Q4', y: 20 },
+        { x: "Q1", y: 10 },
+        { x: "Q2", y: 5 },
+        { x: "Q3", y: 15 },
+        { x: "Q4", y: 20 },
       ],
     },
     {
-      cluster: '2015',
-      color: 'rgba(72,166,242,0.4)',
+      cluster: "2015",
+      color: "rgba(72,166,242,0.4)",
       data: [
-        { x: 'Q1', y: 3 },
-        { x: 'Q2', y: 7 },
-        { x: 'Q3', y: 2 },
-        { x: 'Q4', y: 1 },
+        { x: "Q1", y: 3 },
+        { x: "Q2", y: 7 },
+        { x: "Q3", y: 2 },
+        { x: "Q4", y: 1 },
       ],
     },
     {
-      cluster: '2016',
-      color: 'rgba(255,99,132,0.4)',
+      cluster: "2016",
+      color: "rgba(255,99,132,0.4)",
       data: [
-        { x: 'Q1', y: 3 },
-        { x: 'Q2', y: 8 },
-        { x: 'Q3', y: 11 },
-        { x: 'Q4', y: 19 },
+        { x: "Q1", y: 3 },
+        { x: "Q2", y: 8 },
+        { x: "Q3", y: 11 },
+        { x: "Q4", y: 19 },
       ],
     },
     {
-      cluster: '2016',
-      color: 'rgba(72,166,242,0.4)',
+      cluster: "2016",
+      color: "rgba(72,166,242,0.4)",
       data: [
-        { x: 'Q1', y: 22 },
-        { x: 'Q2', y: 2 },
-        { x: 'Q3', y: 22 },
-        { x: 'Q4', y: 18 },
+        { x: "Q1", y: 22 },
+        { x: "Q2", y: 2 },
+        { x: "Q3", y: 22 },
+        { x: "Q4", y: 18 },
       ],
     },
   ],
 };
 const CustomScales = {
-  componentName: 'CustomScales',
-  key: 'CustomScales',
-  title: 'Custom Scales',
+  componentName: "CustomScales",
+  key: "CustomScales",
+  title: "Custom Scales",
   width,
   height,
   datas: [
@@ -249,9 +244,9 @@ const CustomScales = {
   ],
 };
 const CircularGridLines = {
-  componentName: 'CircularGridLines',
-  key: 'CircularGridLines',
-  title: 'Circular Grid Lines',
+  componentName: "CircularGridLines",
+  key: "CircularGridLines",
+  title: "Circular Grid Lines",
   width,
   height,
   xDomain: [-3, 3],
@@ -268,9 +263,9 @@ const CircularGridLines = {
   ],
 };
 const DynamicProgrammaticRightedgehints = {
-  componentName: 'DynamicProgrammaticRightedgehints',
-  key: 'DynamicProgrammaticRightedgehints',
-  title: 'Dynamic Programmatic Right Edge Hints',
+  componentName: "DynamicProgrammaticRightedgehints",
+  key: "DynamicProgrammaticRightedgehints",
+  title: "Dynamic Programmatic Right Edge Hints",
   width,
   height,
   xMax: 4,
@@ -282,9 +277,9 @@ const DynamicProgrammaticRightedgehints = {
   ],
 };
 const DynamicCrosshairScatterplot = {
-  componentName: 'DynamicCrosshairScatterplot',
-  key: 'DynamicCrosshairScatterplot',
-  title: 'Dynamic Crosshair Scatterplot',
+  componentName: "DynamicCrosshairScatterplot",
+  key: "DynamicCrosshairScatterplot",
+  title: "Dynamic Crosshair Scatterplot",
   width,
   height,
   xDomain: [1, 3],
@@ -315,25 +310,25 @@ const DynamicCrosshairScatterplot = {
   ],
 };
 const SimpleRadialChart = {
-  componentName: 'SimpleRadialChart',
-  key: 'SimpleRadialChart',
-  title: 'simple Radial Chart',
+  componentName: "SimpleRadialChart",
+  key: "SimpleRadialChart",
+  title: "simple Radial Chart",
   width,
   height,
   colorRange: [0, 10],
   colorDomain: [0, 100],
   datas: [
-    { angle: 1, color: '#89DAC1', label: 'green', opacity: 0.2 },
-    { angle: 2, color: '#F6D18A', label: 'yellow' },
-    { angle: 5, color: '#1E96BE', label: 'cyan' },
-    { angle: 3, color: '#DA70BF', label: 'magenta' },
-    { angle: 5, color: '#F6D18A', label: 'yellow again' },
+    { angle: 1, color: "#89DAC1", label: "green", opacity: 0.2 },
+    { angle: 2, color: "#F6D18A", label: "yellow" },
+    { angle: 5, color: "#1E96BE", label: "cyan" },
+    { angle: 3, color: "#DA70BF", label: "magenta" },
+    { angle: 5, color: "#F6D18A", label: "yellow again" },
   ],
 };
 const SimpleDonutChart = {
-  componentName: 'SimpleDonutChart',
-  key: 'SimpleDonutChart',
-  title: 'Simple Donut Chart',
+  componentName: "SimpleDonutChart",
+  key: "SimpleDonutChart",
+  title: "Simple Donut Chart",
   width,
   height,
   innerRadius: 100,
@@ -341,9 +336,9 @@ const SimpleDonutChart = {
   datas: [{ angle: 2 }, { angle: 6 }, { angle: 2 }, { angle: 3 }, { angle: 1 }],
 };
 const CustomRadius = {
-  componentName: 'CustomRadius',
-  key: 'CustomRadius',
-  title: 'Custom Radius',
+  componentName: "CustomRadius",
+  key: "CustomRadius",
+  title: "Custom Radius",
   width,
   height,
   radiusDomain: [0, 20],
@@ -353,62 +348,62 @@ const CustomRadius = {
     { angle: 1, id: 1, radius: 10 },
     {
       angle: 2,
-      label: 'Super Custom label',
-      subLabel: 'With annotation',
+      label: "Super Custom label",
+      subLabel: "With annotation",
       id: 2,
       radius: 20,
     },
-    { angle: 5, id: 3, radius: 5, label: 'Alt Label' },
+    { angle: 5, id: 3, radius: 5, label: "Alt Label" },
     { angle: 3, id: 4, radius: 14 },
-    { angle: 5, id: 5, adius: 12, subLabel: 'Sub Label only' },
+    { angle: 5, id: 5, adius: 12, subLabel: "Sub Label only" },
   ],
 };
 const SimpleTreeMap = {
-  componentName: 'SimpleTreeMap',
-  key: 'SimpleTreeMap',
-  title: 'Simple Tree Map',
+  componentName: "SimpleTreeMap",
+  key: "SimpleTreeMap",
+  title: "Simple Tree Map",
   width,
   height,
   datas: TreeData,
 };
 const DynamicTreeMap = {
-  componentName: 'DynamicTreeMap',
-  key: 'DynamicTreeMap',
-  title: 'Dynamic Tree Map',
+  componentName: "DynamicTreeMap",
+  key: "DynamicTreeMap",
+  title: "Dynamic Tree Map",
   width,
   height,
 };
 const BasicSunburst = {
-  componentName: 'BasicSunburst',
-  key: 'BasicSunburst',
-  title: 'Basic Sunburst',
+  componentName: "BasicSunburst",
+  key: "BasicSunburst",
+  title: "Basic Sunburst",
   width,
   height,
   datas: TreeData,
 };
 const AnimatedSunburst = {
-  componentName: 'AnimatedSunburst',
-  key: 'AnimatedSunburst',
-  title: 'Animated Sunburst',
+  componentName: "AnimatedSunburst",
+  key: "AnimatedSunburst",
+  title: "Animated Sunburst",
   width,
   height,
 };
 const CandleStick = {
-  componentName: 'CandleStick',
-  key: 'CandleStick',
-  title: 'Candle Stick',
+  componentName: "CandleStick",
+  key: "CandleStick",
+  title: "Candle Stick",
   height,
   datas: buildCSData(30),
 };
 const ComplexChart = {
-  componentName: 'ComplexChart',
-  key: 'ComplexChart',
-  title: 'Complex Chart',
+  componentName: "ComplexChart",
+  key: "ComplexChart",
+  title: "Complex Chart",
 };
 const StreamGraph = {
-  componentName: 'StreamGraph',
-  key: 'StreamGraph',
-  title: 'Stream Graph',
+  componentName: "StreamGraph",
+  key: "StreamGraph",
+  title: "Stream Graph",
 };
 
 export {

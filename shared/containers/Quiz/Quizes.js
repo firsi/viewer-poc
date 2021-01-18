@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import { Row, Col, Button } from 'antd';
-import IntlMessages from '@iso/components/utility/intlMessages';
-import Card from '../UIElements/Card/Card.styles';
-import basicStyle from '@iso/assets/styles/constants';
-import { Link } from 'react-router-dom';
+import React, { Component } from "react";
+import { Row, Col, Button } from "antd";
+import IntlMessages from "@iso/components/utility/intlMessages";
+import Card from "../UIElements/Card/Card.styles";
+import basicStyle from "@iso/assets/styles/constants";
+import { Link } from "react-router-dom";
 
 export default class Quizes extends Component {
   // Then we add our constructor which receives our props

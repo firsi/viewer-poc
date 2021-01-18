@@ -1,16 +1,13 @@
-import React from 'react';
-import Button from '@iso/components/uielements/button';
-import Checkbox from '@iso/components/uielements/checkbox';
-import { RadioButton, RadioGroup } from '@iso/components/uielements/radio';
-import { timeDifference } from '@iso/lib/helpers/utility';
-import { notification, ColorChoser, EditableComponent } from '@iso/components/';
-import { TodoListWrapper } from './Todo.styles';
-import { CloseOutlined } from '@ant-design/icons';
+import React from "react";
+import Button from "@iso/components/uielements/button";
+import Checkbox from "@iso/components/uielements/checkbox";
+import { RadioButton, RadioGroup } from "@iso/components/uielements/radio";
+import { timeDifference } from "@iso/lib/helpers/utility";
+import { notification, ColorChoser, EditableComponent } from "@iso/components/";
+import { TodoListWrapper } from "./Todo.styles";
+import { CloseOutlined } from "@ant-design/icons";
 function filterTodos(todos, search) {
-  const selectedTodos =
-    search === 'All'
-      ? todos
-      : todos.filter((todo) => todo.completed === (search === 'Completed'));
+  const selectedTodos = search === "All" ? todos : todos.filter((todo) => todo.completed === (search === "Completed"));
   let completed = 0;
   selectedTodos.forEach((todo) => {
     if (todo.completed) {
@@ -20,7 +17,7 @@ function filterTodos(todos, search) {
   return { selectedTodos, completed };
 }
 export default function TodoList(props) {
-  const [search, setSearch] = React.useState('All');
+  const [search, setSearch] = React.useState("All");
 
   function singleTodo(todo) {
     const { deleteTodo, colors } = props;
@@ -31,30 +28,17 @@ export default function TodoList(props) {
     };
     return (
       <div className="isoTodoList" key={todo.id}>
-        <ColorChoser
-          colors={colors}
-          changeColor={(value) => updateTodo('color', value)}
-          seectedColor={todo.color}
-        />
+        <ColorChoser colors={colors} changeColor={(value) => updateTodo("color", value)} seectedColor={todo.color} />
         <Checkbox
           className="isoTodoCheck"
           checked={todo.completed}
-          onChange={() => updateTodo('completed', !todo.completed)}
+          onChange={() => updateTodo("completed", !todo.completed)}
         />
         <div className="isoTodoContentWrapper">
           <span className="isoTodoDate">{timeDifference(todo.createTime)}</span>
-          <EditableComponent
-            value={todo.todo}
-            itemKey="todo"
-            onChange={updateTodo}
-          />
+          <EditableComponent value={todo.todo} itemKey="todo" onChange={updateTodo} />
         </div>
-        <Button
-          className="isoTodoDelete"
-          icon={<CloseOutlined />}
-          type="default"
-          onClick={onDelete}
-        />
+        <Button className="isoTodoDelete" icon={<CloseOutlined />} type="default" onClick={onDelete} />
       </div>
     );
   }
@@ -65,11 +49,7 @@ export default function TodoList(props) {
   return (
     <TodoListWrapper className="isoTodoContent">
       <div className="isoTodoStatusTab">
-        <RadioGroup
-          value={search}
-          onChange={onChange}
-          className="isoTodoStatus"
-        >
+        <RadioGroup value={search} onChange={onChange} className="isoTodoStatus">
           <RadioButton value="All">All</RadioButton>
           <RadioButton value="Uncompleted">Uncompleted</RadioButton>
           <RadioButton value="Completed">Completed</RadioButton>
@@ -90,7 +70,7 @@ export default function TodoList(props) {
           checked={completed === selectedTodos.length}
           disabled={completed === selectedTodos.length}
           onChange={() => {
-            notification('success', 'All Todos are Completed!!!', '');
+            notification("success", "All Todos are Completed!!!", "");
             props.allCompleted();
           }}
         >
@@ -102,14 +82,14 @@ export default function TodoList(props) {
             type="button"
             className="isoDeleteAll"
             onClick={() => {
-              notification('success', 'All Completed Todos are Deleted', '');
+              notification("success", "All Completed Todos are Deleted", "");
               props.deleteCompleted();
             }}
           >
             {`Delete Completed (${completed})`}
           </Button>
         ) : (
-          ''
+          ""
         )}
       </div>
     </TodoListWrapper>

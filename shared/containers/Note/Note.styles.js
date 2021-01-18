@@ -1,7 +1,7 @@
-import styled from 'styled-components';
-import { palette } from 'styled-theme';
-import { transition, borderRadius } from '@iso/lib/helpers/style_utils';
-import WithDirection from '@iso/lib/helpers/rtl';
+import styled from "styled-components";
+import { palette } from "styled-theme";
+import { transition, borderRadius } from "@iso/lib/helpers/style_utils";
+import WithDirection from "@iso/lib/helpers/rtl";
 
 const NoteComponentWrapper = styled.div`
   padding: 50px 35px;
@@ -28,11 +28,9 @@ const NoteComponentWrapper = styled.div`
     display: flex;
     flex-direction: column;
     flex-shrink: 0;
-    ${'' /* height: 100%; */} background: #ffffff;
-    border-right: ${(props) => (props['data-rtl'] === 'rtl' ? 0 : 1)}px solid
-      ${palette('border', 0)};
-    border-left: ${(props) => (props['data-rtl'] === 'rtl' ? 1 : 0)}px solid
-      ${palette('border', 0)};
+    ${"" /* height: 100%; */} background: #ffffff;
+    border-right: ${(props) => (props["data-rtl"] === "rtl" ? 0 : 1)}px solid ${palette("border", 0)};
+    border-left: ${(props) => (props["data-rtl"] === "rtl" ? 1 : 0)}px solid ${palette("border", 0)};
 
     @media only screen and (min-width: 767px) and (max-width: 990px) {
       width: 260px !important;
@@ -64,7 +62,7 @@ const NoteComponentWrapper = styled.div`
       flex-wrap: wrap;
       flex-direction: row;
       background-color: #ffffff;
-      border-bottom: 1px solid ${palette('border', 0)};
+      border-bottom: 1px solid ${palette("border", 0)};
 
       @media only screen and (max-width: 480px) {
         padding: 20px;
@@ -81,14 +79,12 @@ const NoteComponentWrapper = styled.div`
         align-items: center;
         justify-content: flex-start;
         flex-direction: row;
-        margin-right: ${(props) =>
-          props['data-rtl'] === 'rtl' ? 'inherit' : 'auto'};
-        margin-left: ${(props) =>
-          props['data-rtl'] === 'rtl' ? 'auto' : 'inherit'};
+        margin-right: ${(props) => (props["data-rtl"] === "rtl" ? "inherit" : "auto")};
+        margin-left: ${(props) => (props["data-rtl"] === "rtl" ? "auto" : "inherit")};
 
         span {
           font-size: 13px;
-          color: ${palette('grayscale', 0)};
+          color: ${palette("grayscale", 0)};
         }
 
         .isoColorChooser {
@@ -96,10 +92,9 @@ const NoteComponentWrapper = styled.div`
           height: 20px;
           cursor: pointer;
           border: 0;
-          margin: ${(props) =>
-            props['data-rtl'] === 'rtl' ? '0 0 0 15px' : '0 15px 0 0'};
+          margin: ${(props) => (props["data-rtl"] === "rtl" ? "0 0 0 15px" : "0 15px 0 0")};
           padding: 0;
-          ${borderRadius('3px')};
+          ${borderRadius("3px")};
 
           &:empty {
             visibility: visible;
@@ -108,19 +103,16 @@ const NoteComponentWrapper = styled.div`
       }
 
       .isoAddNoteBtn {
-        background-color: ${palette('primary', 0)};
+        background-color: ${palette("primary", 0)};
         border: 0;
         padding: 5px 15px;
-        margin-left: ${(props) =>
-          props['data-rtl'] === 'rtl' ? 'inherit' : 'auto'};
-        margin-right: ${(props) =>
-          props['data-rtl'] === 'rtl' ? 'auto' : 'inherit'};
-        ${borderRadius('3px')};
+        margin-left: ${(props) => (props["data-rtl"] === "rtl" ? "inherit" : "auto")};
+        margin-right: ${(props) => (props["data-rtl"] === "rtl" ? "auto" : "inherit")};
+        ${borderRadius("3px")};
         ${transition()};
 
         @media only screen and (max-width: 400px) {
-          margin: ${(props) =>
-            props['data-rtl'] === 'rtl' ? '15px 0 0 0' : '15px 0 0 0'};
+          margin: ${(props) => (props["data-rtl"] === "rtl" ? "15px 0 0 0" : "15px 0 0 0")};
         }
 
         span {
@@ -132,7 +124,7 @@ const NoteComponentWrapper = styled.div`
         }
 
         &:hover {
-          background-color: ${palette('primary', 1)};
+          background-color: ${palette("primary", 1)};
         }
       }
     }
@@ -147,7 +139,7 @@ const NoteComponentWrapper = styled.div`
 
       .isoNoteTextbox {
         font-size: 14px;
-        color: ${palette('text', 2)};
+        color: ${palette("text", 2)};
         line-height: 24px;
         width: 100%;
         height: calc(100% - 30px);
@@ -192,9 +184,8 @@ const NoteListSidebar = styled.div`
     width: 100%;
     height: 77px;
     padding: 0 15px;
-    padding-left: ${(props) => (props['data-rtl'] === 'rtl' ? '15px' : '35px')};
-    padding-right: ${(props) =>
-      props['data-rtl'] === 'rtl' ? '35px' : '15px'};
+    padding-left: ${(props) => (props["data-rtl"] === "rtl" ? "15px" : "35px")};
+    padding-right: ${(props) => (props["data-rtl"] === "rtl" ? "35px" : "15px")};
     border: 0;
     border-bottom: 1px solid rgba(230, 230, 230, 0.7);
     outline: 0 !important;
@@ -218,7 +209,7 @@ const NoteListSidebar = styled.div`
     .ant-input {
       font-size: 14px;
       font-weight: 400;
-      color: ${palette('text', 0)};
+      color: ${palette("text", 0)};
       line-height: inherit;
     }
 
@@ -231,9 +222,9 @@ const NoteListSidebar = styled.div`
   }
 
   .ant-input-suffix {
-    left: ${(props) => (props['data-rtl'] === 'rtl' ? 'auto' : '10px')};
-    right: ${(props) => (props['data-rtl'] === 'rtl' ? '10px' : 'auto')};
-    color: ${palette('grayscale', 0)};
+    left: ${(props) => (props["data-rtl"] === "rtl" ? "auto" : "10px")};
+    right: ${(props) => (props["data-rtl"] === "rtl" ? "10px" : "auto")};
+    color: ${palette("grayscale", 0)};
 
     .ant-input-search-icon {
       &:before {
@@ -257,27 +248,24 @@ const NoteListSidebar = styled.div`
       justify-content: flex-start;
       flex-shrink: 0;
       padding: 0;
-      border-bottom: 1px solid ${palette('border', 0)};
-      text-align: ${(props) =>
-        props['data-rtl'] === 'rtl' ? 'right' : 'left'};
+      border-bottom: 1px solid ${palette("border", 0)};
+      text-align: ${(props) => (props["data-rtl"] === "rtl" ? "right" : "left")};
       position: relative;
 
       &.active {
-        background-color: ${palette('secondary', 1)};
+        background-color: ${palette("secondary", 1)};
       }
 
       .isoNoteBGColor {
         width: 5px;
         display: flex;
-        margin: ${(props) =>
-          props['data-rtl'] === 'rtl' ? '0 0 0 15px' : '0 15px 0 0'};
+        margin: ${(props) => (props["data-rtl"] === "rtl" ? "0 0 0 15px" : "0 15px 0 0")};
         flex-shrink: 0;
       }
 
       .isoNoteText {
         width: calc(100% - 60px);
-        margin: ${(props) =>
-          props['data-rtl'] === 'rtl' ? '0 0 0 20px' : '0 20px 0 0'};
+        margin: ${(props) => (props["data-rtl"] === "rtl" ? "0 0 0 20px" : "0 20px 0 0")};
         padding: 20px 0;
         cursor: pointer;
 
@@ -286,13 +274,13 @@ const NoteListSidebar = styled.div`
           white-space: nowrap;
           text-overflow: ellipsis;
           overflow: hidden;
-          color: ${palette('secondary', 2)};
+          color: ${palette("secondary", 2)};
           font-weight: 500;
         }
 
         .isoNoteCreatedDate {
           font-size: 13px;
-          color: ${palette('grayscale', 0)};
+          color: ${palette("grayscale", 0)};
         }
       }
 
@@ -303,16 +291,16 @@ const NoteListSidebar = styled.div`
         flex-shrink: 0;
         position: absolute;
         top: 5px;
-        right: ${(props) => (props['data-rtl'] === 'rtl' ? 'inherit' : '5px')};
-        left: ${(props) => (props['data-rtl'] === 'rtl' ? '5px' : 'inherit')};
+        right: ${(props) => (props["data-rtl"] === "rtl" ? "inherit" : "5px")};
+        left: ${(props) => (props["data-rtl"] === "rtl" ? "5px" : "inherit")};
         padding: 0;
         border: 0;
         font-size: 14px;
-        color: ${palette('grayscale', 0)};
+        color: ${palette("grayscale", 0)};
         ${transition()};
 
         &:hover {
-          color: ${palette('primary', 0)};
+          color: ${palette("primary", 0)};
         }
       }
     }
@@ -320,7 +308,7 @@ const NoteListSidebar = styled.div`
     .isoNotlistNotice {
       font-size: 14px;
       font-weight: 400;
-      color: ${palette('grayscale', 0)};
+      color: ${palette("grayscale", 0)};
       line-height: inherit;
       padding: 30px 20px;
     }
@@ -328,7 +316,7 @@ const NoteListSidebar = styled.div`
     .isoNoResultMsg {
       padding: 15px 20px;
       text-align: center;
-      color: ${palette('secondary', 2)};
+      color: ${palette("secondary", 2)};
       font-weight: 500;
       font-size: 14px;
     }

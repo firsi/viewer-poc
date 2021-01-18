@@ -1,2 +1,2 @@
-import { Divider } from 'antd';
+import { Divider } from "antd";
 export default Divider;

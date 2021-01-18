@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { colors, grid } from '@iso/assets/styles/constants';
+import styled from "styled-components";
+import { colors, grid } from "@iso/assets/styles/constants";
 
 export default styled.h4`
   /* padding: ${grid}px; */
@@ -10,7 +10,7 @@ export default styled.h4`
   position: relative;
   font-size: 20px;
   color: #2d3446;
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-weight: 500;
   &:focus {
     outline: 2px solid ${colors.purple};

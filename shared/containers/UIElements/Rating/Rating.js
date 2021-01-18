@@ -1,13 +1,13 @@
-import React from 'react';
-import { HeartOutlined } from '@ant-design/icons';
-import { Row, Col } from 'antd';
-import Rate from '@iso/components/uielements/rate';
-import PageHeader from '@iso/components/utility/pageHeader';
-import Box from '@iso/components/utility/box';
-import LayoutWrapper from '@iso/components/utility/layoutWrapper';
-import ContentHolder from '@iso/components/utility/contentHolder';
-import IntlMessages from '@iso/components/utility/intlMessages';
-import basicStyle from '@iso/assets/styles/constants';
+import React from "react";
+import { HeartOutlined } from "@ant-design/icons";
+import { Row, Col } from "antd";
+import Rate from "@iso/components/uielements/rate";
+import PageHeader from "@iso/components/utility/pageHeader";
+import Box from "@iso/components/utility/box";
+import LayoutWrapper from "@iso/components/utility/layoutWrapper";
+import ContentHolder from "@iso/components/utility/contentHolder";
+import IntlMessages from "@iso/components/utility/intlMessages";
+import basicStyle from "@iso/assets/styles/constants";
 
 export default function () {
   const [value, setValue] = React.useState(3);
@@ -23,9 +23,7 @@ export default function () {
         <Col md={12} sm={12} xs={24} style={colStyle}>
           <Box
             title={<IntlMessages id="uiElements.rating.basicExample" />}
-            subtitle={
-              <IntlMessages id="uiElements.rating.basicExampleSubTitle" />
-            }
+            subtitle={<IntlMessages id="uiElements.rating.basicExampleSubTitle" />}
           >
             <ContentHolder>
               <Rate />
@@ -47,9 +45,7 @@ export default function () {
         <Col md={12} sm={12} xs={24} style={colStyle}>
           <Box
             title={<IntlMessages id="uiElements.rating.showCopywriting" />}
-            subtitle={
-              <IntlMessages id="uiElements.rating.showCopywritingSubTitle" />
-            }
+            subtitle={<IntlMessages id="uiElements.rating.showCopywritingSubTitle" />}
           >
             <ContentHolder>
               <span>
@@ -74,9 +70,7 @@ export default function () {
         <Col md={12} sm={12} xs={24} style={colStyle}>
           <Box
             title={<IntlMessages id="uiElements.rating.otherCharacter" />}
-            subtitle={
-              <IntlMessages id="uiElements.rating.otherCharacterSubTitle" />
-            }
+            subtitle={<IntlMessages id="uiElements.rating.otherCharacterSubTitle" />}
           >
             <ContentHolder>
               <Rate character={<HeartOutlined />} allowHalf />

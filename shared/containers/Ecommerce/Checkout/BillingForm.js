@@ -1,10 +1,10 @@
-import React from 'react';
-import Input from '@iso/components/uielements/input';
-import Select, { SelectOption } from '@iso/components/uielements/select';
-import Checkbox from '@iso/components/uielements/checkbox';
-import InputBox from './InputBox';
-import IntlMessages from '@iso/components/utility/intlMessages';
-import { BillingFormWrapper, InputBoxWrapper } from './Checkout.styles';
+import React from "react";
+import Input from "@iso/components/uielements/input";
+import Select, { SelectOption } from "@iso/components/uielements/select";
+import Checkbox from "@iso/components/uielements/checkbox";
+import InputBox from "./InputBox";
+import IntlMessages from "@iso/components/utility/intlMessages";
+import { BillingFormWrapper, InputBoxWrapper } from "./Checkout.styles";
 
 const Option = SelectOption;
 
@@ -14,14 +14,8 @@ export default function () {
   return (
     <BillingFormWrapper className="isoBillingForm">
       <div className="isoInputFieldset">
-        <InputBox
-          label={<IntlMessages id="checkout.billingform.firstname" />}
-          important
-        />
-        <InputBox
-          label={<IntlMessages id="checkout.billingform.lastname" />}
-          important
-        />
+        <InputBox label={<IntlMessages id="checkout.billingform.firstname" />} important />
+        <InputBox label={<IntlMessages id="checkout.billingform.lastname" />} important />
       </div>
 
       <div className="isoInputFieldset">
@@ -29,10 +23,7 @@ export default function () {
       </div>
 
       <div className="isoInputFieldset">
-        <InputBox
-          label={<IntlMessages id="checkout.billingform.email" />}
-          important
-        />
+        <InputBox label={<IntlMessages id="checkout.billingform.email" />} important />
         <InputBox label={<IntlMessages id="checkout.billingform.mobile" />} />
       </div>
 
@@ -56,15 +47,8 @@ export default function () {
       </div>
 
       <div className="isoInputFieldset vertical">
-        <InputBox
-          label={<IntlMessages id="checkout.billingform.address" />}
-          placeholder="Address"
-        />
-        <Input
-          size="large"
-          placeholder="Apartment, suite, unit etc. (optional)"
-          style={{ marginTop: '35px' }}
-        />
+        <InputBox label={<IntlMessages id="checkout.billingform.address" />} placeholder="Address" />
+        <Input size="large" placeholder="Apartment, suite, unit etc. (optional)" style={{ marginTop: "35px" }} />
       </div>
 
       <Checkbox onChange={handleOnChange}>

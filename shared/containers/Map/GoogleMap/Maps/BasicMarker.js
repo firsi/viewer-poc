@@ -1,9 +1,9 @@
-import React from 'react';
-import { posts } from '../config';
-import googleConfig from '@iso/config/google_map.config';
-import { GoogleApiWrapper } from 'google-maps-react';
-import { Marker, MarkerInfoWindow } from '../Marker';
-import BasicMapWrapper from './Maps.styles';
+import React from "react";
+import { posts } from "../config";
+import googleConfig from "@iso/config/google_map.config";
+import { GoogleApiWrapper } from "google-maps-react";
+import { Marker, MarkerInfoWindow } from "../Marker";
+import BasicMapWrapper from "./Maps.styles";
 
 function BasicMarkerMap(props) {
   const state = {
@@ -25,8 +25,8 @@ function BasicMarkerMap(props) {
         position: google.maps.ControlPosition.TOP_RIGHT,
       },
     });
-    const RichMarker = require('js-rich-marker');
-    const InfoBubble = require('@redq/js-info-bubble');
+    const RichMarker = require("js-rich-marker");
+    const InfoBubble = require("@redq/js-info-bubble");
     posts.map((post) => {
       const marker = RichMarker
         ? new RichMarker.RichMarker({
@@ -50,7 +50,7 @@ function BasicMarkerMap(props) {
         minHeight: 255,
         shadowStyle: 0,
         padding: 0,
-        backgroundColor: '#ffffff',
+        backgroundColor: "#ffffff",
         position: new google.maps.LatLng(post.lat, post.lng),
         borderRadius: 0,
         arrowSize: 10,
@@ -61,7 +61,7 @@ function BasicMarkerMap(props) {
         arrowStyle: 0,
         content: MarkerInfoWindow(post),
       });
-      marker.addListener('click', function () {
+      marker.addListener("click", function () {
         if (self.infowindow) {
           self.infowindow.close();
         }
@@ -77,11 +77,7 @@ function BasicMarkerMap(props) {
     <div>
       {loaded ? (
         <BasicMapWrapper>
-          <div
-            className="isoGoogleMap"
-            style={{ height: '650px', width: '100%' }}
-            ref={loadMap}
-          />
+          <div className="isoGoogleMap" style={{ height: "650px", width: "100%" }} ref={loadMap} />
         </BasicMapWrapper>
       ) : (
         <span>API is Loading</span>

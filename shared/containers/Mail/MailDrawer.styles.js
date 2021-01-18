@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import WithDirection from '@iso/lib/helpers/rtl';
+import styled from "styled-components";
+import WithDirection from "@iso/lib/helpers/rtl";
 
 const MailDrawer = styled.div`
   > div > div {

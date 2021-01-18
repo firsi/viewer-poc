@@ -1,10 +1,6 @@
-import styled from 'styled-components';
-import { palette } from 'styled-theme';
-import {
-  borderRadius,
-  boxShadow,
-  transition,
-} from '@iso/lib/helpers/style_utils';
+import styled from "styled-components";
+import { palette } from "styled-theme";
+import { borderRadius, boxShadow, transition } from "@iso/lib/helpers/style_utils";
 
 const DropzoneWrapper = styled.div`
   .filepicker {
@@ -16,12 +12,12 @@ const DropzoneWrapper = styled.div`
     align-items: center;
     justify-content: center;
     background-color: #ffffff;
-    border: 1px dashed ${palette('border', 0)};
+    border: 1px dashed ${palette("border", 0)};
     position: relative;
     overflow: hidden;
     cursor: pointer;
     text-align: center;
-    ${borderRadius('0')};
+    ${borderRadius("0")};
 
     .closeBtn {
       width: 30px;
@@ -38,22 +34,22 @@ const DropzoneWrapper = styled.div`
       position: absolute;
       top: 0;
       right: 0;
-      ${borderRadius('50%')};
-      ${boxShadow('none')};
+      ${borderRadius("50%")};
+      ${boxShadow("none")};
       ${transition()};
 
       &:before {
-        content: '\f2d7';
-        font-family: 'ionicons';
+        content: "\f2d7";
+        font-family: "ionicons";
         font-size: 14px;
-        color: ${palette('text', 3)};
+        color: ${palette("text", 3)};
         line-height: 1;
         ${transition()};
       }
 
       &:hover {
         &:before {
-          color: ${palette('text', 0)};
+          color: ${palette("text", 0)};
         }
       }
     }
@@ -67,17 +63,17 @@ const DropzoneWrapper = styled.div`
 
       span {
         font-size: 14px;
-        color: ${palette('text', 3)};
+        color: ${palette("text", 3)};
         font-weight: 700;
         margin-top: 6px;
       }
 
       &:before {
-        content: '\f255';
-        font-family: 'ionicons';
+        content: "\f255";
+        font-family: "ionicons";
         font-size: 53.4px;
         line-height: 32px;
-        color: ${palette('primary', 0)};
+        color: ${palette("primary", 0)};
       }
     }
 
@@ -93,7 +89,7 @@ const DropzoneWrapper = styled.div`
       left: 0;
       background: none;
       background-color: rgba(255, 255, 255, 0.8);
-      ${borderRadius('0')};
+      ${borderRadius("0")};
     }
 
     .dz-preview {
@@ -122,8 +118,8 @@ const DropzoneWrapper = styled.div`
         overflow-y: hidden;
         position: relative;
         background: none;
-        background-color: ${palette('secondary', 6)};
-        ${borderRadius('0')};
+        background-color: ${palette("secondary", 6)};
+        ${borderRadius("0")};
 
         img {
           max-width: 100%;
@@ -148,7 +144,7 @@ const DropzoneWrapper = styled.div`
         overflow: hidden;
         position: relative;
         cursor: default;
-        background-color: ${palette('secondary', 1)};
+        background-color: ${palette("secondary", 1)};
 
         .dz-size {
           display: none;
@@ -160,7 +156,7 @@ const DropzoneWrapper = styled.div`
 
           span {
             font-size: 14px;
-            color: ${palette('text', 4)};
+            color: ${palette("text", 4)};
             white-space: nowrap;
             background-color: transparent;
           }
@@ -187,7 +183,7 @@ const DropzoneWrapper = styled.div`
       .dz-remove {
         font-size: 14px;
         font-weight: 400;
-        background-color: ${palette('error', 0)};
+        background-color: ${palette("error", 0)};
         width: 100%;
         height: 25px;
         color: #fff;

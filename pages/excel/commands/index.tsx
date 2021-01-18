@@ -1,7 +1,6 @@
-import Head from 'next/head'
-import dynamic from 'next/dynamic'
+import dynamic from 'next/dynamic';
 
-const CommandsWrapper = dynamic(import('../../../Components/excel/commandsWrapper'), {
+const CommandsWrapper = dynamic(import('../../../Components/excel/commands/commandsWrapper'), {
     loading: () => <p>Loading...</p>,
     ssr: false
 })

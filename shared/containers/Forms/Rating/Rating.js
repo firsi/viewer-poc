@@ -1,5 +1,5 @@
-import React from 'react';
-import Rate from '@iso/components/uielements/rate';
+import React from "react";
+import Rate from "@iso/components/uielements/rate";
 
 export default function () {
   const [value, setValue] = React.useState(3);

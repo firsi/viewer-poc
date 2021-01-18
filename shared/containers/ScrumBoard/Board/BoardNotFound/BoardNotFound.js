@@ -1,7 +1,7 @@
-import React from 'react';
-import { Button } from 'antd';
-import { Wrapper, Title, Text, Icon } from './NoBoardFounds.style';
-import emptyProjectPlaceHolder from '@iso/assets/images/icon/12.svg';
+import React from "react";
+import { Button } from "antd";
+import { Wrapper, Title, Text, Icon } from "./NoBoardFounds.style";
+import emptyProjectPlaceHolder from "@iso/assets/images/icon/12.svg";
 export default function NoBoardFounds({ history, match }) {
   return (
     <Wrapper>

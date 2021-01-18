@@ -1,10 +1,10 @@
-import React from 'react';
-import styled from 'styled-components';
-import { Button, Popconfirm, Tooltip } from 'antd';
-import { IconSvg } from '@iso/components/ScrumBoard/IconSvg/IconSvg';
-import RemoveIcon from '@iso/assets/images/icon/02-icon.svg';
-import ShareIcon from '@iso/assets/images/icon/03-icon.svg';
-import ArrowIcon from '@iso/assets/images/icon/04-icon.svg';
+import React from "react";
+import styled from "styled-components";
+import { Button, Popconfirm, Tooltip } from "antd";
+import { IconSvg } from "@iso/components/ScrumBoard/IconSvg/IconSvg";
+import RemoveIcon from "@iso/assets/images/icon/02-icon.svg";
+import ShareIcon from "@iso/assets/images/icon/03-icon.svg";
+import ArrowIcon from "@iso/assets/images/icon/04-icon.svg";
 
 const Container = styled.div`
   display: flex;
@@ -30,12 +30,7 @@ const IconButtons = styled.div`
     margin-right: 0;
   }
 `;
-export default function CardDetailsHeader({
-  onIconClick,
-  onBtnClick,
-  onDelete,
-  onEditCancel,
-}) {
+export default function CardDetailsHeader({ onIconClick, onBtnClick, onDelete, onEditCancel }) {
   return (
     <Container>
       <ActionButtons>
@@ -50,10 +45,7 @@ export default function CardDetailsHeader({
         )}
       </ActionButtons>
       <IconButtons>
-        <Tooltip
-          title="Please Implements Your Own Share Methods"
-          placement="bottom"
-        >
+        <Tooltip title="Please Implements Your Own Share Methods" placement="bottom">
           <IconSvg src={ShareIcon} />
         </Tooltip>
         <Popconfirm

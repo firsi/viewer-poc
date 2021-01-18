@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import { Doughnut } from 'react-chartjs-2';
-import { data } from './DoughnutConfig';
+import React, { Component } from "react";
+import { Doughnut } from "react-chartjs-2";
+import { data } from "./DoughnutConfig";
 
 export default class extends Component {
   render() {

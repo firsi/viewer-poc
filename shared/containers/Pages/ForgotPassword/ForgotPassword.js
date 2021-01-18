@@ -1,9 +1,9 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import Input from '@iso/components/uielements/input';
-import Button from '@iso/components/uielements/button';
-import IntlMessages from '@iso/components/utility/intlMessages';
-import ForgotPasswordStyleWrapper from './ForgotPassword.styles';
+import React from "react";
+import { Link } from "react-router-dom";
+import Input from "@iso/components/uielements/input";
+import Button from "@iso/components/uielements/button";
+import IntlMessages from "@iso/components/utility/intlMessages";
+import ForgotPasswordStyleWrapper from "./ForgotPassword.styles";
 
 export default function () {
   return (

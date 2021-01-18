@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Row, Col } from 'antd';
+import React, { Component } from "react";
+import { Row, Col } from "antd";
 import {
   SimpleLineCharts,
   CustomizedDotLineChart,
@@ -14,13 +14,13 @@ import {
   SpecifiedDomainRadarChart,
   SimpleRadialBarChart,
   LegendEffectOpacity,
-} from './Charts';
-import PageHeader from '@iso/components/utility/pageHeader';
-import Box from '@iso/components/utility/box';
-import LayoutWrapper from '@iso/components/utility/layoutWrapper';
-import ContentHolder from '@iso/components/utility/contentHolder';
-import basicStyle from '@iso/assets/styles/constants';
-import * as configs from './config';
+} from "./Charts";
+import PageHeader from "@iso/components/utility/pageHeader";
+import Box from "@iso/components/utility/box";
+import LayoutWrapper from "@iso/components/utility/layoutWrapper";
+import ContentHolder from "@iso/components/utility/contentHolder";
+import basicStyle from "@iso/assets/styles/constants";
+import * as configs from "./config";
 
 export default class ReCharts extends Component {
   render() {
@@ -97,9 +97,7 @@ export default class ReCharts extends Component {
           <Col md={12} xs={24} style={colStyle}>
             <Box title={configs.LineBarAreaComposedChart.title}>
               <ContentHolder>
-                <LineBarAreaComposedChart
-                  {...configs.LineBarAreaComposedChart}
-                />
+                <LineBarAreaComposedChart {...configs.LineBarAreaComposedChart} />
               </ContentHolder>
             </Box>
           </Col>
@@ -107,9 +105,7 @@ export default class ReCharts extends Component {
           <Col md={12} xs={24} style={colStyle}>
             <Box title={configs.CustomActiveShapePieChart.title}>
               <ContentHolder>
-                <CustomActiveShapePieChart
-                  {...configs.CustomActiveShapePieChart}
-                />
+                <CustomActiveShapePieChart {...configs.CustomActiveShapePieChart} />
               </ContentHolder>
             </Box>
           </Col>

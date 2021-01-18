@@ -1,35 +1,19 @@
-import React from 'react';
-import { Form, Field } from 'formik';
-import { Row, Col, Tooltip } from 'antd';
-import {
-  AntDatePicker,
-  AntSelect,
-  AntTextArea,
-} from '@iso/components/ScrumBoard/AntFields';
-import { dateFormat } from '@iso/components/ScrumBoard/FieldFormats';
-import CreateTaskHeader from '../CreateTaskHeader/CreateTaskHeader';
-import HeadingWithIcon from '@iso/components/ScrumBoard/HeadingWithIcon/HeadingWithIcon';
-import TitleIcon from '@iso/assets/images/icon/05-icon.svg';
-import DescriptionIcon from '@iso/assets/images/icon/06-icon.svg';
-import AttachmentIcon from '@iso/assets/images/icon/01-icon.svg';
+import React from "react";
+import { Form, Field } from "formik";
+import { Row, Col, Tooltip } from "antd";
+import { AntDatePicker, AntSelect, AntTextArea } from "@iso/components/ScrumBoard/AntFields";
+import { dateFormat } from "@iso/components/ScrumBoard/FieldFormats";
+import CreateTaskHeader from "../CreateTaskHeader/CreateTaskHeader";
+import HeadingWithIcon from "@iso/components/ScrumBoard/HeadingWithIcon/HeadingWithIcon";
+import TitleIcon from "@iso/assets/images/icon/05-icon.svg";
+import DescriptionIcon from "@iso/assets/images/icon/06-icon.svg";
+import AttachmentIcon from "@iso/assets/images/icon/01-icon.svg";
 
-import { AttachmentWrapper } from '../TaskCreateOrUpdate.style';
+import { AttachmentWrapper } from "../TaskCreateOrUpdate.style";
 
-export default ({
-  handleSubmit,
-  values,
-  submitCount,
-  onCancel,
-  onDelete,
-  onEditCancel,
-}) => (
+export default ({ handleSubmit, values, submitCount, onCancel, onDelete, onEditCancel }) => (
   <Form onSubmit={handleSubmit}>
-    <CreateTaskHeader
-      values={values}
-      onCancel={onCancel}
-      onDelete={onDelete}
-      onEditCancel={onEditCancel}
-    />
+    <CreateTaskHeader values={values} onCancel={onCancel} onDelete={onDelete} onEditCancel={onEditCancel} />
     <Field
       component={AntTextArea}
       name="title"
@@ -54,7 +38,7 @@ export default ({
           defaultValue={values.assignees}
           selectOptions={values.selectAssignees}
           submitCount={submitCount}
-          tokenSeparators={[',']}
+          tokenSeparators={[","]}
           hasFeedback
           size="large"
         />
@@ -68,7 +52,7 @@ export default ({
           defaultValue={values.labels}
           selectOptions={values.selectOptions}
           submitCount={submitCount}
-          tokenSeparators={[',']}
+          tokenSeparators={[","]}
           hasFeedback
           size="large"
         />
@@ -93,9 +77,7 @@ export default ({
       name="description"
       type="text"
       placeholder="Add a more detailed description..."
-      tasklabel={
-        <HeadingWithIcon heading="Description" iconSrc={DescriptionIcon} />
-      }
+      tasklabel={<HeadingWithIcon heading="Description" iconSrc={DescriptionIcon} />}
       submitCount={submitCount}
       hasFeedback
       rows={4}
@@ -106,10 +88,7 @@ export default ({
     <Tooltip title="Please Implements Your Own Attachment Methods">
       <AttachmentWrapper>
         <HeadingWithIcon heading="Attachments" iconSrc={AttachmentIcon} />
-        <HeadingWithIcon
-          heading="Add an Attachment...."
-          iconSrc={AttachmentIcon}
-        />
+        <HeadingWithIcon heading="Add an Attachment...." iconSrc={AttachmentIcon} />
       </AttachmentWrapper>
     </Tooltip>
   </Form>

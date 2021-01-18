@@ -1,9 +1,9 @@
-import React from 'react';
-import CardWrapper, { Avatar, Info } from './AvatarCard.style';
+import React from "react";
+import CardWrapper, { Avatar, Info } from "./AvatarCard.style";
 
 const AvatarCard = ({ className, avatar, name, username }) => {
   return (
-    <CardWrapper className={`avatar-card ${className ? className : ''}`}>
+    <CardWrapper className={`avatar-card ${className ? className : ""}`}>
       {avatar && (
         <Avatar className="avatar">
           <img src={avatar} alt={name} />
@@ -15,7 +15,7 @@ const AvatarCard = ({ className, avatar, name, username }) => {
           {username && <p className="username">{username}</p>}
         </Info>
       ) : (
-        ''
+        ""
       )}
     </CardWrapper>
   );

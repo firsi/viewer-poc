@@ -1,11 +1,11 @@
-import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { Highlight, Snippet } from 'react-instantsearch/dom';
-import Rate from '@iso/components/uielements/rate';
-import Button from '@iso/components/uielements/button';
-import { GridListViewWrapper } from '@iso/components/Algolia/AlgoliaComponent.style';
-import ecommerceActions from '@iso/redux/ecommerce/actions';
-import { CartIcon } from '@iso/config/icon.config';
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Highlight, Snippet } from "react-instantsearch/dom";
+import Rate from "@iso/components/uielements/rate";
+import Button from "@iso/components/uielements/button";
+import { GridListViewWrapper } from "@iso/components/Algolia/AlgoliaComponent.style";
+import ecommerceActions from "@iso/redux/ecommerce/actions";
+import { CartIcon } from "@iso/config/icon.config";
 
 const { addToCart, changeViewTopbarCart } = ecommerceActions;
 
@@ -13,8 +13,7 @@ export default function Hit({ hit }) {
   const [addCartLoading, setAddCartLoading] = React.useState(false);
   const { view, productQuantity } = useSelector((state) => state.Ecommerce);
   const dispatch = useDispatch();
-  const className =
-    view === 'gridView' ? 'isoAlgoliaGrid GridView' : 'isoAlgoliaGrid ListView';
+  const className = view === "gridView" ? "isoAlgoliaGrid GridView" : "isoAlgoliaGrid ListView";
   let addedTocart = false;
   productQuantity.forEach((product) => {
     if (product.objectID === hit.objectID) {
@@ -43,11 +42,7 @@ export default function Hit({ hit }) {
             Add to cart
           </Button>
         ) : (
-          <Button
-            onClick={() => dispatch(changeViewTopbarCart(true))}
-            type="primary"
-            className="isoAlAddToCart"
-          >
+          <Button onClick={() => dispatch(changeViewTopbarCart(true))} type="primary" className="isoAlAddToCart">
             View Cart
           </Button>
         )}

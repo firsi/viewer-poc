@@ -1,5 +1,5 @@
-import React from 'react';
-import InputNumber from '@iso/components/uielements/InputNumber';
+import React from "react";
+import InputNumber from "@iso/components/uielements/InputNumber";
 
 export default function () {
   const onChange = (value) => {};

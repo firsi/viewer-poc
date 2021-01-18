@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import { Bar } from 'react-chartjs-2';
-import { data, barSettings } from './BarConfig';
+import React, { Component } from "react";
+import { Bar } from "react-chartjs-2";
+import { data, barSettings } from "./BarConfig";
 
 export default class extends Component {
   render() {

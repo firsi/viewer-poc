@@ -1,11 +1,11 @@
-import React from 'react';
-import { Form } from 'antd';
-import Input from '@iso/components/uielements/input';
-import PageHeader from '@iso/components/utility/pageHeader';
-import Box from '@iso/components/utility/box';
-import LayoutWrapper from '@iso/components/utility/layoutWrapper.js';
-import IntlMessages from '@iso/components/utility/intlMessages';
-import FormValidation from './FormValidation';
+import React from "react";
+import { Form } from "antd";
+import Input from "@iso/components/uielements/input";
+import PageHeader from "@iso/components/utility/pageHeader";
+import Box from "@iso/components/utility/box";
+import LayoutWrapper from "@iso/components/utility/layoutWrapper.js";
+import IntlMessages from "@iso/components/utility/intlMessages";
+import FormValidation from "./FormValidation";
 
 const FormItem = Form.Item;
 
@@ -23,9 +23,7 @@ const formItemLayout = {
 export default function () {
   return (
     <LayoutWrapper>
-      <PageHeader>
-        {<IntlMessages id="forms.formsWithValidation.header" />}
-      </PageHeader>
+      <PageHeader>{<IntlMessages id="forms.formsWithValidation.header" />}</PageHeader>
       <Box>
         <Form>
           <FormItem
@@ -47,19 +45,12 @@ export default function () {
 
           <FormItem
             {...formItemLayout}
-            label={
-              <IntlMessages id="forms.formsWithValidation.ValidatingLabel" />
-            }
+            label={<IntlMessages id="forms.formsWithValidation.ValidatingLabel" />}
             hasFeedback
             validateStatus="validating"
-            help={
-              <IntlMessages id="forms.formsWithValidation.ValidatingHelp" />
-            }
+            help={<IntlMessages id="forms.formsWithValidation.ValidatingHelp" />}
           >
-            <Input
-              placeholder="I'm the content is being validated"
-              id="validating"
-            />
+            <Input placeholder="I'm the content is being validated" id="validating" />
           </FormItem>
 
           <FormItem
@@ -73,9 +64,7 @@ export default function () {
 
           <FormItem
             {...formItemLayout}
-            label={
-              <IntlMessages id="forms.formsWithValidation.WarninghasFeedbackLabel" />
-            }
+            label={<IntlMessages id="forms.formsWithValidation.WarninghasFeedbackLabel" />}
             hasFeedback
             validateStatus="warning"
           >
@@ -84,14 +73,10 @@ export default function () {
 
           <FormItem
             {...formItemLayout}
-            label={
-              <IntlMessages id="forms.formsWithValidation.FailhasFeedbackLabel" />
-            }
+            label={<IntlMessages id="forms.formsWithValidation.FailhasFeedbackLabel" />}
             hasFeedback
             validateStatus="error"
-            help={
-              <IntlMessages id="forms.formsWithValidation.FailhasFeedbackHelp" />
-            }
+            help={<IntlMessages id="forms.formsWithValidation.FailhasFeedbackHelp" />}
           >
             <Input placeholder="unavailable choice" id="error1" />
           </FormItem>

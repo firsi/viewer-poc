@@ -1,7 +1,7 @@
 const actions = {
-  GIT_SEARCH: 'GIT_SEARCH',
-  GIT_SUCCESS_RESULT: 'GIT_SUCCESS_RESULT',
-  GIT_ERROR_RESULT: 'GIT_ERROR_RESULT',
+  GIT_SEARCH: "GIT_SEARCH",
+  GIT_SUCCESS_RESULT: "GIT_SUCCESS_RESULT",
+  GIT_ERROR_RESULT: "GIT_ERROR_RESULT",
   gitSearch: (searcText) => ({
     type: actions.GIT_SEARCH,
     payload: { searcText, page: 1 },

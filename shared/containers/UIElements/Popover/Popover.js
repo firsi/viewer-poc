@@ -1,13 +1,13 @@
-import React from 'react';
-import { Row, Col, Button } from 'antd';
-import Popover from '@iso/components/uielements/popover';
-import PageHeader from '@iso/components/utility/pageHeader';
-import Box from '@iso/components/utility/box';
-import LayoutWrapper from '@iso/components/utility/layoutWrapper';
-import ContentHolder from '@iso/components/utility/contentHolder';
-import IntlMessages from '@iso/components/utility/intlMessages';
-import basicStyle from '@iso/assets/styles/constants';
-import PopoverWrapper from './Popover.styles';
+import React from "react";
+import { Row, Col, Button } from "antd";
+import Popover from "@iso/components/uielements/popover";
+import PageHeader from "@iso/components/utility/pageHeader";
+import Box from "@iso/components/utility/box";
+import LayoutWrapper from "@iso/components/utility/layoutWrapper";
+import ContentHolder from "@iso/components/utility/contentHolder";
+import IntlMessages from "@iso/components/utility/intlMessages";
+import basicStyle from "@iso/assets/styles/constants";
+import PopoverWrapper from "./Popover.styles";
 
 const content = (
   <PopoverWrapper>
@@ -32,25 +32,16 @@ export default function () {
   const { rowStyle, colStyle, gutter } = basicStyle;
   return (
     <LayoutWrapper>
-      <PageHeader>
-        {<IntlMessages id="uiElements.popover.popover" />}
-      </PageHeader>
+      <PageHeader>{<IntlMessages id="uiElements.popover.popover" />}</PageHeader>
       <Row style={rowStyle} gutter={gutter} justify="start">
         <Col md={12} sm={12} xs={24} style={colStyle}>
           <Box
             title={<IntlMessages id="uiElements.popover.basicExample" />}
-            subtitle={
-              <IntlMessages id="uiElements.popover.basicExampleSubTitle" />
-            }
+            subtitle={<IntlMessages id="uiElements.popover.basicExampleSubTitle" />}
           >
             <ContentHolder>
-              <Popover
-                content={content}
-                title={<IntlMessages id="uiElements.popover.title" />}
-              >
-                <Button type="primary">
-                  {<IntlMessages id="uiElements.popover.hoverMe" />}
-                </Button>
+              <Popover content={content} title={<IntlMessages id="uiElements.popover.title" />}>
+                <Button type="primary">{<IntlMessages id="uiElements.popover.hoverMe" />}</Button>
               </Popover>
             </ContentHolder>
           </Box>
@@ -58,37 +49,17 @@ export default function () {
         <Col md={12} sm={12} xs={24} style={colStyle}>
           <Box
             title={<IntlMessages id="uiElements.popover.titleTrigger" />}
-            subtitle={
-              <IntlMessages id="uiElements.popover.titleTriggerSubTitle" />
-            }
+            subtitle={<IntlMessages id="uiElements.popover.titleTriggerSubTitle" />}
           >
             <ContentHolder>
-              <Popover
-                content={content}
-                title={<IntlMessages id="uiElements.popover.title" />}
-                trigger="hover"
-              >
-                <Button className="demoBtn">
-                  {<IntlMessages id="uiElements.popover.hoverMe" />}
-                </Button>
+              <Popover content={content} title={<IntlMessages id="uiElements.popover.title" />} trigger="hover">
+                <Button className="demoBtn">{<IntlMessages id="uiElements.popover.hoverMe" />}</Button>
               </Popover>
-              <Popover
-                content={content}
-                title={<IntlMessages id="uiElements.popover.title" />}
-                trigger="focus"
-              >
-                <Button className="demoBtn">
-                  {<IntlMessages id="uiElements.popover.focusMe" />}
-                </Button>
+              <Popover content={content} title={<IntlMessages id="uiElements.popover.title" />} trigger="focus">
+                <Button className="demoBtn">{<IntlMessages id="uiElements.popover.focusMe" />}</Button>
               </Popover>
-              <Popover
-                content={content}
-                title={<IntlMessages id="uiElements.popover.title" />}
-                trigger="click"
-              >
-                <Button className="demoBtn">
-                  {<IntlMessages id="uiElements.popover.clickMe" />}
-                </Button>
+              <Popover content={content} title={<IntlMessages id="uiElements.popover.title" />} trigger="click">
+                <Button className="demoBtn">{<IntlMessages id="uiElements.popover.clickMe" />}</Button>
               </Popover>
             </ContentHolder>
           </Box>
@@ -98,9 +69,7 @@ export default function () {
         <Col md={12} sm={12} xs={24} style={colStyle}>
           <Box
             title={<IntlMessages id="uiElements.popover.placement" />}
-            subtitle={
-              <IntlMessages id="uiElements.popover.placementSubTitle" />
-            }
+            subtitle={<IntlMessages id="uiElements.popover.placementSubTitle" />}
           >
             <ContentHolder>
               <div className="demoBtnsWrapper">
@@ -110,9 +79,7 @@ export default function () {
                   content={content}
                   trigger="click"
                 >
-                  <Button className="demoPosBtn">
-                    {<IntlMessages id="uiElements.popover.TL" />}
-                  </Button>
+                  <Button className="demoPosBtn">{<IntlMessages id="uiElements.popover.TL" />}</Button>
                 </Popover>
                 <Popover
                   placement="top"
@@ -120,9 +87,7 @@ export default function () {
                   content={content}
                   trigger="click"
                 >
-                  <Button className="demoPosBtn">
-                    {<IntlMessages id="uiElements.popover.top" />}
-                  </Button>
+                  <Button className="demoPosBtn">{<IntlMessages id="uiElements.popover.top" />}</Button>
                 </Popover>
                 <Popover
                   placement="topRight"
@@ -130,9 +95,7 @@ export default function () {
                   content={content}
                   trigger="click"
                 >
-                  <Button className="demoPosBtn">
-                    {<IntlMessages id="uiElements.popover.TR" />}
-                  </Button>
+                  <Button className="demoPosBtn">{<IntlMessages id="uiElements.popover.TR" />}</Button>
                 </Popover>
               </div>
               <div className="demoBtnsWrapper">
@@ -142,9 +105,7 @@ export default function () {
                   content={content}
                   trigger="click"
                 >
-                  <Button className="demoPosBtn">
-                    {<IntlMessages id="uiElements.popover.LT" />}
-                  </Button>
+                  <Button className="demoPosBtn">{<IntlMessages id="uiElements.popover.LT" />}</Button>
                 </Popover>
                 <Popover
                   placement="left"
@@ -152,9 +113,7 @@ export default function () {
                   content={content}
                   trigger="click"
                 >
-                  <Button className="demoPosBtn">
-                    {<IntlMessages id="uiElements.popover.left" />}
-                  </Button>
+                  <Button className="demoPosBtn">{<IntlMessages id="uiElements.popover.left" />}</Button>
                 </Popover>
                 <Popover
                   placement="leftBottom"
@@ -162,9 +121,7 @@ export default function () {
                   content={content}
                   trigger="click"
                 >
-                  <Button className="demoPosBtn">
-                    {<IntlMessages id="uiElements.popover.LB" />}
-                  </Button>
+                  <Button className="demoPosBtn">{<IntlMessages id="uiElements.popover.LB" />}</Button>
                 </Popover>
               </div>
               <div className="demoBtnsWrapper">
@@ -174,9 +131,7 @@ export default function () {
                   content={content}
                   trigger="click"
                 >
-                  <Button className="demoPosBtn">
-                    {<IntlMessages id="uiElements.popover.RT" />}
-                  </Button>
+                  <Button className="demoPosBtn">{<IntlMessages id="uiElements.popover.RT" />}</Button>
                 </Popover>
                 <Popover
                   placement="right"
@@ -184,19 +139,10 @@ export default function () {
                   content={content}
                   trigger="click"
                 >
-                  <Button className="demoPosBtn">
-                    {<IntlMessages id="uiElements.popover.right" />}
-                  </Button>
+                  <Button className="demoPosBtn">{<IntlMessages id="uiElements.popover.right" />}</Button>
                 </Popover>
-                <Popover
-                  placement="rightBottom"
-                  title="Right Bottom"
-                  content={content}
-                  trigger="click"
-                >
-                  <Button className="demoPosBtn">
-                    {<IntlMessages id="uiElements.popover.RB" />}
-                  </Button>
+                <Popover placement="rightBottom" title="Right Bottom" content={content} trigger="click">
+                  <Button className="demoPosBtn">{<IntlMessages id="uiElements.popover.RB" />}</Button>
                 </Popover>
               </div>
               <div className="demoBtnsWrapper">
@@ -206,9 +152,7 @@ export default function () {
                   content={content}
                   trigger="click"
                 >
-                  <Button className="demoPosBtn">
-                    {<IntlMessages id="uiElements.popover.BL" />}
-                  </Button>
+                  <Button className="demoPosBtn">{<IntlMessages id="uiElements.popover.BL" />}</Button>
                 </Popover>
                 <Popover
                   placement="bottom"
@@ -216,9 +160,7 @@ export default function () {
                   content={content}
                   trigger="click"
                 >
-                  <Button className="demoPosBtn">
-                    {<IntlMessages id="uiElements.popover.bottom" />}
-                  </Button>
+                  <Button className="demoPosBtn">{<IntlMessages id="uiElements.popover.bottom" />}</Button>
                 </Popover>
                 <Popover
                   placement="bottomRight"
@@ -226,9 +168,7 @@ export default function () {
                   content={content}
                   trigger="click"
                 >
-                  <Button className="demoPosBtn">
-                    {<IntlMessages id="uiElements.popover.BR" />}
-                  </Button>
+                  <Button className="demoPosBtn">{<IntlMessages id="uiElements.popover.BR" />}</Button>
                 </Popover>
               </div>
             </ContentHolder>
@@ -252,9 +192,7 @@ export default function () {
                 visible={visible}
                 onVisibleChange={handleVisibleChange}
               >
-                <Button type="primary">
-                  {<IntlMessages id="uiElements.popover.clickMe" />}
-                </Button>
+                <Button type="primary">{<IntlMessages id="uiElements.popover.clickMe" />}</Button>
               </Popover>
             </ContentHolder>
           </Box>

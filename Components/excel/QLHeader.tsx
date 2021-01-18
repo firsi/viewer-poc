@@ -1,6 +1,5 @@
 import React from "react";
-import { Card } from "antd";
-import { Image } from "antd";
+
 const QLHeader = () => {
   return (
     <>

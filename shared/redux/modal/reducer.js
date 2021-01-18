@@ -1,8 +1,8 @@
-import modalActions from './actions';
+import modalActions from "./actions";
 
 const initialState = {
   modalVisibility: false,
-  modalType: '',
+  modalType: "",
   modalProps: {},
 };
 

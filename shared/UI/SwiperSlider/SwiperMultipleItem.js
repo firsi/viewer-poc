@@ -1,5 +1,5 @@
-import React from 'react';
-import Swiper from 'react-id-swiper';
+import React from "react";
+import Swiper from "react-id-swiper";
 
 export default function SwiperMultipleItem(props) {
   const { children } = props;
@@ -8,7 +8,7 @@ export default function SwiperMultipleItem(props) {
     slidesPerColumn: 2,
     spaceBetween: 30,
     pagination: {
-      el: '.swiper-pagination',
+      el: ".swiper-pagination",
       clickable: true,
     },
   };

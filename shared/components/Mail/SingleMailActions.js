@@ -1,17 +1,17 @@
-import React from 'react';
-import Popover from '../uielements/popover';
-import Popconfirm from '../Feedback/Popconfirm';
-import notification from '../Notification';
-import { buckets } from './MailBuckets';
-import { tags } from './MailTags';
+import React from "react";
+import Popover from "../uielements/popover";
+import Popconfirm from "../Feedback/Popconfirm";
+import notification from "../Notification";
+import { buckets } from "./MailBuckets";
+import { tags } from "./MailTags";
 import {
   SingleMailActions,
   MailActionsWrapper,
   MailCategoryWrapper,
   MailPaginationWrapper,
   MailActionDropdown,
-} from './SingleMailActions.style';
-import { direction } from '@iso/lib/helpers/rtl';
+} from "./SingleMailActions.style";
+import { direction } from "@iso/lib/helpers/rtl";
 import {
   MailArchiveIcon,
   MailSpamReportIcon,
@@ -20,7 +20,7 @@ import {
   MailTagIcon,
   ArrowRightIcon,
   ArrowLeftIcon,
-} from '@iso/config/icon.config';
+} from "@iso/config/icon.config";
 
 function DeleteButton() {
   return (
@@ -29,7 +29,7 @@ function DeleteButton() {
       okText="DELETE"
       cancelText="No"
       onConfirm={() => {
-        notification('error', `Deleted selected mail`, '');
+        notification("error", `Deleted selected mail`, "");
       }}
     >
       <button type="button" className="mailDelete">
@@ -43,7 +43,7 @@ function MoveMailButton() {
   const bucketOptions = buckets.map((bucket) => (
     <li
       onClick={() => {
-        notification('success', `Massage Moved Successfully`, '');
+        notification("success", `Massage Moved Successfully`, "");
       }}
       key={bucket}
     >
@@ -52,11 +52,7 @@ function MoveMailButton() {
   ));
   const content = <MailActionDropdown>{bucketOptions}</MailActionDropdown>;
   return (
-    <Popover
-      title={`Move mail`}
-      content={content}
-      overlayClassName="mailMoveDropdown"
-    >
+    <Popover title={`Move mail`} content={content} overlayClassName="mailMoveDropdown">
       <button type="button" className="mailArchive">
         <MailFolderIcon size={16} />
       </button>
@@ -68,7 +64,7 @@ function SelectTagButton() {
   const tagOptions = tags.map((tag) => (
     <li
       onClick={() => {
-        notification('success', `Label Added`, '');
+        notification("success", `Label Added`, "");
       }}
       key={tag}
     >
@@ -77,11 +73,7 @@ function SelectTagButton() {
   ));
   const content = <MailActionDropdown>{tagOptions}</MailActionDropdown>;
   return (
-    <Popover
-      title={`Select tag`}
-      content={content}
-      overlayClassName="mailMoveDropdown"
-    >
+    <Popover title={`Select tag`} content={content} overlayClassName="mailMoveDropdown">
       <button type="button" className="mailReport">
         <MailTagIcon size={16} />
       </button>
@@ -90,9 +82,7 @@ function SelectTagButton() {
 }
 
 export default function ({ mail, filterMails, selectMail, toggleListVisible }) {
-  const index = filterMails.findIndex(
-    (filterMail) => filterMail.id === mail.id
-  );
+  const index = filterMails.findIndex((filterMail) => filterMail.id === mail.id);
   const toggleView = () => {
     toggleListVisible();
   };
@@ -103,14 +93,14 @@ export default function ({ mail, filterMails, selectMail, toggleListVisible }) {
           Inbox
         </button>
       ) : (
-        ''
+        ""
       )}
       <MailActionsWrapper className="isoMailActions">
         <button
           type="button"
           className="mailArchive"
           onClick={() => {
-            notification('success', 'this mail archived');
+            notification("success", "this mail archived");
           }}
         >
           <MailArchiveIcon size={16} />
@@ -120,7 +110,7 @@ export default function ({ mail, filterMails, selectMail, toggleListVisible }) {
           type="button"
           className="mailReport"
           onClick={() => {
-            notification('success', 'Reported as spam');
+            notification("success", "Reported as spam");
           }}
         >
           <MailSpamReportIcon size={16} />
@@ -136,34 +126,18 @@ export default function ({ mail, filterMails, selectMail, toggleListVisible }) {
 
       <MailPaginationWrapper className="isoSingleMailPagination">
         {index === 0 ? (
-          ''
+          ""
         ) : (
-          <button
-            type="button"
-            className="prevPage"
-            onClick={() => selectMail(filterMails[index - 1].id)}
-          >
-            {direction === 'rtl' ? (
-              <ArrowRightIcon size={18} />
-            ) : (
-              <ArrowLeftIcon size={18} />
-            )}
+          <button type="button" className="prevPage" onClick={() => selectMail(filterMails[index - 1].id)}>
+            {direction === "rtl" ? <ArrowRightIcon size={18} /> : <ArrowLeftIcon size={18} />}
           </button>
         )}
 
         {index + 1 === filterMails.length ? (
-          ''
+          ""
         ) : (
-          <button
-            type="button"
-            className="nextPage"
-            onClick={() => selectMail(filterMails[index + 1].id)}
-          >
-            {direction === 'rtl' ? (
-              <ArrowLeftIcon size={18} />
-            ) : (
-              <ArrowRightIcon size={18} />
-            )}
+          <button type="button" className="nextPage" onClick={() => selectMail(filterMails[index + 1].id)}>
+            {direction === "rtl" ? <ArrowLeftIcon size={18} /> : <ArrowRightIcon size={18} />}
           </button>
         )}
       </MailPaginationWrapper>

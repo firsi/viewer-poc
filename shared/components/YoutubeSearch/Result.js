@@ -1,25 +1,15 @@
-import React from 'react';
-import Loader from '../utility/loader';
-import HelperText from '../utility/helper-text';
-import Button from '../uielements/button';
-import PlayYoutubeVideo from './PlayYoutubeVideo';
-import {
-  YoutubeSearchListStyleWrapper,
-  YoutubeSearchStyleWrapper,
-} from './YoutubeSearch.style';
+import React from "react";
+import Loader from "../utility/loader";
+import HelperText from "../utility/helper-text";
+import Button from "../uielements/button";
+import PlayYoutubeVideo from "./PlayYoutubeVideo";
+import { YoutubeSearchListStyleWrapper, YoutubeSearchStyleWrapper } from "./YoutubeSearch.style";
 
 function SearchList(result, handleSelectedVideo) {
   return (
     <YoutubeSearchListStyleWrapper className="isoYoutubeResultList">
       {result.map((item) => {
-        const {
-          publishedAt,
-          title,
-          description,
-          channelTitle,
-          thumbnails,
-          channelId,
-        } = item.snippet;
+        const { publishedAt, title, description, channelTitle, thumbnails, channelId } = item.snippet;
         const id = item.id.videoId;
         const updateDate = new Date(publishedAt).toDateString();
         const onClick = (event) => {
@@ -29,7 +19,7 @@ function SearchList(result, handleSelectedVideo) {
         const onChannelClick = (event) => {
           event.preventDefault();
           event.stopPropagation();
-          window.open(`https://www.youtube.com/channel/${channelId}`, '_blank');
+          window.open(`https://www.youtube.com/channel/${channelId}`, "_blank");
         };
         return (
           <div key={id} className="isoSingleVideoResult" onClick={onClick}>
@@ -49,7 +39,7 @@ function SearchList(result, handleSelectedVideo) {
                 <span className="uploadDate">{updateDate}</span>
               </div>
 
-              {description ? <p>{description}</p> : ''}
+              {description ? <p>{description}</p> : ""}
             </div>
           </div>
         );
@@ -67,15 +57,7 @@ function YoutubeResult({ YoutubeSearch, onPageChange }) {
     setSelectrdVideo(selectedVideo);
   };
 
-  const {
-    searcText,
-    result,
-    loading,
-    error,
-    nextPageToken,
-    prevPageToken,
-    total_count,
-  } = YoutubeSearch;
+  const { searcText, result, loading, error, nextPageToken, prevPageToken, total_count } = YoutubeSearch;
   if (!searcText) {
     return null;
   }
@@ -94,31 +76,12 @@ function YoutubeResult({ YoutubeSearch, onPageChange }) {
         <span>{`${total_count}`} videos found</span>
       </p>
 
-      {selectedVideo ? (
-        <PlayYoutubeVideo
-          selectedVideo={selectedVideo}
-          handleCancel={handleCancel}
-        />
-      ) : (
-        ''
-      )}
+      {selectedVideo ? <PlayYoutubeVideo selectedVideo={selectedVideo} handleCancel={handleCancel} /> : ""}
       {SearchList(result, handleSelectedVideo)}
 
       <div className="youtubeSearchPagination">
-        {prevPageToken ? (
-          <Button onClick={() => onPageChange(searcText, prevPageToken)}>
-            Previous
-          </Button>
-        ) : (
-          ''
-        )}
-        {nextPageToken ? (
-          <Button onClick={() => onPageChange(searcText, nextPageToken)}>
-            Next
-          </Button>
-        ) : (
-          ''
-        )}
+        {prevPageToken ? <Button onClick={() => onPageChange(searcText, prevPageToken)}>Previous</Button> : ""}
+        {nextPageToken ? <Button onClick={() => onPageChange(searcText, nextPageToken)}>Next</Button> : ""}
       </div>
     </YoutubeSearchStyleWrapper>
   );

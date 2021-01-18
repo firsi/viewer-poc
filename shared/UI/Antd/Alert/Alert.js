@@ -1,3 +1,3 @@
-import { Alert } from 'antd';
+import { Alert } from "antd";
 
 export default Alert;

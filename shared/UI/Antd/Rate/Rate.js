@@ -1,4 +1,4 @@
-import { Rate } from 'antd';
+import { Rate } from "antd";
 // import Ratings from './Rating.style';
 
 // const AntRating = Ratings(Rate);

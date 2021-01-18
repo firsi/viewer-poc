@@ -1,40 +1,30 @@
-import React from 'react';
-import { Row, Col } from 'antd';
-import Tooltip from '@iso/components/uielements/tooltip';
-import PageHeader from '@iso/components/utility/pageHeader';
-import Box from '@iso/components/utility/box';
-import LayoutWrapper from '@iso/components/utility/layoutWrapper';
-import ContentHolder from '@iso/components/utility/contentHolder';
-import IntlMessages from '@iso/components/utility/intlMessages';
-import basicStyle from '@iso/assets/styles/constants';
+import React from "react";
+import { Row, Col } from "antd";
+import Tooltip from "@iso/components/uielements/tooltip";
+import PageHeader from "@iso/components/utility/pageHeader";
+import Box from "@iso/components/utility/box";
+import LayoutWrapper from "@iso/components/utility/layoutWrapper";
+import ContentHolder from "@iso/components/utility/contentHolder";
+import IntlMessages from "@iso/components/utility/intlMessages";
+import basicStyle from "@iso/assets/styles/constants";
 
-const text = (
-  <span>{<IntlMessages id="uiElements.tooltip.contentSpan" />}</span>
-);
+const text = <span>{<IntlMessages id="uiElements.tooltip.contentSpan" />}</span>;
 
 export default function () {
   const { rowStyle, colStyle, gutter } = basicStyle;
 
   return (
     <LayoutWrapper>
-      <PageHeader>
-        {<IntlMessages id="uiElements.tooltip.tooltip" />}
-      </PageHeader>
+      <PageHeader>{<IntlMessages id="uiElements.tooltip.tooltip" />}</PageHeader>
       <Row style={rowStyle} gutter={gutter} justify="start">
         <Col md={12} sm={12} xs={24} style={colStyle}>
           <Box
             title={<IntlMessages id="uiElements.tooltip.basicExample" />}
-            subtitle={
-              <IntlMessages id="uiElements.tooltip.basicExampleSubTitle" />
-            }
+            subtitle={<IntlMessages id="uiElements.tooltip.basicExampleSubTitle" />}
           >
             <ContentHolder>
-              <Tooltip
-                title={<IntlMessages id="uiElements.tooltip.tooltipContent" />}
-              >
-                <span>
-                  {<IntlMessages id="uiElements.tooltip.tooltipContentSpan" />}
-                </span>
+              <Tooltip title={<IntlMessages id="uiElements.tooltip.tooltipContent" />}>
+                <span>{<IntlMessages id="uiElements.tooltip.tooltipContentSpan" />}</span>
               </Tooltip>
             </ContentHolder>
           </Box>
@@ -42,9 +32,7 @@ export default function () {
         <Col md={12} sm={12} xs={24} style={colStyle}>
           <Box
             title={<IntlMessages id="uiElements.tooltip.placementTitle" />}
-            subtitle={
-              <IntlMessages id="uiElements.tooltip.placementSubTitle" />
-            }
+            subtitle={<IntlMessages id="uiElements.tooltip.placementSubTitle" />}
           >
             <ContentHolder>
               <div className="demoBtnsWrapper">

@@ -1,3 +1,3 @@
-import { Avatar } from 'antd';
+import { Avatar } from "antd";
 
 export default Avatar;

@@ -1,5 +1,5 @@
-import React from 'react';
-import { Col, Row } from 'antd';
+import React from "react";
+import { Col, Row } from "antd";
 
 import LaddaButton, {
   XL,
@@ -12,12 +12,12 @@ import LaddaButton, {
   SLIDE_UP,
   ZOOM_IN,
   ZOOM_OUT,
-} from 'react-ladda';
-import PageHeader from '@iso/components/utility/pageHeader';
-import Box from '@iso/components/utility/box';
-import LayoutWrapper from '@iso/components/utility/layoutWrapper';
-import ContentHolder from '@iso/components/utility/contentHolder';
-import './laddaButton.css';
+} from "react-ladda";
+import PageHeader from "@iso/components/utility/pageHeader";
+import Box from "@iso/components/utility/box";
+import LayoutWrapper from "@iso/components/utility/layoutWrapper";
+import ContentHolder from "@iso/components/utility/contentHolder";
+import "./laddaButton.css";
 
 export default function () {
   const [loading, setLoading] = React.useState(false);
@@ -30,12 +30,12 @@ export default function () {
   };
 
   const rowStyle = {
-    width: '100%',
-    display: 'flex',
-    flexFlow: 'row wrap',
+    width: "100%",
+    display: "flex",
+    flexFlow: "row wrap",
   };
   const colStyle = {
-    marginBottom: '16px',
+    marginBottom: "16px",
   };
   const gutter = 16;
   return (

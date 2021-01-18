@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
-import { RadialChart } from 'react-vis';
-import ChartWrapper from '../../Charts.styles';
+import { RadialChart } from "react-vis";
+import ChartWrapper from "../../Charts.styles";
 
 export default class extends Component {
   render() {
@@ -9,7 +9,7 @@ export default class extends Component {
     return (
       <ChartWrapper className="isoChartWrapper">
         <RadialChart
-          colorType={'literal'}
+          colorType={"literal"}
           colorDomain={colorDomain}
           colorRange={colorRange}
           margin={{ top: 100 }}

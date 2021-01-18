@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { grid } from '@iso/assets/styles/constants';
+import styled from "styled-components";
+import { grid } from "@iso/assets/styles/constants";
 
 export const Container = styled.div`
   box-sizing: border-box;
@@ -31,8 +31,7 @@ export const Header = styled.div`
   padding: 20px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  background-color: ${({ isDragging }) =>
-    isDragging ? '#e6eaf8' : 'transparent'};
+  background-color: ${({ isDragging }) => (isDragging ? "#e6eaf8" : "transparent")};
   transition: background-color 0.1s ease;
   &:hover {
     background-color: #e6eaf8;

@@ -1,8 +1,8 @@
-import React from 'react';
-import Popconfirm from '@iso/components/Feedback/Popconfirm';
-import { Button } from 'antd';
-import { notification } from '@iso/components';
-import { CloseOutlined } from '@ant-design/icons';
+import React from "react";
+import Popconfirm from "@iso/components/Feedback/Popconfirm";
+import { Button } from "antd";
+import { notification } from "@iso/components";
+import { CloseOutlined } from "@ant-design/icons";
 export default function ({ handleDelete }) {
   return (
     <Popconfirm
@@ -10,15 +10,11 @@ export default function ({ handleDelete }) {
       okText="DELETE"
       cancelText="No"
       onConfirm={() => {
-        notification('error', 'Deleted', '');
+        notification("error", "Deleted", "");
         handleDelete();
       }}
     >
-      <Button
-        icon={<CloseOutlined />}
-        type="default"
-        className="isoDeleteBtn"
-      />
+      <Button icon={<CloseOutlined />} type="default" className="isoDeleteBtn" />
     </Popconfirm>
   );
 }

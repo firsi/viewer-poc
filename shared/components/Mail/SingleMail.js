@@ -1,15 +1,15 @@
-import React from 'react';
-import ComposeMail from './ComposeMail';
-import { timeDifference } from '@iso/lib/helpers/utility';
-import MailAction from './SingleMailActions';
-import { tags, tagColor } from './MailTags.js';
+import React from "react";
+import ComposeMail from "./ComposeMail";
+import { timeDifference } from "@iso/lib/helpers/utility";
+import MailAction from "./SingleMailActions";
+import { tags, tagColor } from "./MailTags.js";
 import {
   SingleMailContents,
   SingleMailHeader,
   SingleMailInfo,
   SingleMailBody,
   SingleMailReply,
-} from './SingleMail.style';
+} from "./SingleMail.style";
 
 export default function singleMail(
   allMail,
@@ -25,22 +25,15 @@ export default function singleMail(
   const signature = {
     splitLet: recpName
       .match(/\b(\w)/g)
-      .join('')
-      .split('', 2),
+      .join("")
+      .split("", 2),
   };
 
-  const labelColor = mail.tags
-    ? tagColor[tags.findIndex((tags) => tags === mail.tags)]
-    : '';
+  const labelColor = mail.tags ? tagColor[tags.findIndex((tags) => tags === mail.tags)] : "";
 
   return (
     <SingleMailContents className="isoSingleMailContents">
-      <MailAction
-        mail={mail}
-        filterMails={filterMails}
-        selectMail={selectMail}
-        toggleListVisible={toggleListVisible}
-      />
+      <MailAction mail={mail} filterMails={filterMails} selectMail={selectMail} toggleListVisible={toggleListVisible} />
       <div className="isoSingleMail">
         <SingleMailHeader className="isoMailHeader">
           <h2>{mail.subject}</h2>
@@ -51,11 +44,7 @@ export default function singleMail(
 
         <SingleMailInfo className="isoMailInfo">
           <div className="isoRecipentsImg">
-            {mail.img ? (
-              <img alt="#" src={mail.img} />
-            ) : (
-              <span>{signature.splitLet}</span>
-            )}
+            {mail.img ? <img alt="#" src={mail.img} /> : <span>{signature.splitLet}</span>}
           </div>
           <div className="isoMailAddress">
             <div className="isoAddress">
@@ -78,10 +67,7 @@ export default function singleMail(
           {replyMail ? (
             <ComposeMail allMail={allMail} />
           ) : (
-            <div
-              onClick={(event) => changeReplyMail(true)}
-              className="isoReplyMailBtn"
-            >
+            <div onClick={(event) => changeReplyMail(true)} className="isoReplyMailBtn">
               Click here to <span>Reply</span>
             </div>
           )}

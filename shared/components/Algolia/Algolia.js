@@ -1,4 +1,4 @@
-import Sidebar from './Sidebar';
-import Footer from './Footer';
+import Sidebar from "./Sidebar";
+import Footer from "./Footer";
 
 export { Sidebar, Footer };

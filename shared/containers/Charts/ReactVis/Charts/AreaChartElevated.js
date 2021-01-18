@@ -1,15 +1,7 @@
-import React, { Component } from 'react';
-import ChartWrapper from '../../Charts.styles';
+import React, { Component } from "react";
+import ChartWrapper from "../../Charts.styles";
 
-import {
-  XYPlot,
-  XAxis,
-  YAxis,
-  VerticalGridLines,
-  HorizontalGridLines,
-  LineMarkSeries,
-  AreaSeries,
-} from 'react-vis';
+import { XYPlot, XAxis, YAxis, VerticalGridLines, HorizontalGridLines, LineMarkSeries, AreaSeries } from "react-vis";
 
 export default class extends Component {
   render() {
@@ -30,10 +22,7 @@ export default class extends Component {
             };
             return <AreaSeries {...config} />;
           })}
-          <LineMarkSeries
-            className="area-elevated-line-series"
-            data={datas[1].data}
-          />
+          <LineMarkSeries className="area-elevated-line-series" data={datas[1].data} />
         </XYPlot>
       </ChartWrapper>
     );

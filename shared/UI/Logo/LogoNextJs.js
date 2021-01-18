@@ -1,7 +1,7 @@
-import React, { Fragment } from 'react';
-import PropTypes from 'prop-types';
-import Link from 'next/link';
-import LogoArea from './Logo.style';
+import React, { Fragment } from "react";
+import PropTypes from "prop-types";
+import Link from "next/link";
+import LogoArea from "./Logo.style";
 
 const LogoNext = ({ className, withLink, linkTo, title, src }) => {
   return (

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import {
   XYPlot,
   XAxis,
@@ -7,8 +7,8 @@ import {
   HorizontalGridLines,
   VerticalBarSeries,
   DiscreteColorLegend,
-} from 'react-vis';
-import ChartWrapper from '../../Charts.styles';
+} from "react-vis";
+import ChartWrapper from "../../Charts.styles";
 
 export default class extends Component {
   render() {
@@ -23,7 +23,7 @@ export default class extends Component {
           height={height}
         >
           <DiscreteColorLegend
-            style={{ position: 'absolute', left: '40px', top: '0px' }}
+            style={{ position: "absolute", left: "40px", top: "0px" }}
             orientation="horizontal"
             items={orientationItems}
           />

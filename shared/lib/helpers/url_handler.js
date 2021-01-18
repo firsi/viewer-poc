@@ -1,8 +1,8 @@
 export function createUrl(urlData) {
   const keys = Object.keys(urlData);
-  let search = '?';
+  let search = "?";
   keys.forEach((key) => {
-    if (urlData[key] !== null && urlData[key] !== '') {
+    if (urlData[key] !== null && urlData[key] !== "") {
       search += `${key}=${urlData[key]}&`;
     }
   });
@@ -12,13 +12,11 @@ export function createUrl(urlData) {
 export function getUrl(location) {
   // const location = location;
   const data =
-    process.browser && location.search
-      ? location.search.slice(location.search.indexOf('?') + 1).split('&')
-      : [];
+    process.browser && location.search ? location.search.slice(location.search.indexOf("?") + 1).split("&") : [];
   const urlData = {};
   data.forEach((data) => {
     try {
-      data = data.split('=');
+      data = data.split("=");
       const dataVal = decodeURIComponent(data[1]);
       urlData[data[0]] = dataVal;
     } catch (e) {}
@@ -30,40 +28,37 @@ export function setStateToUrl(state) {
   for (const key in state) {
     if (state.hasOwnProperty(key)) {
       switch (key) {
-        case 'date_range':
+        case "date_range":
           let data = Object.values(state[key]);
           if (data[0] === null && data[1] === null) {
-            data = '';
+            data = "";
           }
           urlData[key] = data && data.length ? data.join() : null;
           break;
-        case 'amenities':
-          urlData[key] =
-            state[key] && state[key].length ? state[key].join() : null;
+        case "amenities":
+          urlData[key] = state[key] && state[key].length ? state[key].join() : null;
           break;
-        case 'room':
+        case "room":
           if (state[key]) {
             urlData[key] = state[key] ? state[key] : 0;
           } else {
-            urlData[key] = '';
+            urlData[key] = "";
           }
           break;
-        case 'guest':
+        case "guest":
           if (state[key]) {
             urlData[key] = state[key] ? state[key] : 0;
           } else {
-            urlData[key] = '';
+            urlData[key] = "";
           }
           break;
-        case 'property':
-          urlData[key] =
-            state[key] && state[key].length ? state[key].join() : null;
+        case "property":
+          urlData[key] = state[key] && state[key].length ? state[key].join() : null;
           break;
-        case 'price':
-          urlData[key] =
-            state[key] && state[key].length ? state[key].join() : null;
+        case "price":
+          urlData[key] = state[key] && state[key].length ? state[key].join() : null;
           break;
-        case 'location':
+        case "location":
           if (state[key] && state[key].lat) {
             urlData[`${key}_lat`] = state[key].lat;
           }
@@ -71,7 +66,7 @@ export function setStateToUrl(state) {
             urlData[`${key}_lng`] = state[key].lng;
           }
           break;
-        case 'reset':
+        case "reset":
           urlData = state[key];
           break;
 
@@ -101,57 +96,49 @@ export function getStateFromUrl(location) {
         //       : [];
         //   break;
 
-        case 'date_range':
+        case "date_range":
           const date = urlData[key] ? urlData[key] : null;
           if (date) {
-            let splitDate = date ? date.split(',') : null;
+            let splitDate = date ? date.split(",") : null;
             let setStartDate = splitDate ? splitDate[0] : null;
             let setEndDate = splitDate ? splitDate[1] : null;
-            state[key] = date
-              ? { setStartDate: setStartDate, setEndDate: setEndDate }
-              : null;
+            state[key] = date ? { setStartDate: setStartDate, setEndDate: setEndDate } : null;
           }
           break;
 
-        case 'amenities':
-          state[key] =
-            urlData[key] && urlData[key] !== 'null'
-              ? urlData[key].split(',')
-              : [];
+        case "amenities":
+          state[key] = urlData[key] && urlData[key] !== "null" ? urlData[key].split(",") : [];
           break;
 
-        case 'room':
+        case "room":
           if (urlData[key]) {
             state[key] = urlData[key] ? urlData[key] : 0;
           } else {
-            state[key] = '';
+            state[key] = "";
           }
 
           break;
 
-        case 'guest':
+        case "guest":
           if (urlData[key]) {
             state[key] = urlData[key] ? urlData[key] : 0;
           } else {
-            state[key] = '';
+            state[key] = "";
           }
           break;
 
-        case 'property':
-          state[key] =
-            urlData[key] && urlData[key] !== 'null'
-              ? urlData[key].split(',')
-              : [];
+        case "property":
+          state[key] = urlData[key] && urlData[key] !== "null" ? urlData[key].split(",") : [];
           break;
 
-        case 'price':
+        case "price":
           const defaultPrice = {
             min: 0,
             max: 100,
             defaultMin: 0,
             defaultMax: 100,
           };
-          const price = urlData[key] ? urlData[key].split(',') : defaultPrice;
+          const price = urlData[key] ? urlData[key].split(",") : defaultPrice;
           if (price) {
             let min, max;
             min = price ? Number(price[0]) : 0;
@@ -164,7 +151,7 @@ export function getStateFromUrl(location) {
                 defaultMax: 100,
               };
             } else {
-              state[key] = '';
+              state[key] = "";
             }
           }
           break;
@@ -181,18 +168,18 @@ export function getStateFromUrl(location) {
         //   state[key] = urlData[key] && urlData[key] == 'true' ? true : false;
         //   break;
 
-        case 'location_lat':
-          if (urlData['location_lat']) {
-            state['location'] = {};
-            state['location']['lat'] = Number(urlData[key]);
+        case "location_lat":
+          if (urlData["location_lat"]) {
+            state["location"] = {};
+            state["location"]["lat"] = Number(urlData[key]);
           } else {
-            state['location'] = null;
+            state["location"] = null;
           }
           break;
 
-        case 'location_lng':
+        case "location_lng":
           if (urlData[key]) {
-            state['location']['lng'] = Number(urlData[key]);
+            state["location"]["lng"] = Number(urlData[key]);
           }
           break;
 
@@ -209,15 +196,15 @@ export function getStateFromUrl(location) {
         //   }
         //   break;
 
-        case 'page':
+        case "page":
           if (urlData[key]) {
-            state['page'] = Number(urlData[key]);
+            state["page"] = Number(urlData[key]);
           }
           break;
 
-        case 'limit':
+        case "limit":
           if (urlData[key]) {
-            state['limit'] = Number(urlData[key]);
+            state["limit"] = Number(urlData[key]);
           }
           break;
 

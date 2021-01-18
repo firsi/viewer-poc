@@ -1,40 +1,35 @@
 // saga.js
-import { all, takeEvery, put } from 'redux-saga/effects';
-import placeActions from './actions';
-import axios from 'axios';
+import { all, takeEvery, put } from "redux-saga/effects";
+import placeActions from "./actions";
+import axios from "axios";
 
 export function* fetchPlaceDataEffect(json) {
   try {
-    var payload = json.payload.substring(json.payload.lastIndexOf('/') + 1);
-    var url = `https://api20210115154420.azurewebsites.net/api/gid/places/${payload}`
-    console.log("calling " + url)
+    var payload = json.payload.substring(json.payload.lastIndexOf("/") + 1);
+    var url = `https://api20210115154420.azurewebsites.net/api/gid/places/${payload}`;
+    console.log("calling " + url);
     //console.log("Payload = " + JSON.stringify(json));
     //console.log(url);
 
-    console.log('this is where we fetch things');
-    const response = yield fetch(
-      url,
-      {
-        method: 'GET',
-        headers: { 'Content-Type': 'application/json' },
-      }
-    );
+    console.log("this is where we fetch things");
+    const response = yield fetch(url, {
+      method: "GET",
+      headers: { "Content-Type": "application/json" },
+    });
 
     const place = yield response.json();
     console.log(place);
     yield put(placeActions.fetchPlaceDataSuccess(place));
   } catch (error) {
-      console.log(error);
+    console.log(error);
     yield put(placeActions.fetchPlaceDataFailure(error));
   }
 }
 
 export default function* placeSaga() {
-  yield all([
-    takeEvery(placeActions.FETCH_PLACE_DATA_START, fetchPlaceDataEffect),
-  ]);
+  yield all([takeEvery(placeActions.FETCH_PLACE_DATA_START, fetchPlaceDataEffect)]);
 }
- 
+
 // export function fetchPlace() {
 // 	return (dispatch) => {
 //         console.log("fetching place");
@@ -91,4 +86,3 @@ export default function* placeSaga() {
 
 //         }
 //     }
-

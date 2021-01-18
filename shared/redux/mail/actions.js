@@ -1,9 +1,9 @@
 const mailActions = {
-  FILTER_ATTRIBUTE: 'FILTER_ATTRIBUTE',
-  SELECTED_MAIL: 'SELECTED_MAIL',
-  COMPOSE_MAIL: 'COMPOSE_MAIL',
-  REPLY_MAIL: 'REPLY_MAIL',
-  SEARCH_STRING: 'SEARCH_STRING',
+  FILTER_ATTRIBUTE: "FILTER_ATTRIBUTE",
+  SELECTED_MAIL: "SELECTED_MAIL",
+  COMPOSE_MAIL: "COMPOSE_MAIL",
+  REPLY_MAIL: "REPLY_MAIL",
+  SEARCH_STRING: "SEARCH_STRING",
   filterAction: (newFilterAttr) => {
     return (dispatch, getState) => {
       const filterAttr = getState().Mails.filterAttr;
@@ -24,9 +24,7 @@ const mailActions = {
   selectMail: (selectedMail) => {
     return (dispatch, getState) => {
       const allMails = getState().Mails.allMails;
-      allMails[
-        allMails.findIndex((mail) => mail.id === selectedMail)
-      ].read = true;
+      allMails[allMails.findIndex((mail) => mail.id === selectedMail)].read = true;
       dispatch({
         type: mailActions.SELECTED_MAIL,
         selectedMail,

@@ -1,6 +1,6 @@
-import React from 'react';
-import Input from '../uielements/input';
-import Button from '../uielements/button';
+import React from "react";
+import Input from "../uielements/input";
+import Button from "../uielements/button";
 
 export default function ({ searchText, onInputChange, onSearch }) {
   return (

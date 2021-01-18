@@ -1,20 +1,12 @@
-import React, { Component } from 'react';
-import SingleQuestion from './SingleQuestion';
-import MultipleQuestion from './MultipleQuestion';
+import React, { Component } from "react";
+import SingleQuestion from "./SingleQuestion";
+import MultipleQuestion from "./MultipleQuestion";
 
 export default class Question extends Component {
   // The render function, where we actually tell the browser what it should show
   render() {
-    const {
-      question,
-      answers,
-      submitted,
-      total,
-      activeQuestion,
-      wrong,
-      correct,
-    } = this.props;
-    if (question.type === 'single') {
+    const { question, answers, submitted, total, activeQuestion, wrong, correct } = this.props;
+    if (question.type === "single") {
       return (
         <SingleQuestion
           question={question}

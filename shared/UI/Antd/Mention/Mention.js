@@ -1,2 +1,2 @@
-import { Mentions } from 'antd';
+import { Mentions } from "antd";
 export default Mentions;

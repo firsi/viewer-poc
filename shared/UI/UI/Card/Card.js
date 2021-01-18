@@ -1,13 +1,6 @@
-import React from 'react';
-import { Wrapper, Header, Content, Footer } from './Card.style';
-export default function Card({
-  title,
-  className,
-  header,
-  content,
-  children,
-  footer,
-}) {
+import React from "react";
+import { Wrapper, Header, Content, Footer } from "./Card.style";
+export default function Card({ title, className, header, content, children, footer }) {
   return (
     <Wrapper className={className}>
       <Header>{header ? header : <h2>{title}</h2>}</Header>

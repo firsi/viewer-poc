@@ -1,17 +1,17 @@
-import { contacts } from './reducer';
+import { contacts } from "./reducer";
 
 function ascendingSort(contact1, contact2) {
-  const name1 = contact1.name ? contact1.name.toUpperCase() : '~';
-  const name2 = contact2.name ? contact2.name.toUpperCase() : '~';
+  const name1 = contact1.name ? contact1.name.toUpperCase() : "~";
+  const name2 = contact2.name ? contact2.name.toUpperCase() : "~";
   return name1 > name2 ? 1 : name1 === name2 ? 0 : -1;
 }
 
 const contactActions = {
-  ADD_CONTACT: 'ADD_CONTACT',
-  EDIT_CONTACT: 'EDIT_CONTACT',
-  DELETE__CONTACT: 'DELETE__CONTACT',
-  CHANGE_CONTACT: 'CHANGE_CONTACT',
-  EDIT_VIEW: 'EDIT_VIEW',
+  ADD_CONTACT: "ADD_CONTACT",
+  EDIT_CONTACT: "EDIT_CONTACT",
+  DELETE__CONTACT: "DELETE__CONTACT",
+  CHANGE_CONTACT: "CHANGE_CONTACT",
+  EDIT_VIEW: "EDIT_VIEW",
   changeContact: (id) => ({
     type: contactActions.CHANGE_CONTACT,
     id,
@@ -19,15 +19,15 @@ const contactActions = {
   addContact: () => {
     const newContact = {
       id: new Date(),
-      firstName: '',
+      firstName: "",
       avatar: contacts[new Date() % 10].avatar,
-      LastName: '',
-      mobile: '',
-      home: '',
-      name: '',
-      company: '',
-      work: '',
-      note: '',
+      LastName: "",
+      mobile: "",
+      home: "",
+      name: "",
+      company: "",
+      work: "",
+      note: "",
     };
     return (dispatch, getState) => {
       dispatch({

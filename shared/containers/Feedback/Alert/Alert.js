@@ -1,19 +1,19 @@
-import React from 'react';
-import { Row, Col } from 'antd';
-import PageHeader from '@iso/components/utility/pageHeader';
-import Box from '@iso/components/utility/box';
-import LayoutWrapper from '@iso/components/utility/layoutWrapper.js';
-import ContentHolder from '@iso/components/utility/contentHolder';
-import IntlMessages from '@iso/components/utility/intlMessages';
-import Alert from '@iso/components/Feedback/Alert';
-import basicStyle from '@iso/assets/styles/constants';
+import React from "react";
+import { Row, Col } from "antd";
+import PageHeader from "@iso/components/utility/pageHeader";
+import Box from "@iso/components/utility/box";
+import LayoutWrapper from "@iso/components/utility/layoutWrapper.js";
+import ContentHolder from "@iso/components/utility/contentHolder";
+import IntlMessages from "@iso/components/utility/intlMessages";
+import Alert from "@iso/components/Feedback/Alert";
+import basicStyle from "@iso/assets/styles/constants";
 
 export default function () {
   const onClose = function (e) {};
 
   const { rowStyle, colStyle, gutter } = basicStyle;
   const marginBot = {
-    marginBottom: '10px',
+    marginBottom: "10px",
   };
   return (
     <LayoutWrapper>
@@ -22,25 +22,10 @@ export default function () {
         <Col md={12} sm={12} xs={24} style={colStyle}>
           <Box title={<IntlMessages id="feedback.alert.basicTitle" />}>
             <ContentHolder>
-              <Alert
-                message={<IntlMessages id="feedback.alert.successText" />}
-                type="success"
-                style={marginBot}
-              />
-              <Alert
-                message={<IntlMessages id="feedback.alert.infoText" />}
-                type="info"
-                style={marginBot}
-              />
-              <Alert
-                message={<IntlMessages id="feedback.alert.warningText" />}
-                type="warning"
-                style={marginBot}
-              />
-              <Alert
-                message={<IntlMessages id="feedback.alert.errorText" />}
-                type="error"
-              />
+              <Alert message={<IntlMessages id="feedback.alert.successText" />} type="success" style={marginBot} />
+              <Alert message={<IntlMessages id="feedback.alert.infoText" />} type="info" style={marginBot} />
+              <Alert message={<IntlMessages id="feedback.alert.warningText" />} type="warning" style={marginBot} />
+              <Alert message={<IntlMessages id="feedback.alert.errorText" />} type="error" />
             </ContentHolder>
           </Box>
         </Col>
@@ -48,9 +33,7 @@ export default function () {
           <Box title={<IntlMessages id="feedback.alert.closableAlertType" />}>
             <ContentHolder>
               <Alert
-                message={
-                  <IntlMessages id="feedback.alert.warningDescription" />
-                }
+                message={<IntlMessages id="feedback.alert.warningDescription" />}
                 type="warning"
                 closable
                 onClose={onClose}
@@ -58,9 +41,7 @@ export default function () {
               />
               <Alert
                 message={<IntlMessages id="feedback.alert.errorText" />}
-                description={
-                  <IntlMessages id="feedback.alert.errorDescription" />
-                }
+                description={<IntlMessages id="feedback.alert.errorDescription" />}
                 type="error"
                 closable
                 onClose={onClose}
@@ -74,25 +55,10 @@ export default function () {
         <Col md={12} sm={12} xs={24} style={colStyle}>
           <Box title={<IntlMessages id="feedback.alert.iconAlertType" />}>
             <ContentHolder>
-              <Alert
-                message={<IntlMessages id="feedback.alert.successText" />}
-                type="success"
-                style={marginBot}
-              />
-              <Alert
-                message={<IntlMessages id="feedback.alert.infoText" />}
-                type="info"
-                style={marginBot}
-              />
-              <Alert
-                message={<IntlMessages id="feedback.alert.warningText" />}
-                type="warning"
-                style={marginBot}
-              />
-              <Alert
-                message={<IntlMessages id="feedback.alert.errorText" />}
-                type="error"
-              />
+              <Alert message={<IntlMessages id="feedback.alert.successText" />} type="success" style={marginBot} />
+              <Alert message={<IntlMessages id="feedback.alert.infoText" />} type="info" style={marginBot} />
+              <Alert message={<IntlMessages id="feedback.alert.warningText" />} type="warning" style={marginBot} />
+              <Alert message={<IntlMessages id="feedback.alert.errorText" />} type="error" />
             </ContentHolder>
           </Box>
         </Col>
@@ -101,36 +67,28 @@ export default function () {
             <ContentHolder>
               <Alert
                 message={<IntlMessages id="feedback.alert.successTips" />}
-                description={
-                  <IntlMessages id="feedback.alert.successTipsDescription" />
-                }
+                description={<IntlMessages id="feedback.alert.successTipsDescription" />}
                 type="success"
                 showIcon
                 style={marginBot}
               />
               <Alert
                 message={<IntlMessages id="feedback.alert.informationTips" />}
-                description={
-                  <IntlMessages id="feedback.alert.informationDescription" />
-                }
+                description={<IntlMessages id="feedback.alert.informationDescription" />}
                 type="info"
                 showIcon
                 style={marginBot}
               />
               <Alert
                 message={<IntlMessages id="feedback.alert.warningTips" />}
-                description={
-                  <IntlMessages id="feedback.alert.warningDescription" />
-                }
+                description={<IntlMessages id="feedback.alert.warningDescription" />}
                 type="warning"
                 showIcon
                 style={marginBot}
               />
               <Alert
                 message={<IntlMessages id="feedback.alert.errorTips" />}
-                description={
-                  <IntlMessages id="feedback.alert.errorDescription" />
-                }
+                description={<IntlMessages id="feedback.alert.errorDescription" />}
                 type="error"
                 showIcon
               />

@@ -1,20 +1,16 @@
-import React from 'react';
-import {
-  AppstoreOutlined,
-  MailOutlined,
-  SettingOutlined,
-} from '@ant-design/icons';
-import { Menu, Switch } from 'antd';
+import React from "react";
+import { AppstoreOutlined, MailOutlined, SettingOutlined } from "@ant-design/icons";
+import { Menu, Switch } from "antd";
 
 const SubMenu = Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;
 
 export default function () {
   const [state, setState] = React.useState({
-    current: '1',
+    current: "1",
     openKeys: [],
-    theme: 'dark',
-    mode: 'inline',
+    theme: "dark",
+    mode: "inline",
   });
   const handleClick = (e) => {
     setState({
@@ -23,16 +19,12 @@ export default function () {
   };
   const changeMode = (value) => {
     setState({
-      mode: value ? 'vertical' : 'inline',
+      mode: value ? "vertical" : "inline",
     });
   };
   const onOpenChange = (openKeys) => {
-    const latestOpenKey = openKeys.find(
-      (key) => !(state.openKeys.indexOf(key) > -1)
-    );
-    const latestCloseKey = state.openKeys.find(
-      (key) => !(openKeys.indexOf(key) > -1)
-    );
+    const latestOpenKey = openKeys.find((key) => !(state.openKeys.indexOf(key) > -1));
+    const latestCloseKey = state.openKeys.find((key) => !(openKeys.indexOf(key) > -1));
 
     let nextOpenKeys = [];
     if (latestOpenKey) {
@@ -45,13 +37,13 @@ export default function () {
   };
   const getAncestorKeys = (key) => {
     const map = {
-      sub3: ['sub2'],
+      sub3: ["sub2"],
     };
     return map[key] || [];
   };
   const changeTheme = (value) => {
     setState({
-      theme: value ? 'dark' : 'light',
+      theme: value ? "dark" : "light",
     });
   };
 
@@ -59,11 +51,7 @@ export default function () {
     <div>
       <div className="isoContent">
         <h2>Top Navigation</h2>
-        <Menu
-          onClick={handleClick}
-          selectedKeys={[state.current]}
-          mode="horizontal"
-        >
+        <Menu onClick={handleClick} selectedKeys={[state.current]} mode="horizontal">
           <Menu.Item key="mail">
             <MailOutlined />
             Navigation One
@@ -90,11 +78,7 @@ export default function () {
             </MenuItemGroup>
           </SubMenu>
           <Menu.Item key="alipay">
-            <a
-              href="https://ant.design"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
               Navigation Four - Link
             </a>
           </Menu.Item>
@@ -110,8 +94,8 @@ export default function () {
         <Menu
           onClick={handleClick}
           style={{ width: 240 }}
-          defaultSelectedKeys={['1']}
-          defaultOpenKeys={['sub1']}
+          defaultSelectedKeys={["1"]}
+          defaultOpenKeys={["sub1"]}
           mode="inline"
         >
           <SubMenu
@@ -294,7 +278,7 @@ export default function () {
         <h2>Menu Themes</h2>
         <div>
           <Switch
-            checked={state.theme === 'dark'}
+            checked={state.theme === "dark"}
             onChange={changeTheme}
             checkedChildren="Dark"
             unCheckedChildren="Light"
@@ -305,7 +289,7 @@ export default function () {
             theme={state.theme}
             onClick={handleClick}
             style={{ width: 240 }}
-            defaultOpenKeys={['sub1']}
+            defaultOpenKeys={["sub1"]}
             selectedKeys={[state.current]}
             mode="inline"
           >
@@ -366,11 +350,7 @@ export default function () {
         <Switch onChange={changeMode} />
         <br />
         <br />
-        <Menu
-          style={{ width: 240 }}
-          defaultOpenKeys={['sub1']}
-          mode={state.mode}
-        >
+        <Menu style={{ width: 240 }} defaultOpenKeys={["sub1"]} mode={state.mode}>
           <SubMenu
             key="sub1"
             title={

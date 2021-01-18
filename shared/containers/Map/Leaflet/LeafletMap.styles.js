@@ -1,10 +1,6 @@
-import styled from 'styled-components';
-import { palette } from 'styled-theme';
-import {
-  transition,
-  borderRadius,
-  boxShadow,
-} from '@iso/lib/helpers/style_utils';
+import styled from "styled-components";
+import { palette } from "styled-theme";
+import { transition, borderRadius, boxShadow } from "@iso/lib/helpers/style_utils";
 
 const LeafletMapWrapper = styled.div`
   &.isoLeafletMap {
@@ -21,20 +17,20 @@ const LeafletMapWrapper = styled.div`
       background-color: rgb(255, 255, 255);
       width: 28px;
       height: 55px;
-      box-shadow: ${boxShadow('rgba(0, 0, 0, 0.3) 0px 1px 4px -1px')};
+      box-shadow: ${boxShadow("rgba(0, 0, 0, 0.3) 0px 1px 4px -1px")};
     }
 
     .leaflet-bar {
       a {
         background-color: #ffffff;
         border-bottom: 1px solid rgb(230, 230, 230);
-        font-size: ${palette('fontSize', 4)};
+        font-size: ${palette("fontSize", 4)};
         line-height: 27px;
-        color: ${palette('text', 3)};
+        color: ${palette("text", 3)};
         ${transition()};
 
         &:hover {
-          color: ${palette('primary', 0)};
+          color: ${palette("primary", 0)};
         }
       }
     }
@@ -64,8 +60,8 @@ const LeafletMapWrapper = styled.div`
       ${transition()};
 
       &:before {
-        content: '\f2d7';
-        font-family: 'ionicons';
+        content: "\f2d7";
+        font-family: "ionicons";
         width: 100%;
         font-size: 14px;
         color: #fff;
@@ -77,9 +73,7 @@ const LeafletMapWrapper = styled.div`
       }
     }
 
-    .leaflet-popup-close-button
-      + .leaflet-popup-content-wrapper
-      .leaflet-popup-content {
+    .leaflet-popup-close-button + .leaflet-popup-content-wrapper .leaflet-popup-content {
       padding-top: 0;
     }
 
@@ -102,7 +96,7 @@ const LeafletMapWrapper = styled.div`
     }
 
     .leaflet-popup-content-wrapper {
-      ${borderRadius('0')};
+      ${borderRadius("0")};
 
       .leaflet-popup-content {
         position: relative;
@@ -141,7 +135,7 @@ const LeafletMapWrapper = styled.div`
             margin: 0;
             font-size: 14px;
             font-weight: 500;
-            color: ${palette('text', 0)};
+            color: ${palette("text", 0)};
             text-align: center;
 
             a {
@@ -156,7 +150,7 @@ const LeafletMapWrapper = styled.div`
           p {
             font-size: 13px;
             font-weight: 400;
-            color: ${palette('text', 1)};
+            color: ${palette("text", 1)};
             margin-bottom: 0px;
             text-align: center;
           }
@@ -165,10 +159,10 @@ const LeafletMapWrapper = styled.div`
     }
 
     .marker-cluster {
-      background-color: ${palette('primary', 4)} !important;
+      background-color: ${palette("primary", 4)} !important;
 
       > div {
-        background-color: ${palette('primary', 6)} !important;
+        background-color: ${palette("primary", 6)} !important;
 
         span {
           color: #ffffff;
@@ -188,7 +182,7 @@ const LeafletMapWrapper = styled.div`
     background-color: #ffffff;
     border-radius: 50%;
     position: relative;
-    ${transition('0.4s')};
+    ${transition("0.4s")};
 
     .marker-icon-wrapper {
       width: 36px;
@@ -198,7 +192,7 @@ const LeafletMapWrapper = styled.div`
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      background-color: ${palette('primary', 0)};
+      background-color: ${palette("primary", 0)};
       border-radius: 50%;
 
       i {

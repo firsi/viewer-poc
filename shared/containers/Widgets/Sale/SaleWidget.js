@@ -1,5 +1,5 @@
-import React from 'react';
-import { SaleWidgetWrapper } from './SaleWidget.styles';
+import React from "react";
+import { SaleWidgetWrapper } from "./SaleWidget.styles";
 
 export default function ({ fontColor, label, price, details }) {
   const textColor = {

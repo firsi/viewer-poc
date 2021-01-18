@@ -1,11 +1,11 @@
-import React from 'react';
-import { Row, Col } from 'antd';
-import Button, { ButtonGroup } from '@iso/components/uielements/button';
-import Progress from '@iso/components/uielements/progress';
-import PageHeader from '@iso/components/utility/pageHeader';
-import LayoutWrapper from '@iso/components/utility/layoutWrapper.js';
-import Box from '@iso/components/utility/box';
-import basicStyle from '@iso/assets/styles/constants';
+import React from "react";
+import { Row, Col } from "antd";
+import Button, { ButtonGroup } from "@iso/components/uielements/button";
+import Progress from "@iso/components/uielements/progress";
+import PageHeader from "@iso/components/utility/pageHeader";
+import LayoutWrapper from "@iso/components/utility/layoutWrapper.js";
+import Box from "@iso/components/utility/box";
+import basicStyle from "@iso/assets/styles/constants";
 
 export default function () {
   const [percent, setPercent] = React.useState(0);
@@ -39,10 +39,7 @@ export default function () {
           </Box>
         </Col>
         <Col span={12} style={colStyle}>
-          <Box
-            title="Circular Progress bar"
-            subtitle="A circular progress bar."
-          >
+          <Box title="Circular Progress bar" subtitle="A circular progress bar.">
             <Progress type="circle" percent={75} />
             <Progress type="circle" percent={70} status="exception" />
             <Progress type="circle" percent={100} />
@@ -51,10 +48,7 @@ export default function () {
       </Row>
       <Row style={rowStyle} gutter={gutter} justify="start">
         <Col span={8} style={colStyle}>
-          <Box
-            title="Mini size progress bar"
-            subtitle="Appropriate for a narrow area."
-          >
+          <Box title="Mini size progress bar" subtitle="Appropriate for a narrow area.">
             <Progress percent={30} strokeWidth={5} />
             <Progress percent={50} strokeWidth={5} status="active" />
             <Progress percent={70} strokeWidth={5} status="exception" />
@@ -62,25 +56,14 @@ export default function () {
           </Box>
         </Col>
         <Col span={8} style={colStyle}>
-          <Box
-            title="Mini size circular progress bar"
-            subtitle="A smaller circular progress bar."
-          >
+          <Box title="Mini size circular progress bar" subtitle="A smaller circular progress bar.">
             <Progress type="circle" percent={30} width={80} />
-            <Progress
-              type="circle"
-              percent={70}
-              width={80}
-              status="exception"
-            />
+            <Progress type="circle" percent={70} width={80} status="exception" />
             <Progress type="circle" percent={100} width={80} />
           </Box>
         </Col>
         <Col span={8} style={colStyle}>
-          <Box
-            title="Dynamic circular progress bar"
-            subtitle="A dynamic progress bar is better."
-          >
+          <Box title="Dynamic circular progress bar" subtitle="A dynamic progress bar is better.">
             <Progress type="circle" percent={percent} />
             <ButtonGroup>
               <Button onClick={decline} icon="minus" />
@@ -89,16 +72,9 @@ export default function () {
           </Box>
         </Col>
       </Row>
-      <Box
-        title="Custom text format"
-        subtitle="You can custom text format by setting format."
-      >
-        <Progress
-          type="circle"
-          percent={75}
-          format={(percent) => `${percent} Days`}
-        />
-        <Progress type="circle" percent={100} format={() => 'Done'} />
+      <Box title="Custom text format" subtitle="You can custom text format by setting format.">
+        <Progress type="circle" percent={75} format={(percent) => `${percent} Days`} />
+        <Progress type="circle" percent={100} format={() => "Done"} />
       </Box>
       <Box title="Dashboard" subtitle="A dashboard style of progress.">
         <Progress type="dashboard" percent={75} />

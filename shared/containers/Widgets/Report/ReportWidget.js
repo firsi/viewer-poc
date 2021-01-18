@@ -1,5 +1,5 @@
-import React from 'react';
-import { ReportWidgetWrapper } from './ReportWidget.styles';
+import React from "react";
+import { ReportWidgetWrapper } from "./ReportWidget.styles";
 
 export default function ({ label, details, children }) {
   return (

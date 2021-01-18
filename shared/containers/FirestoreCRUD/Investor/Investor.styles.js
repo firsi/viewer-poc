@@ -1,7 +1,7 @@
-import styled from 'styled-components';
-import { palette } from 'styled-theme';
-import Buttons from '@iso/components/uielements/button';
-import Table from '../../Tables/AntTables/AntTables.styles';
+import styled from "styled-components";
+import { palette } from "styled-theme";
+import Buttons from "@iso/components/uielements/button";
+import Table from "../../Tables/AntTables/AntTables.styles";
 
 const TableWrapper = styled(Table)`
   .ant-table-bordered .ant-table-thead > tr > th,
@@ -24,17 +24,17 @@ const StatusTag = styled.span`
   align-items: center;
   justify-content: center;
   border-radius: 2px;
-  background-color: ${palette('primary', 0)};
+  background-color: ${palette("primary", 0)};
   font-size: 12px;
   color: #ffffff;
   text-transform: capitalize;
 
   &.draft {
-    background-color: ${palette('warning', 0)};
+    background-color: ${palette("warning", 0)};
   }
 
   &.publish {
-    background-color: ${palette('success', 0)};
+    background-color: ${palette("success", 0)};
   }
 `;
 
@@ -51,7 +51,7 @@ const ButtonHolders = styled.div``;
 const ComponentTitle = styled.h3`
   font-size: 16px;
   font-weight: 500;
-  color: ${palette('text', 0)};
+  color: ${palette("text", 0)};
   margin: 5px 0;
 `;
 
@@ -65,7 +65,7 @@ const ActionBtn = styled(Buttons)`
     }
     i {
       font-size: 17px;
-      color: ${palette('text', 1)};
+      color: ${palette("text", 1)};
     }
 
     &:hover {
@@ -89,7 +89,7 @@ const Fieldset = styled.div`
 
 const Label = styled.label`
   font-size: 13px;
-  color: ${palette('text', 1)};
+  color: ${palette("text", 1)};
   line-height: 1.5;
   font-weight: 500;
   padding: 0;
@@ -101,20 +101,20 @@ const ActionWrapper = styled.div`
   align-content: center;
 
   a {
-    color: ${palette('primary', 0)};
+    color: ${palette("primary", 0)};
     margin-right: 12px;
     &:last-child {
       margin-right: 0;
     }
 
     &:hover {
-      color: ${palette('primary', 4)};
+      color: ${palette("primary", 4)};
     }
 
     &.deleteBtn {
-      color: ${palette('error', 0)} !important;
+      color: ${palette("error", 0)} !important;
       &:hover {
-        color: ${palette('error', 2)} !important;
+        color: ${palette("error", 2)} !important;
       }
     }
   }

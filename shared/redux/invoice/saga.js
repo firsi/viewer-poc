@@ -1,6 +1,6 @@
-import { all, takeEvery, put } from 'redux-saga/effects';
-import { localDataName, createDemoData } from './config';
-import actions from './actions';
+import { all, takeEvery, put } from "redux-saga/effects";
+import { localDataName, createDemoData } from "./config";
+import actions from "./actions";
 
 export function* getInvoice() {
   yield put({

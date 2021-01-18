@@ -1,6 +1,6 @@
 /* global console, location, localStorage, Excel, Office, OfficeRuntime */
 
-import { getGlobal } from '../commands';
+import { getGlobal } from '../commands/commands';
 
 export const SetRuntimeVisibleHelper = (visible: boolean) => {
   let p: any;

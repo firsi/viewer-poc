@@ -1,25 +1,25 @@
-import React from 'react';
-import { Row, Col } from 'antd';
-import Checkbox, { CheckboxGroup } from '@iso/components/uielements/checkbox';
-import PageHeader from '@iso/components/utility/pageHeader';
-import Box from '@iso/components/utility/box';
-import LayoutWrapper from '@iso/components/utility/layoutWrapper.js';
-import ContentHolder from '@iso/components/utility/contentHolder';
-import IntlMessages from '@iso/components/utility/intlMessages';
-import basicStyle from '@iso/assets/styles/constants';
+import React from "react";
+import { Row, Col } from "antd";
+import Checkbox, { CheckboxGroup } from "@iso/components/uielements/checkbox";
+import PageHeader from "@iso/components/utility/pageHeader";
+import Box from "@iso/components/utility/box";
+import LayoutWrapper from "@iso/components/utility/layoutWrapper.js";
+import ContentHolder from "@iso/components/utility/contentHolder";
+import IntlMessages from "@iso/components/utility/intlMessages";
+import basicStyle from "@iso/assets/styles/constants";
 
-const plainOptions = ['Apple', 'Pear', 'Orange'];
+const plainOptions = ["Apple", "Pear", "Orange"];
 const options = [
-  { label: 'Apple', value: 'Apple' },
-  { label: 'Pear', value: 'Pear' },
-  { label: 'Orange', value: 'Orange' },
+  { label: "Apple", value: "Apple" },
+  { label: "Pear", value: "Pear" },
+  { label: "Orange", value: "Orange" },
 ];
 const optionsWithDisabled = [
-  { label: 'Apple', value: 'Apple' },
-  { label: 'Pear', value: 'Pear' },
-  { label: 'Orange', value: 'Orange', disabled: false },
+  { label: "Apple", value: "Apple" },
+  { label: "Pear", value: "Pear" },
+  { label: "Orange", value: "Orange", disabled: false },
 ];
-const defaultCheckedList = ['Apple', 'Orange'];
+const defaultCheckedList = ["Apple", "Orange"];
 
 export default function () {
   const [checkedList, setCheckedList] = React.useState(defaultCheckedList);
@@ -30,9 +30,7 @@ export default function () {
 
   const onChange = (checkedList) => {
     setCheckedList(checkedList);
-    setIndeterminate(
-      !!checkedList.length && checkedList.length < plainOptions.length
-    );
+    setIndeterminate(!!checkedList.length && checkedList.length < plainOptions.length);
     setCheckAll(checkedList.length === plainOptions.length);
   };
   const onCheckAllChange = (e) => {
@@ -62,22 +60,14 @@ export default function () {
             subtitle={<IntlMessages id="forms.checkbox.groupSubTitle" />}
           >
             <ContentHolder>
-              <CheckboxGroup
-                options={plainOptions}
-                defaultValue={['Apple']}
-                onChange={handleOnChange}
-              />
+              <CheckboxGroup options={plainOptions} defaultValue={["Apple"]} onChange={handleOnChange} />
               <br />
-              <CheckboxGroup
-                options={options}
-                defaultValue={['Pear']}
-                onChange={handleOnChange}
-              />
+              <CheckboxGroup options={options} defaultValue={["Pear"]} onChange={handleOnChange} />
               <br />
               <CheckboxGroup
                 options={optionsWithDisabled}
                 disabled
-                defaultValue={['Apple']}
+                defaultValue={["Apple"]}
                 onChange={handleOnChange}
               />
             </ContentHolder>
@@ -94,24 +84,16 @@ export default function () {
               <div>
                 <div
                   style={{
-                    borderBottom: '1px solid #E9E9E9',
-                    paddingBottom: '15px',
+                    borderBottom: "1px solid #E9E9E9",
+                    paddingBottom: "15px",
                   }}
                 >
-                  <Checkbox
-                    indeterminate={indeterminate}
-                    onChange={onCheckAllChange}
-                    checked={checkAll}
-                  >
+                  <Checkbox indeterminate={indeterminate} onChange={onCheckAllChange} checked={checkAll}>
                     Check all
                   </Checkbox>
                 </div>
                 <br />
-                <CheckboxGroup
-                  options={plainOptions}
-                  value={checkedList}
-                  onChange={onChange}
-                />
+                <CheckboxGroup options={plainOptions} value={checkedList} onChange={onChange} />
               </div>
             </ContentHolder>
           </Box>

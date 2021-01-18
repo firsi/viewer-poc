@@ -1,7 +1,7 @@
-import styled from 'styled-components';
-import { palette } from 'styled-theme';
-import { borderRadius, transition } from '@iso/lib/helpers/style_utils';
-import WithDirection from '@iso/lib/helpers/rtl';
+import styled from "styled-components";
+import { palette } from "styled-theme";
+import { borderRadius, transition } from "@iso/lib/helpers/style_utils";
+import WithDirection from "@iso/lib/helpers/rtl";
 const WDYoutubeSearchListStyleWrapper = styled.div`
   width: 100%;
   display: flex;
@@ -9,7 +9,7 @@ const WDYoutubeSearchListStyleWrapper = styled.div`
 
   .isoSingleVideoResult {
     padding: 20px 0;
-    border-bottom: 1px solid ${palette('border', 2)};
+    border-bottom: 1px solid ${palette("border", 2)};
     display: flex;
     width: 100%;
 
@@ -44,8 +44,7 @@ const WDYoutubeSearchListStyleWrapper = styled.div`
       display: flex;
       flex-direction: column;
       width: 100%;
-      margin: ${(props) =>
-        props['data-rtl'] === 'rtl' ? '0 20px 0 0' : '0 0 0 20px'};
+      margin: ${(props) => (props["data-rtl"] === "rtl" ? "0 20px 0 0" : "0 0 0 20px")};
       cursor: pointer;
 
       h3.videoName {
@@ -64,15 +63,15 @@ const WDYoutubeSearchListStyleWrapper = styled.div`
         a {
           font-size: 18px;
           font-weight: 400;
-          color: ${palette('text', 0)};
+          color: ${palette("text", 0)};
           line-height: 1.3;
           word-break: break-word;
           display: inline-block;
           text-decoration: none;
-          ${transition('')};
+          ${transition("")};
 
           &:hover {
-            color: ${palette('primary', 0)};
+            color: ${palette("primary", 0)};
           }
         }
       }
@@ -95,48 +94,43 @@ const WDYoutubeSearchListStyleWrapper = styled.div`
           align-items: center;
           font-size: 13px;
           font-weight: 400;
-          color: ${palette('text', 2)};
+          color: ${palette("text", 2)};
           line-height: 1.3;
-          ${transition('')};
+          ${transition("")};
 
           &:hover {
-            color: ${palette('primary', 11)};
+            color: ${palette("primary", 11)};
           }
         }
 
         .uploadDate {
           font-size: 13px;
           font-weight: 400;
-          color: ${palette('text', 2)};
+          color: ${palette("text", 2)};
           line-height: 1.3;
           display: inline-block;
           padding-left: 20px;
           position: relative;
 
           &:before {
-            content: '';
+            content: "";
             width: 4px;
             height: 4px;
             display: inline-block;
-            background-color: ${palette('grayscale', 0)};
+            background-color: ${palette("grayscale", 0)};
             position: absolute;
             top: 6px;
-            left: ${(props) =>
-              props['data-rtl'] === 'rtl' ? 'inherit' : '8px'};
-            right: ${(props) =>
-              props['data-rtl'] === 'rtl' ? '8px' : 'inherit'};
-            ${borderRadius('50%')};
+            left: ${(props) => (props["data-rtl"] === "rtl" ? "inherit" : "8px")};
+            right: ${(props) => (props["data-rtl"] === "rtl" ? "8px" : "inherit")};
+            ${borderRadius("50%")};
           }
 
           @media only screen and (max-width: 420px) {
-            padding: ${(props) =>
-              props['data-rtl'] === 'rtl' ? '0 13px 0 0' : '0 0 0 13px'};
+            padding: ${(props) => (props["data-rtl"] === "rtl" ? "0 13px 0 0" : "0 0 0 13px")};
 
             &:before {
-              left: ${(props) =>
-                props['data-rtl'] === 'rtl' ? 'inherit' : '0'};
-              right: ${(props) =>
-                props['data-rtl'] === 'rtl' ? '0' : 'inherit'};
+              left: ${(props) => (props["data-rtl"] === "rtl" ? "inherit" : "0")};
+              right: ${(props) => (props["data-rtl"] === "rtl" ? "0" : "inherit")};
             }
           }
         }
@@ -145,7 +139,7 @@ const WDYoutubeSearchListStyleWrapper = styled.div`
       p {
         font-size: 14px;
         font-weight: 400;
-        color: ${palette('text', 3)};
+        color: ${palette("text", 3)};
         line-height: 1.3;
         margin-bottom: 0;
         margin-top: 10px;
@@ -161,10 +155,10 @@ const YoutubeSearchStyleWrapper = styled.div`
   .isoTotalResultFind {
     font-size: 18px;
     font-weight: 700;
-    color: ${palette('text', 0)};
+    color: ${palette("text", 0)};
     line-height: 1.3;
     padding-bottom: 15px;
-    border-bottom: 1px solid ${palette('border', 2)};
+    border-bottom: 1px solid ${palette("border", 2)};
   }
 
   .youtubeSearchPagination {
@@ -198,12 +192,6 @@ const YoutubeModal = (ComponentName) => styled(ComponentName)`
   }
 `;
 
-const YoutubeSearchListStyleWrapper = WithDirection(
-  WDYoutubeSearchListStyleWrapper
-);
+const YoutubeSearchListStyleWrapper = WithDirection(WDYoutubeSearchListStyleWrapper);
 
-export {
-  YoutubeSearchListStyleWrapper,
-  YoutubeSearchStyleWrapper,
-  YoutubeModal,
-};
+export { YoutubeSearchListStyleWrapper, YoutubeSearchStyleWrapper, YoutubeModal };

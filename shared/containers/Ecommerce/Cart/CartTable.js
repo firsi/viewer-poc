@@ -1,12 +1,12 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import Input from '@iso/components/uielements/input';
-import Button from '@iso/components/uielements/button';
-import SingleCart from '@iso/components/Cart/SingleCart';
-import ecommerceActions from '@iso/redux/ecommerce/actions';
-import ProductsTable from './CartTable.styles';
-import { direction } from '@iso/lib/helpers/rtl';
+import React from "react";
+import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import Input from "@iso/components/uielements/input";
+import Button from "@iso/components/uielements/button";
+import SingleCart from "@iso/components/Cart/SingleCart";
+import ecommerceActions from "@iso/redux/ecommerce/actions";
+import ProductsTable from "./CartTable.styles";
+import { direction } from "@iso/lib/helpers/rtl";
 
 const { changeProductQuantity } = ecommerceActions;
 
@@ -56,7 +56,7 @@ export default function CartTable({ style }) {
     });
     dispatch(changeProductQuantity(newProductQuantity));
   }
-  const classname = style != null ? style : '';
+  const classname = style != null ? style : "";
   return (
     <ProductsTable className={`isoCartTable ${classname}`}>
       <table>
@@ -87,24 +87,24 @@ export default function CartTable({ style }) {
           <tr>
             <td
               style={{
-                width: '100%',
-                paddingRight: `${direction === 'rtl' ? '0' : '25px'}`,
-                paddingLeft: `${direction === 'rtl' ? '25px' : '0'}`,
+                width: "100%",
+                paddingRight: `${direction === "rtl" ? "0" : "25px"}`,
+                paddingLeft: `${direction === "rtl" ? "25px" : "0"}`,
               }}
             >
               <Input size="large" placeholder="Discount Coupon" />
             </td>
             <td
               style={{
-                paddingRight: `${direction === 'rtl' ? '0' : '25px'}`,
-                paddingLeft: `${direction === 'rtl' ? '25px' : '0'}`,
+                paddingRight: `${direction === "rtl" ? "0" : "25px"}`,
+                paddingLeft: `${direction === "rtl" ? "25px" : "0"}`,
               }}
             >
               <Button>Apply</Button>
             </td>
             <td>
               <Button type="primary">
-                <Link to={'/dashboard/checkout'}>Checkout</Link>
+                <Link to={"/dashboard/checkout"}>Checkout</Link>
               </Button>
             </td>
           </tr>

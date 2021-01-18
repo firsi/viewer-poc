@@ -1,17 +1,17 @@
-import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import moment from 'moment';
-import Input from '@iso/components/uielements/input';
-import { Tooltip } from 'antd';
-import Radio, { RadioGroup } from '@iso/components/uielements/radio';
-import DatePicker from '@iso/components/uielements/datePicker';
-import Modal from '@iso/components/Feedback/Modal';
-import notification from '@iso/components/Notification';
-import chatActions from '@iso/redux/chat/actions';
-import { AddUserBtn, Fieldset, Form, Label } from './Messages.styles';
-import { AddIcon } from '@iso/config/icon.config';
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import moment from "moment";
+import Input from "@iso/components/uielements/input";
+import { Tooltip } from "antd";
+import Radio, { RadioGroup } from "@iso/components/uielements/radio";
+import DatePicker from "@iso/components/uielements/datePicker";
+import Modal from "@iso/components/Feedback/Modal";
+import notification from "@iso/components/Notification";
+import chatActions from "@iso/redux/chat/actions";
+import { AddUserBtn, Fieldset, Form, Label } from "./Messages.styles";
+import { AddIcon } from "@iso/config/icon.config";
 
-const dateFormat = 'DD/MM/YYYY';
+const dateFormat = "DD/MM/YYYY";
 const { updateNewUsersProp, addNewUser } = chatActions;
 export default function AddNewUser() {
   const { user, users, addNewUsersProp } = useSelector((state) => state.Chat);
@@ -23,41 +23,32 @@ export default function AddNewUser() {
     dispatch(
       updateNewUsersProp({
         modalActive: true,
-        name: 'New User',
-        dob: '22/04/1992',
-        mobileNo: '9429692135',
-        gender: 'Male',
-        language: 'English',
+        name: "New User",
+        dob: "22/04/1992",
+        mobileNo: "9429692135",
+        gender: "Male",
+        language: "English",
         profileImageUrl:
-          'https://thumb7.shutterstock.com/display_pic_with_logo/818215/552201991/stock-photo-beautiful-young-grinning-professional-black-woman-in-office-with-eyeglasses-folded-arms-and-552201991.jpg',
+          "https://thumb7.shutterstock.com/display_pic_with_logo/818215/552201991/stock-photo-beautiful-young-grinning-professional-black-woman-in-office-with-eyeglasses-folded-arms-and-552201991.jpg",
       })
     );
   };
   const userNameExist = (newUser) =>
-    users.findIndex(
-      (user) => user.name.toLowerCase() === newUser.name.toLowerCase()
-    ) !== -1;
+    users.findIndex((user) => user.name.toLowerCase() === newUser.name.toLowerCase()) !== -1;
 
   const addUser = () => {
     if (addNewUsersProp.name) {
       if (userNameExist(addNewUsersProp)) {
-        notification('error', 'User name already exists');
+        notification("error", "User name already exists");
       } else {
         dispatch(addNewUser(user, addNewUsersProp));
-        notification('success', 'New user created successfuly');
+        notification("success", "New user created successfuly");
       }
     } else {
-      notification('error', 'please add new user name');
+      notification("error", "please add new user name");
     }
   };
-  const {
-    modalActive,
-    name,
-    dob,
-    mobileNo,
-    gender,
-    language,
-  } = addNewUsersProp;
+  const { modalActive, name, dob, mobileNo, gender, language } = addNewUsersProp;
   return (
     <div>
       <Tooltip placement="topRight" title="Add a new user (For demo only)">
@@ -80,7 +71,7 @@ export default function AddNewUser() {
             <Input
               label="Name"
               placeholder="Enter Name"
-              value={name || ''}
+              value={name || ""}
               onChange={(event) => {
                 addNewUsersProp.name = event.target.value;
                 dispatch(updateNewUsersProp(addNewUsersProp));
@@ -93,7 +84,7 @@ export default function AddNewUser() {
             <Input
               label="Mobile"
               placeholder="Mobile No"
-              value={mobileNo || ''}
+              value={mobileNo || ""}
               onChange={(event) => {
                 addNewUsersProp.mobileNo = event.target.value;
                 dispatch(updateNewUsersProp(addNewUsersProp));
@@ -123,7 +114,7 @@ export default function AddNewUser() {
             <Input
               label="Language"
               placeholder="Language"
-              value={language || ''}
+              value={language || ""}
               onChange={(event) => {
                 addNewUsersProp.language = event.target.value;
                 dispatch(updateNewUsersProp(addNewUsersProp));

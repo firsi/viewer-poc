@@ -1,25 +1,21 @@
-import React from 'react';
-import { Popover } from 'antd';
-import moment from 'moment';
-import LikeDislike from './LikeDislike';
-import Rating from '../Rating/Rating';
+import React from "react";
+import { Popover } from "antd";
+import moment from "moment";
+import LikeDislike from "./LikeDislike";
+import Rating from "../Rating/Rating";
 
 export default class App extends React.Component {
   render() {
     const { singleReview, authorRating } = this.props;
-    const reviewAuthorFirstName = singleReview
-      ? singleReview.reviewAuthorFirstName
-      : '';
-    const reviewAuthorLastName = singleReview
-      ? singleReview.reviewAuthorLastName
-      : '';
-    const authorName = reviewAuthorFirstName + ' ' + reviewAuthorLastName;
-    const content = singleReview ? singleReview.reviewText : '';
-    const reviewTitle = singleReview ? singleReview.reviewTitle : '';
-    const commentDate = singleReview ? singleReview.reviewDate : '';
+    const reviewAuthorFirstName = singleReview ? singleReview.reviewAuthorFirstName : "";
+    const reviewAuthorLastName = singleReview ? singleReview.reviewAuthorLastName : "";
+    const authorName = reviewAuthorFirstName + " " + reviewAuthorLastName;
+    const content = singleReview ? singleReview.reviewText : "";
+    const reviewTitle = singleReview ? singleReview.reviewTitle : "";
+    const commentDate = singleReview ? singleReview.reviewDate : "";
     const postTime = new Date(commentDate).getTime();
-    const authorAvatar = singleReview ? singleReview.reviewAuthorPic.url : '';
-    const reviewRating = singleReview ? singleReview.reviewFields : '';
+    const authorAvatar = singleReview ? singleReview.reviewAuthorPic.url : "";
+    const reviewRating = singleReview ? singleReview.reviewFields : "";
 
     return (
       <div className="comment-area">
@@ -31,16 +27,9 @@ export default class App extends React.Component {
               </div>
               <div className="author-info">
                 <h3 className="author-name">{authorName}</h3>
-                {authorRating && (
-                  <div className="author-rating">{authorRating}</div>
-                )}
+                {authorRating && <div className="author-rating">{authorRating}</div>}
                 <div className="comment-date">
-                  <Popover
-                    placement="bottom"
-                    content={moment(commentDate).format(
-                      'dddd, MMMM Do YYYY, h:mm:ss a'
-                    )}
-                  >
+                  <Popover placement="bottom" content={moment(commentDate).format("dddd, MMMM Do YYYY, h:mm:ss a")}>
                     <span>Reviewd - {moment(postTime).fromNow()}</span>
                   </Popover>
                 </div>
@@ -68,7 +57,7 @@ export default class App extends React.Component {
                     </div>
                   );
                 })
-              : ''}
+              : ""}
           </div>
         </div>
       </div>

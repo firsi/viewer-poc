@@ -1,9 +1,9 @@
 export const validateEmail = (value) => {
   let errors;
   if (!value) {
-    errors = 'Required!';
+    errors = "Required!";
   } else if (!/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value)) {
-    errors = 'Invalid email address!';
+    errors = "Invalid email address!";
   }
   return errors;
 };

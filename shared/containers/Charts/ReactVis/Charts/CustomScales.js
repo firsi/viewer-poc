@@ -1,14 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
-import {
-  XYPlot,
-  XAxis,
-  YAxis,
-  HorizontalGridLines,
-  VerticalGridLines,
-  LineSeries,
-} from 'react-vis';
-import ChartWrapper from '../../Charts.styles';
+import { XYPlot, XAxis, YAxis, HorizontalGridLines, VerticalGridLines, LineSeries } from "react-vis";
+import ChartWrapper from "../../Charts.styles";
 
 export default class extends Component {
   render() {

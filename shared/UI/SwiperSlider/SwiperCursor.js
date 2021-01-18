@@ -1,5 +1,5 @@
-import React from 'react';
-import Swiper from 'react-id-swiper';
+import React from "react";
+import Swiper from "react-id-swiper";
 
 export default function SwiperCursor(props) {
   const { children } = props;
@@ -9,7 +9,7 @@ export default function SwiperCursor(props) {
     spaceBetween: 30,
     grabCursor: true,
     pagination: {
-      el: '.swiper-pagination',
+      el: ".swiper-pagination",
       clickable: true,
     },
   };

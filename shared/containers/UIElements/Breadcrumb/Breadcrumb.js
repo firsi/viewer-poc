@@ -1,12 +1,12 @@
-import React from 'react';
-import { HomeOutlined, UserOutlined } from '@ant-design/icons';
-import { Row, Col } from 'antd';
-import PageHeader from '@iso/components/utility/pageHeader';
-import Box from '@iso/components/utility/box';
-import LayoutWrapper from '@iso/components/utility/layoutWrapper';
-import ContentHolder from '@iso/components/utility/contentHolder';
-import basicStyle from '@iso/assets/styles/constants';
-import Breadcrumb from './Breadcrumb.styles';
+import React from "react";
+import { HomeOutlined, UserOutlined } from "@ant-design/icons";
+import { Row, Col } from "antd";
+import PageHeader from "@iso/components/utility/pageHeader";
+import Box from "@iso/components/utility/box";
+import LayoutWrapper from "@iso/components/utility/layoutWrapper";
+import ContentHolder from "@iso/components/utility/contentHolder";
+import basicStyle from "@iso/assets/styles/constants";
+import Breadcrumb from "./Breadcrumb.styles";
 
 export default function () {
   const { rowStyle, colStyle, gutter } = basicStyle;
@@ -15,10 +15,7 @@ export default function () {
       <PageHeader>BreadCrumb</PageHeader>
       <Row style={rowStyle} gutter={gutter} justify="start">
         <Col span={12} style={colStyle}>
-          <Box
-            title="Basic BreadCrumb"
-            subtitle="The simplest usage that close the notification box after 4.5s."
-          >
+          <Box title="Basic BreadCrumb" subtitle="The simplest usage that close the notification box after 4.5s.">
             <ContentHolder>
               <Breadcrumb>
                 <Breadcrumb.Item>Home</Breadcrumb.Item>
@@ -34,10 +31,7 @@ export default function () {
           </Box>
         </Col>
         <Col span={12} style={colStyle}>
-          <Box
-            title="Breadcrumb with Icon"
-            subtitle="The simplest usage that close the notification box after 4.5s."
-          >
+          <Box title="Breadcrumb with Icon" subtitle="The simplest usage that close the notification box after 4.5s.">
             <ContentHolder>
               <Breadcrumb>
                 <Breadcrumb.Item href="# ">

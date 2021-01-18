@@ -1,9 +1,9 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Heading = styled.h2`
   font-size: 25px;
   color: #2d3446;
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-weight: 500;
   margin-bottom: 51px;
 `;
@@ -62,8 +62,8 @@ export const FormWrapper = styled.div`
       }
     }
   }
-  button[type='submit'],
-  button[type='submit'].ant-btn-primary {
+  button[type="submit"],
+  button[type="submit"].ant-btn-primary {
     border-radius: 6px;
     height: 54px;
     font-size: 18px;

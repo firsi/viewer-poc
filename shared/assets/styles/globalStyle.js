@@ -1,5 +1,5 @@
-import { createGlobalStyle } from 'styled-components';
-import { palette, font } from 'styled-theme';
+import { createGlobalStyle } from "styled-components";
+import { palette, font } from "styled-theme";
 // import 'antd/dist/antd.css';
 
 const GlobalStyles = createGlobalStyle`
@@ -146,7 +146,7 @@ const GlobalStyles = createGlobalStyle`
     background: #f8f8f8!important;
 }
 
-font-family: ${font('primary', 0)};
+font-family: ${font("primary", 0)};
 
 h1,
 h2,
@@ -164,13 +164,13 @@ div,
 img,
 svg {
   &::selection {
-    background: ${palette('primary', 0)};
+    background: ${palette("primary", 0)};
     color: #fff;
   }
 }
 
 .ant-row:not(.ant-form-item) {
-  ${'' /* margin-left: -8px;
+  ${"" /* margin-left: -8px;
   margin-right: -8px; */};
   &:before,
   &:after {

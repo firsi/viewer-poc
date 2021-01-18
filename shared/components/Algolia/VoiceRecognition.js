@@ -1,13 +1,8 @@
-import React, { useState } from 'react';
-import { PropTypes } from 'prop-types';
-import SpeechRecognition, {
-  useSpeechRecognition,
-} from 'react-speech-recognition';
-import { VoiceSearchWrapper } from './AlgoliaComponent.style';
-import {
-  VoiceSearchMicIcon,
-  VoiceSearchStopIcon,
-} from '@iso/config/icon.config';
+import React, { useState } from "react";
+import { PropTypes } from "prop-types";
+import SpeechRecognition, { useSpeechRecognition } from "react-speech-recognition";
+import { VoiceSearchWrapper } from "./AlgoliaComponent.style";
+import { VoiceSearchMicIcon, VoiceSearchStopIcon } from "@iso/config/icon.config";
 
 const propTypes = {
   transcript: PropTypes.string,

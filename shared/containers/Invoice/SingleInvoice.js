@@ -1,10 +1,10 @@
-import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useRouteMatch, useParams } from 'react-router-dom';
-import EditInvoice from './EditInvoice';
-import ViewInvoice from './ViewInvoice';
-import Loader from '@iso/components/utility/loader';
-import invoiceActions from '@iso/redux/invoice/actions';
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useRouteMatch, useParams } from "react-router-dom";
+import EditInvoice from "./EditInvoice";
+import ViewInvoice from "./ViewInvoice";
+import Loader from "@iso/components/utility/loader";
+import invoiceActions from "@iso/redux/invoice/actions";
 const { initData, selectCurrentInvoice, toggleView } = invoiceActions;
 export default function SingleInvoice() {
   const invoices = useSelector((state) => state.Invoices);
@@ -26,24 +26,12 @@ export default function SingleInvoice() {
       dispatch(selectCurrentInvoice(invoiceId));
     }
   }
-  const redirectPath = match.url.replace(invoiceId, '');
+  const redirectPath = match.url.replace(invoiceId, "");
   if (currentInvoice.id !== invoiceId) {
     return <Loader />;
   } else if (enableEditView) {
-    return (
-      <EditInvoice
-        toggleView={(data) => dispatch(toggleView(data))}
-        {...invoices}
-        redirectPath={redirectPath}
-      />
-    );
+    return <EditInvoice toggleView={(data) => dispatch(toggleView(data))} {...invoices} redirectPath={redirectPath} />;
   } else {
-    return (
-      <ViewInvoice
-        {...invoices}
-        toggleView={(data) => dispatch(toggleView(data))}
-        redirectPath={redirectPath}
-      />
-    );
+    return <ViewInvoice {...invoices} toggleView={(data) => dispatch(toggleView(data))} redirectPath={redirectPath} />;
   }
 }

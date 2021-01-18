@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 // Glide wrapper style
 const GlideWrapper = styled.div`
@@ -53,12 +53,5 @@ const DefaultBtn = styled.button`
   margin: 10px 3px;
 `;
 
-export {
-  GlideSlideWrapper,
-  ButtonControlWrapper,
-  ButtonWrapper,
-  BulletControlWrapper,
-  BulletButton,
-  DefaultBtn,
-};
+export { GlideSlideWrapper, ButtonControlWrapper, ButtonWrapper, BulletControlWrapper, BulletButton, DefaultBtn };
 export default GlideWrapper;

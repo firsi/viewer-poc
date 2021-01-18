@@ -1,11 +1,11 @@
-import React from 'react';
-import moment from 'moment';
-import InvoiceAddress from '@iso/components/Invoice/Address';
-import { ViewTable } from '@iso/components/Invoice/InvoiceTable';
+import React from "react";
+import moment from "moment";
+import InvoiceAddress from "@iso/components/Invoice/Address";
+import { ViewTable } from "@iso/components/Invoice/InvoiceTable";
 
 const Invoice = React.forwardRef(({ currentInvoice }, ref) => {
   return (
-    <div className="PageContent" style={{ padding: '20' }} ref={ref}>
+    <div className="PageContent" style={{ padding: "20" }} ref={ref}>
       <div className="OrderInfo">
         <div className="LeftSideContent">
           <h3 className="Title">Invoice Info</h3>
@@ -18,11 +18,7 @@ const Invoice = React.forwardRef(({ currentInvoice }, ref) => {
           </p>
           <p>
             <span className="orderDateSpan">Order date: </span>
-            <span className="orderDate">
-              {moment(new Date(currentInvoice.orderDate)).format(
-                'MMMM Do YYYY'
-              )}
-            </span>
+            <span className="orderDate">{moment(new Date(currentInvoice.orderDate)).format("MMMM Do YYYY")}</span>
           </p>
         </div>
       </div>
@@ -30,34 +26,25 @@ const Invoice = React.forwardRef(({ currentInvoice }, ref) => {
         <div className="LeftSideContent">
           <h3 className="Title">Bill From</h3>
 
-          <InvoiceAddress
-            companyName={currentInvoice.billFrom}
-            companyAddress={currentInvoice.billFromAddress}
-          />
+          <InvoiceAddress companyName={currentInvoice.billFrom} companyAddress={currentInvoice.billFromAddress} />
         </div>
         <div className="RightSideContent">
           <h3 className="Title">Bill To</h3>
 
-          <InvoiceAddress
-            companyName={currentInvoice.billTo}
-            companyAddress={currentInvoice.billToAddress}
-          />
+          <InvoiceAddress companyName={currentInvoice.billTo} companyAddress={currentInvoice.billToAddress} />
         </div>
       </div>
       <div className="InvoiceTable">
         <ViewTable invoiceList={currentInvoice.invoiceList} />
         <div className="TotalBill">
           <p>
-            Sub-total :{' '}
-            <span>{`${currentInvoice.currency}${currentInvoice.subTotal}`}</span>
+            Sub-total : <span>{`${currentInvoice.currency}${currentInvoice.subTotal}`}</span>
           </p>
           <p>
-            Vat :{' '}
-            <span>{`${currentInvoice.currency}${currentInvoice.vatPrice}`}</span>
+            Vat : <span>{`${currentInvoice.currency}${currentInvoice.vatPrice}`}</span>
           </p>
           <h3>
-            Grand Total :{' '}
-            <span>{`${currentInvoice.currency}${currentInvoice.totalCost}`}</span>
+            Grand Total : <span>{`${currentInvoice.currency}${currentInvoice.totalCost}`}</span>
           </h3>
         </div>
       </div>

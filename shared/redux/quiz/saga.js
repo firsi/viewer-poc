@@ -1,8 +1,8 @@
 // saga.js
-import { all, takeEvery, put, select } from 'redux-saga/effects';
-import quizActions from './actions';
-import FakeQuestion from './fakeQuestion';
-import FakeQuiz from './fakeQuizes';
+import { all, takeEvery, put, select } from "redux-saga/effects";
+import quizActions from "./actions";
+import FakeQuestion from "./fakeQuestion";
+import FakeQuiz from "./fakeQuizes";
 
 const getQuizes = (state) => state.quiz;
 

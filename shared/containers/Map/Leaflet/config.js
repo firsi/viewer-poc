@@ -1,10 +1,10 @@
-import customIcon from '@iso/assets/images/map-pin-2.svg';
-import customIconShadow from '@iso/assets/images/marker-shadow.png';
-import infoWindowImg1 from '@iso/assets/images/image1.jpg';
-import infoWindowImg2 from '@iso/assets/images/image3.jpg';
-import infoWindowImg3 from '@iso/assets/images/image4.jpg';
-import infoWindowImg4 from '@iso/assets/images/image5.jpg';
-import { FlameIcon } from '@iso/config/icon.config';
+import customIcon from "@iso/assets/images/map-pin-2.svg";
+import customIconShadow from "@iso/assets/images/marker-shadow.png";
+import infoWindowImg1 from "@iso/assets/images/image1.jpg";
+import infoWindowImg2 from "@iso/assets/images/image3.jpg";
+import infoWindowImg3 from "@iso/assets/images/image4.jpg";
+import infoWindowImg4 from "@iso/assets/images/image5.jpg";
+import { FlameIcon } from "@iso/config/icon.config";
 
 const basicMarkers = [
   {
@@ -81,7 +81,7 @@ const customHtmlMarker = [
       <MarkerWrapper class="marker-icon-wrapper">
         ${FlameIcon}
       </MarkerWrapper>`,
-    className: 'marker-icon',
+    className: "marker-icon",
     popupText: `
       <div class="isoInfoWindowImage">
         <img src=${infoWindowImg2} alt="" />
@@ -168,10 +168,4 @@ const markerRouting = {
   postion_end: [40.6943, -74.074201],
 };
 
-export {
-  basicMarkers,
-  customIconMarkers,
-  customHtmlMarker,
-  markerCluster,
-  markerRouting,
-};
+export { basicMarkers, customIconMarkers, customHtmlMarker, markerCluster, markerRouting };

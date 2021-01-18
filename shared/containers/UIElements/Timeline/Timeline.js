@@ -1,21 +1,19 @@
-import React from 'react';
-import { ClockCircleOutlined } from '@ant-design/icons';
-import { Row, Col } from 'antd';
-import PageHeader from '@iso/components/utility/pageHeader';
-import Box from '@iso/components/utility/box';
-import LayoutWrapper from '@iso/components/utility/layoutWrapper';
-import ContentHolder from '@iso/components/utility/contentHolder';
-import IntlMessages from '@iso/components/utility/intlMessages';
-import Timeline, { TimelineItem } from '@iso/components/uielements/timeline';
-import basicStyle from '@iso/assets/styles/constants';
+import React from "react";
+import { ClockCircleOutlined } from "@ant-design/icons";
+import { Row, Col } from "antd";
+import PageHeader from "@iso/components/utility/pageHeader";
+import Box from "@iso/components/utility/box";
+import LayoutWrapper from "@iso/components/utility/layoutWrapper";
+import ContentHolder from "@iso/components/utility/contentHolder";
+import IntlMessages from "@iso/components/utility/intlMessages";
+import Timeline, { TimelineItem } from "@iso/components/uielements/timeline";
+import basicStyle from "@iso/assets/styles/constants";
 
 export default function () {
   const { rowStyle, colStyle, gutter } = basicStyle;
   return (
     <LayoutWrapper>
-      <PageHeader>
-        {<IntlMessages id="uiElements.timeline.timeline" />}
-      </PageHeader>
+      <PageHeader>{<IntlMessages id="uiElements.timeline.timeline" />}</PageHeader>
       <Row style={rowStyle} gutter={gutter} justify="start">
         <Col md={12} sm={12} xs={24} style={colStyle}>
           <Box
@@ -24,22 +22,10 @@ export default function () {
           >
             <ContentHolder>
               <Timeline>
-                <TimelineItem>
-                  {<IntlMessages id="uiElements.timeline.createServiceSite" />}
-                </TimelineItem>
-                <TimelineItem>
-                  {
-                    <IntlMessages id="uiElements.timeline.solveInitialNetwork" />
-                  }
-                </TimelineItem>
-                <TimelineItem>
-                  {<IntlMessages id="uiElements.timeline.technicalTesting" />}
-                </TimelineItem>
-                <TimelineItem>
-                  {
-                    <IntlMessages id="uiElements.timeline.networkProblemSolved" />
-                  }
-                </TimelineItem>
+                <TimelineItem>{<IntlMessages id="uiElements.timeline.createServiceSite" />}</TimelineItem>
+                <TimelineItem>{<IntlMessages id="uiElements.timeline.solveInitialNetwork" />}</TimelineItem>
+                <TimelineItem>{<IntlMessages id="uiElements.timeline.technicalTesting" />}</TimelineItem>
+                <TimelineItem>{<IntlMessages id="uiElements.timeline.networkProblemSolved" />}</TimelineItem>
               </Timeline>
             </ContentHolder>
           </Box>
@@ -47,18 +33,12 @@ export default function () {
         <Col md={12} sm={12} xs={24} style={colStyle}>
           <Box
             title={<IntlMessages id="uiElements.timeline.colorExample" />}
-            subtitle={
-              <IntlMessages id="uiElements.timeline.colorExampleContent" />
-            }
+            subtitle={<IntlMessages id="uiElements.timeline.colorExampleContent" />}
           >
             <ContentHolder>
               <Timeline>
-                <TimelineItem color="green">
-                  Create a services site 2015-09-01
-                </TimelineItem>
-                <TimelineItem color="green">
-                  Create a services site 2015-09-01
-                </TimelineItem>
+                <TimelineItem color="green">Create a services site 2015-09-01</TimelineItem>
+                <TimelineItem color="green">Create a services site 2015-09-01</TimelineItem>
                 <TimelineItem color="red">
                   <p>Solve initial network problems 1</p>
                   <p>Solve initial network problems 2</p>
@@ -83,18 +63,11 @@ export default function () {
             <ContentHolder>
               <Timeline>
                 <TimelineItem>Create a services site 2015-09-01</TimelineItem>
-                <TimelineItem>
-                  Solve initial network problems 2015-09-01
-                </TimelineItem>
-                <TimelineItem
-                  dot={<ClockCircleOutlined style={{ fontSize: '16px' }} />}
-                  color="red"
-                >
+                <TimelineItem>Solve initial network problems 2015-09-01</TimelineItem>
+                <TimelineItem dot={<ClockCircleOutlined style={{ fontSize: "16px" }} />} color="red">
                   Technical testing 2015-09-01
                 </TimelineItem>
-                <TimelineItem>
-                  Network problems being solved 2015-09-01
-                </TimelineItem>
+                <TimelineItem>Network problems being solved 2015-09-01</TimelineItem>
               </Timeline>
             </ContentHolder>
           </Box>
@@ -105,17 +78,9 @@ export default function () {
             subtitle={<IntlMessages id="uiElements.timeline.lastNodeContent" />}
           >
             <ContentHolder>
-              <Timeline
-                pending={
-                  <a href="# ">
-                    {<IntlMessages id="uiElements.timeline.seeMore" />}
-                  </a>
-                }
-              >
+              <Timeline pending={<a href="# ">{<IntlMessages id="uiElements.timeline.seeMore" />}</a>}>
                 <TimelineItem>Create a services site 2015-09-01</TimelineItem>
-                <TimelineItem>
-                  Solve initial network problems 2015-09-01
-                </TimelineItem>
+                <TimelineItem>Solve initial network problems 2015-09-01</TimelineItem>
                 <TimelineItem>Technical testing 2015-09-01</TimelineItem>
               </Timeline>
             </ContentHolder>

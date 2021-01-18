@@ -1,6 +1,6 @@
-import React from 'react';
-import CodeMirrors from '@iso/components/uielements/codeMirror';
-import styled from 'styled-components';
+import React from "react";
+import CodeMirrors from "@iso/components/uielements/codeMirror";
+import styled from "styled-components";
 
 const CodeMirrorEditor = (props) => <CodeMirrors {...props} />;
 
@@ -374,7 +374,7 @@ const CodeMirror = styled(CodeMirrorEditor)`
     padding-right: 0.1px;
   }
   .cm-tab-wrap-hack:after {
-    content: '';
+    content: "";
   }
   span.CodeMirror-selectedtext {
     background: none;

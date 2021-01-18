@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { palette } from 'styled-theme';
+import styled from "styled-components";
+import { palette } from "styled-theme";
 
 const Wrapper = styled.div`
   overflow: hidden;
@@ -7,8 +7,8 @@ const Wrapper = styled.div`
     display: block;
     padding: 0 0 10px;
     margin: 0 0 15px;
-    color: ${palette('secondary', 5)};
-    border-bottom: 1px solid ${palette('border', 0)};
+    color: ${palette("secondary", 5)};
+    border-bottom: 1px solid ${palette("border", 0)};
     font-weight: 400;
     strong {
       font-weight: 600;
@@ -29,7 +29,7 @@ export const FollowerList = styled.div`
     }
     .info {
       h3 {
-        color: ${palette('secondary', 5)};
+        color: ${palette("secondary", 5)};
         font-size: 14px;
       }
     }

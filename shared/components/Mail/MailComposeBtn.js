@@ -1,6 +1,6 @@
-import React from 'react';
-import IntlMessages from '../utility/intlMessages';
-import MailComposeBtnWrapper from './MailComposeBtn.style';
+import React from "react";
+import IntlMessages from "../utility/intlMessages";
+import MailComposeBtnWrapper from "./MailComposeBtn.style";
 
 export default function (props) {
   return (

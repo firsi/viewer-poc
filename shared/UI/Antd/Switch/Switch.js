@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 // import { palette } from 'styled-theme';
-import { Switch } from 'antd';
+import { Switch } from "antd";
 
 // const AntSwitch = styled(Switch)`
 //   /* &.ant-switch-checked {

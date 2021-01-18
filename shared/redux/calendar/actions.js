@@ -1,6 +1,6 @@
 const calendarActions = {
-  CALENDAR_VIEW: 'CALENDAR_VIEW',
-  CALENDAR_EVENTS: 'CALENDAR_EVENTS',
+  CALENDAR_VIEW: "CALENDAR_VIEW",
+  CALENDAR_EVENTS: "CALENDAR_EVENTS",
   changeView: (view) => ({
     type: calendarActions.CALENDAR_VIEW,
     view,

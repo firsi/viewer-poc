@@ -1,15 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import ContainerWrapper from './Container.style';
+import React from "react";
+import PropTypes from "prop-types";
+import ContainerWrapper from "./Container.style";
 
 const Container = ({ children, className, fullWidth, noGutter, fluid }) => {
   return (
-    <ContainerWrapper
-      className={className}
-      fullWidth={fullWidth}
-      noGutter={noGutter}
-      fluid={fluid}
-    >
+    <ContainerWrapper className={className} fullWidth={fullWidth} noGutter={noGutter} fluid={fluid}>
       {children}
     </ContainerWrapper>
   );

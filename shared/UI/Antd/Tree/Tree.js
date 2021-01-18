@@ -1,5 +1,5 @@
-import { Tree } from 'antd';
-import AntTree from './Tree.style';
+import { Tree } from "antd";
+import AntTree from "./Tree.style";
 
 const WDTrees = AntTree(Tree);
 const Trees = WDTrees;

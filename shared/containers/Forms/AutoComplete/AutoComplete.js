@@ -1,14 +1,12 @@
-import React from 'react';
-import { Row, Col } from 'antd';
-import AutoComplete, {
-  AutoCompleteOption,
-} from '@iso/components/uielements/autocomplete';
-import PageHeader from '@iso/components/utility/pageHeader';
-import Box from '@iso/components/utility/box';
-import LayoutWrapper from '@iso/components/utility/layoutWrapper.js';
-import ContentHolder from '@iso/components/utility/contentHolder';
-import IntlMessages from '@iso/components/utility/intlMessages';
-import basicStyle from '@iso/assets/styles/constants';
+import React from "react";
+import { Row, Col } from "antd";
+import AutoComplete, { AutoCompleteOption } from "@iso/components/uielements/autocomplete";
+import PageHeader from "@iso/components/utility/pageHeader";
+import Box from "@iso/components/utility/box";
+import LayoutWrapper from "@iso/components/utility/layoutWrapper.js";
+import ContentHolder from "@iso/components/utility/contentHolder";
+import IntlMessages from "@iso/components/utility/intlMessages";
+import basicStyle from "@iso/assets/styles/constants";
 
 const Option = AutoCompleteOption;
 
@@ -18,12 +16,10 @@ export default function () {
 
   const handleCustomizedChange = (value) => {
     let result;
-    if (!value || value.indexOf('@') >= 0) {
+    if (!value || value.indexOf("@") >= 0) {
       result = [];
     } else {
-      result = ['gmail.com', '163.com', 'qq.com'].map(
-        (domain) => `${value}@${domain}`
-      );
+      result = ["gmail.com", "163.com", "qq.com"].map((domain) => `${value}@${domain}`);
     }
     setResult(result);
   };
@@ -60,10 +56,7 @@ export default function () {
             subtitle={<IntlMessages id="forms.autocomplete.simpleSubTitle" />}
           >
             <ContentHolder>
-              <AutoComplete
-                onChange={handleCustomizedChange}
-                placeholder="Input here"
-              >
+              <AutoComplete onChange={handleCustomizedChange} placeholder="Input here">
                 {children}
               </AutoComplete>
             </ContentHolder>
@@ -72,9 +65,7 @@ export default function () {
         <Col md={12} xs={24} style={colStyle}>
           <Box
             title={<IntlMessages id="forms.autocomplete.customizeTitle" />}
-            subtitle={
-              <IntlMessages id="forms.autocomplete.customizeSubTitle" />
-            }
+            subtitle={<IntlMessages id="forms.autocomplete.customizeSubTitle" />}
           >
             <ContentHolder>
               <AutoComplete

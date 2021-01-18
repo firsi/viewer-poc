@@ -1,25 +1,21 @@
-import styled from 'styled-components';
-import { palette } from 'styled-theme';
-import {
-  transition,
-  borderRadius,
-  boxShadow,
-} from '@iso/lib/helpers/style_utils';
-import WithDirection from '@iso/lib/helpers/rtl';
+import styled from "styled-components";
+import { palette } from "styled-theme";
+import { transition, borderRadius, boxShadow } from "@iso/lib/helpers/style_utils";
+import WithDirection from "@iso/lib/helpers/rtl";
 
 const WDSingleCardWrapper = styled.li`
   padding: 15px;
   background-color: #ffffff;
   position: relative;
   margin-bottom: 5px;
-  ${boxShadow('0 0 1px rgba(0,0,0,0.15)')};
+  ${boxShadow("0 0 1px rgba(0,0,0,0.15)")};
 
   .isoCardImage {
     overflow: hidden;
     flex-shrink: 0;
     align-items: center;
     justify-content: center;
-    background-color: ${palette('grayscale', 6)};
+    background-color: ${palette("grayscale", 6)};
 
     img {
       width: 100%;
@@ -37,14 +33,14 @@ const WDSingleCardWrapper = styled.li`
     .isoCardTitle {
       font-size: 14px;
       font-weight: 500;
-      color: ${palette('text', 0)};
+      color: ${palette("text", 0)};
       margin: 0 0 3px;
     }
 
     .isoCardDate {
       font-size: 12px;
       font-weight: 400;
-      color: ${palette('grayscale', 0)};
+      color: ${palette("grayscale", 0)};
     }
   }
 
@@ -56,12 +52,12 @@ const WDSingleCardWrapper = styled.li`
     padding: 0;
     border: 0;
     font-size: 14px;
-    color: ${palette('grayscale', 0)};
+    color: ${palette("grayscale", 0)};
     cursor: pointer;
     ${transition()};
 
     &:hover {
-      color: ${palette('primary', 0)};
+      color: ${palette("primary", 0)};
     }
   }
 
@@ -76,7 +72,7 @@ const WDSingleCardWrapper = styled.li`
       display: -webkit-inline-flex;
       display: -ms-inline-flex;
       display: inline-flex;
-      ${borderRadius('50%')};
+      ${borderRadius("50%")};
     }
   }
 
@@ -94,10 +90,8 @@ const WDSingleCardWrapper = styled.li`
 
     @media only screen and (max-width: 480px) {
       width: 100%;
-      margin-right: ${(props) =>
-        props['data-rtl'] === 'rtl' ? 'inherit' : '0'};
-      margin-left: ${(props) =>
-        props['data-rtl'] === 'rtl' ? '0' : 'inherit'};
+      margin-right: ${(props) => (props["data-rtl"] === "rtl" ? "inherit" : "0")};
+      margin-left: ${(props) => (props["data-rtl"] === "rtl" ? "0" : "inherit")};
     }
 
     @media only screen and (min-width: 1400px) {
@@ -123,8 +117,8 @@ const WDSingleCardWrapper = styled.li`
     .isoDeleteBtn {
       position: absolute;
       top: 0;
-      right: ${(props) => (props['data-rtl'] === 'rtl' ? 'inherit' : '0')};
-      left: ${(props) => (props['data-rtl'] === 'rtl' ? '0' : 'inherit')};
+      right: ${(props) => (props["data-rtl"] === "rtl" ? "inherit" : "0")};
+      left: ${(props) => (props["data-rtl"] === "rtl" ? "0" : "inherit")};
     }
   }
 `;
@@ -156,18 +150,17 @@ const WDSortableCardWrapper = styled.div`
         font-weight: 400;
         text-transform: uppercase;
         color: #ffffff;
-        background-color: ${palette('primary', 0)};
+        background-color: ${palette("primary", 0)};
         border: 0;
         outline: 0;
         display: flex;
         align-items: center;
         height: 35px;
         padding: 0 15px;
-        margin-right: ${(props) =>
-          props['data-rtl'] === 'rtl' ? '0' : '10px'};
-        margin-left: ${(props) => (props['data-rtl'] === 'rtl' ? '10px' : '0')};
+        margin-right: ${(props) => (props["data-rtl"] === "rtl" ? "0" : "10px")};
+        margin-left: ${(props) => (props["data-rtl"] === "rtl" ? "10px" : "0")};
         cursor: pointer;
-        ${borderRadius('3px')};
+        ${borderRadius("3px")};
         ${transition()};
 
         @media only screen and (max-width: 430px) {
@@ -175,33 +168,27 @@ const WDSortableCardWrapper = styled.div`
         }
 
         span {
-          padding-right: ${(props) =>
-            props['data-rtl'] === 'rtl' ? '0' : '10px'};
-          padding-left: ${(props) =>
-            props['data-rtl'] === 'rtl' ? '10px' : '0'};
+          padding-right: ${(props) => (props["data-rtl"] === "rtl" ? "0" : "10px")};
+          padding-left: ${(props) => (props["data-rtl"] === "rtl" ? "10px" : "0")};
         }
 
         &:last-child {
-          margin-right: ${(props) => (props['data-rtl'] === 'rtl' ? '0' : '0')};
-          margin-left: ${(props) => (props['data-rtl'] === 'rtl' ? '0' : '0')};
+          margin-right: ${(props) => (props["data-rtl"] === "rtl" ? "0" : "0")};
+          margin-left: ${(props) => (props["data-rtl"] === "rtl" ? "0" : "0")};
         }
 
         &:hover {
-          background-color: ${palette('primary', 1)};
+          background-color: ${palette("primary", 1)};
         }
       }
 
       &.isoControlBtnGroup {
-        margin-left: ${(props) =>
-          props['data-rtl'] === 'rtl' ? 'inherit' : 'auto'};
-        margin-right: ${(props) =>
-          props['data-rtl'] === 'rtl' ? 'auto' : 'inherit'};
+        margin-left: ${(props) => (props["data-rtl"] === "rtl" ? "inherit" : "auto")};
+        margin-right: ${(props) => (props["data-rtl"] === "rtl" ? "auto" : "inherit")};
 
         @media only screen and (max-width: 767px) {
-          margin-left: ${(props) =>
-            props['data-rtl'] === 'rtl' ? 'inherit' : '0'};
-          margin-right: ${(props) =>
-            props['data-rtl'] === 'rtl' ? '0' : 'inherit'};
+          margin-left: ${(props) => (props["data-rtl"] === "rtl" ? "inherit" : "0")};
+          margin-right: ${(props) => (props["data-rtl"] === "rtl" ? "0" : "inherit")};
           margin-top: 20px;
         }
       }
@@ -224,25 +211,22 @@ const WDSortableCardWrapper = styled.div`
         padding: 0;
         text-transform: uppercase;
         color: #ffffff;
-        background-color: ${palette('primary', 0)};
+        background-color: ${palette("primary", 0)};
         display: flex;
         align-items: center;
         border: 0;
         outline: 0;
         height: 30px;
         padding: 0 15px;
-        margin-right: ${(props) =>
-          props['data-rtl'] === 'rtl' ? '0' : '10px'};
-        margin-left: ${(props) => (props['data-rtl'] === 'rtl' ? '10px' : '0')};
+        margin-right: ${(props) => (props["data-rtl"] === "rtl" ? "0" : "10px")};
+        margin-left: ${(props) => (props["data-rtl"] === "rtl" ? "10px" : "0")};
         cursor: pointer;
-        ${borderRadius('3px')};
+        ${borderRadius("3px")};
         ${transition()};
 
         svg {
-          margin-right: ${(props) =>
-            props['data-rtl'] === 'rtl' ? '0' : '10px'};
-          margin-left: ${(props) =>
-            props['data-rtl'] === 'rtl' ? '10px' : '0'};
+          margin-right: ${(props) => (props["data-rtl"] === "rtl" ? "0" : "10px")};
+          margin-left: ${(props) => (props["data-rtl"] === "rtl" ? "10px" : "0")};
         }
 
         &:last-child {
@@ -250,7 +234,7 @@ const WDSortableCardWrapper = styled.div`
         }
 
         &:hover {
-          background-color: ${palette('primary', 1)};
+          background-color: ${palette("primary", 1)};
         }
       }
     }

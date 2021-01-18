@@ -1,23 +1,22 @@
-import React from 'react';
-import { PlusOutlined } from '@ant-design/icons';
-import Modal from '@iso/components/Feedback/Modal';
-import Upload from '@iso/components/uielements/upload';
-import PageHeader from '@iso/components/utility/pageHeader';
-import Box from '@iso/components/utility/box';
-import LayoutWrapper from '@iso/components/utility/layoutWrapper';
-import ContentHolder from '@iso/components/utility/contentHolder';
+import React from "react";
+import { PlusOutlined } from "@ant-design/icons";
+import Modal from "@iso/components/Feedback/Modal";
+import Upload from "@iso/components/uielements/upload";
+import PageHeader from "@iso/components/utility/pageHeader";
+import Box from "@iso/components/utility/box";
+import LayoutWrapper from "@iso/components/utility/layoutWrapper";
+import ContentHolder from "@iso/components/utility/contentHolder";
 
 export default function () {
   const [state, setState] = React.useState({
     previewVisible: false,
-    previewImage: '',
+    previewImage: "",
     fileList: [
       {
         uid: -1,
-        name: 'xxx.png',
-        status: 'done',
-        url:
-          'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
+        name: "xxx.png",
+        status: "done",
+        url: "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png",
       },
     ],
   });
@@ -59,7 +58,7 @@ export default function () {
             {fileList.length >= 3 ? null : uploadButton}
           </Upload>
           <Modal visible={previewVisible} footer={null} onCancel={handleCancel}>
-            <img alt="example" style={{ width: '100%' }} src={previewImage} />
+            <img alt="example" style={{ width: "100%" }} src={previewImage} />
           </Modal>
         </ContentHolder>
       </Box>

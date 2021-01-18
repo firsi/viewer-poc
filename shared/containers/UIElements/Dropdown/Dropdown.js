@@ -1,37 +1,32 @@
-import React from 'react';
-import { DownOutlined } from '@ant-design/icons';
-import { Row, Col, Button } from 'antd';
-import Menu from '@iso/components/uielements/menu';
-import Dropdown, {
-  DropdownButtons,
-  DropdownMenu,
-  MenuItem,
-  SubMenu,
-} from '@iso/components/uielements/dropdown';
-import message from '@iso/components/uielements/message';
-import PageHeader from '@iso/components/utility/pageHeader';
-import Box from '@iso/components/utility/box';
-import LayoutWrapper from '@iso/components/utility/layoutWrapper';
-import ContentHolder from '@iso/components/utility/contentHolder';
-import IntlMessages from '@iso/components/utility/intlMessages';
-import basicStyle from '@iso/assets/styles/constants';
-import { direction } from '@iso/lib/helpers/rtl';
+import React from "react";
+import { DownOutlined } from "@ant-design/icons";
+import { Row, Col, Button } from "antd";
+import Menu from "@iso/components/uielements/menu";
+import Dropdown, { DropdownButtons, DropdownMenu, MenuItem, SubMenu } from "@iso/components/uielements/dropdown";
+import message from "@iso/components/uielements/message";
+import PageHeader from "@iso/components/utility/pageHeader";
+import Box from "@iso/components/utility/box";
+import LayoutWrapper from "@iso/components/utility/layoutWrapper";
+import ContentHolder from "@iso/components/utility/contentHolder";
+import IntlMessages from "@iso/components/utility/intlMessages";
+import basicStyle from "@iso/assets/styles/constants";
+import { direction } from "@iso/lib/helpers/rtl";
 const MenuDivider = Menu.Divider;
 const DropdownButton = DropdownButtons;
 
 export default function IsoDropDown() {
   const handleButtonClick = (e) => {
-    message.info('Click on left button.');
+    message.info("Click on left button.");
   };
 
   const handleMenuClickToLink = (e) => {
-    message.info('Click on menu item.');
+    message.info("Click on menu item.");
   };
 
   const { rowStyle, colStyle, gutter } = basicStyle;
   const demoStyle = {
-    marginBottom: '8px',
-    marginRight: '8px',
+    marginBottom: "8px",
+    marginRight: "8px",
   };
 
   const menuHover = (
@@ -92,9 +87,7 @@ export default function IsoDropDown() {
 
   return (
     <LayoutWrapper>
-      <PageHeader>
-        {<IntlMessages id="uiElements.dropdown.dropdown" />}
-      </PageHeader>
+      <PageHeader>{<IntlMessages id="uiElements.dropdown.dropdown" />}</PageHeader>
 
       <Row style={rowStyle} gutter={gutter} justify="start">
         <Col md={12} sm={12} xs={24} style={colStyle}>
@@ -102,8 +95,7 @@ export default function IsoDropDown() {
             <ContentHolder>
               <Dropdown overlay={menuHover}>
                 <a className="ant-dropdown-link" href="# ">
-                  {<IntlMessages id="uiElements.dropdown.hoverMe" />}{' '}
-                  <DownOutlined />
+                  {<IntlMessages id="uiElements.dropdown.hoverMe" />} <DownOutlined />
                 </a>
               </Dropdown>
             </ContentHolder>
@@ -139,9 +131,7 @@ export default function IsoDropDown() {
 
       <Row style={rowStyle} gutter={gutter} justify="start">
         <Col md={12} sm={12} xs={24} style={colStyle}>
-          <Box
-            title={<IntlMessages id="uiElements.dropdown.hoverDisableLink" />}
-          >
+          <Box title={<IntlMessages id="uiElements.dropdown.hoverDisableLink" />}>
             <ContentHolder>
               <Dropdown overlay={menuHoverDisable}>
                 <a className="ant-dropdown-link" href="# ">
@@ -153,11 +143,9 @@ export default function IsoDropDown() {
         </Col>
 
         <Col md={12} sm={12} xs={24} style={colStyle}>
-          <Box
-            title={<IntlMessages id="uiElements.dropdown.clickedDropdown" />}
-          >
+          <Box title={<IntlMessages id="uiElements.dropdown.clickedDropdown" />}>
             <ContentHolder>
-              <Dropdown overlay={menuHover} trigger={['click']}>
+              <Dropdown overlay={menuHover} trigger={["click"]}>
                 <a className="ant-dropdown-link" href="# ">
                   Click me <DownOutlined />
                 </a>
@@ -179,7 +167,7 @@ export default function IsoDropDown() {
                 overlay={menuClicked}
                 disabled
                 style={{
-                  margin: direction === 'rtl' ? '0 8px 0 0' : '0 0 0 8px',
+                  margin: direction === "rtl" ? "0 8px 0 0" : "0 0 0 8px",
                 }}
               >
                 Dropdown
@@ -187,7 +175,7 @@ export default function IsoDropDown() {
               <Dropdown overlay={menuClicked}>
                 <Button
                   style={{
-                    margin: direction === 'rtl' ? '0 8px 0 0' : '0 0 0 8px',
+                    margin: direction === "rtl" ? "0 8px 0 0" : "0 0 0 8px",
                   }}
                 >
                   Button <DownOutlined />
@@ -198,9 +186,7 @@ export default function IsoDropDown() {
         </Col>
 
         <Col md={12} sm={12} xs={24} style={colStyle}>
-          <Box
-            title={<IntlMessages id="uiElements.dropdown.clickedDropdown" />}
-          >
+          <Box title={<IntlMessages id="uiElements.dropdown.clickedDropdown" />}>
             <ContentHolder>
               <Dropdown overlay={menuSubmenu}>
                 <a className="ant-dropdown-link" href="# ">

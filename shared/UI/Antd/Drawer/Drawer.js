@@ -1,3 +1,3 @@
-import { Drawer } from 'antd';
+import { Drawer } from "antd";
 
 export default Drawer;

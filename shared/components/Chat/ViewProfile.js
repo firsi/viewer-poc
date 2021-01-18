@@ -1,6 +1,6 @@
-import React from 'react';
-import { ViewProfileWrapper, SingleInfoWrapper } from './ViewProfile.style';
-import { CloseIcon } from '@iso/config/icon.config';
+import React from "react";
+import { ViewProfileWrapper, SingleInfoWrapper } from "./ViewProfile.style";
+import { CloseIcon } from "@iso/config/icon.config";
 
 const SingleInfo = ({ title, value }) => (
   <SingleInfoWrapper>
@@ -8,22 +8,11 @@ const SingleInfo = ({ title, value }) => (
     <span className="viewProfileValue">{value}</span>
   </SingleInfoWrapper>
 );
-export default function ({
-  viewProfile,
-  toggleViewProfile,
-  toggleMobileProfile,
-}) {
+export default function ({ viewProfile, toggleViewProfile, toggleMobileProfile }) {
   if (!viewProfile) {
     return null;
   }
-  const {
-    name,
-    dob,
-    mobileNo,
-    gender,
-    language,
-    profileImageUrl,
-  } = viewProfile;
+  const { name, dob, mobileNo, gender, language, profileImageUrl } = viewProfile;
   return (
     <ViewProfileWrapper>
       <div className="viewProfileTopBar">

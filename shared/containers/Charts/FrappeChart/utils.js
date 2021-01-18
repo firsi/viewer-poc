@@ -1,10 +1,10 @@
-import addDays from 'date-fns/addDays';
-import isBefore from 'date-fns/isBefore';
-import isEqual from 'date-fns/isEqual';
+import addDays from "date-fns/addDays";
+import isBefore from "date-fns/isBefore";
+import isEqual from "date-fns/isEqual";
 // export const startDate = new Date(new Date().setMonth(1, 1));
 // export const endDate = new Date();
-export const startDate = new Date('2019-01-01');
-export const endDate = new Date('2019-12-31');
+export const startDate = new Date("2019-01-01");
+export const endDate = new Date("2019-12-31");
 
 export function getHeatMapData() {
   let dataPoints = {};

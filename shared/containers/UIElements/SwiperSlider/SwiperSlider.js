@@ -1,11 +1,11 @@
-import React from 'react';
-import PageHeader from '@iso/components/utility/pageHeader';
-import LayoutWrapper from '@iso/components/utility/layoutWrapper.js';
-import ContentHolder from '@iso/components/utility/contentHolder';
-import Box from '@iso/components/utility/box';
-import IntlMessages from '@iso/components/utility/intlMessages';
-import Row from '@iso/ui/Antd/Grid/Row';
-import Col from '@iso/ui/Antd/Grid/Col';
+import React from "react";
+import PageHeader from "@iso/components/utility/pageHeader";
+import LayoutWrapper from "@iso/components/utility/layoutWrapper.js";
+import ContentHolder from "@iso/components/utility/contentHolder";
+import Box from "@iso/components/utility/box";
+import IntlMessages from "@iso/components/utility/intlMessages";
+import Row from "@iso/ui/Antd/Grid/Row";
+import Col from "@iso/ui/Antd/Grid/Col";
 import {
   SwiperBasic,
   SwiperWithCustomNav,
@@ -25,9 +25,9 @@ import {
   SwiperAutoPlay,
   SwiperLazyLoad,
   SwiperWithCustomScroll,
-} from '@iso/ui/SwiperSlider';
-import basicStyle from '@iso/assets/styles/constants';
-import PageWrapper from './SwiperSlider.styles';
+} from "@iso/ui/SwiperSlider";
+import basicStyle from "@iso/assets/styles/constants";
+import PageWrapper from "./SwiperSlider.styles";
 
 // data
 import {
@@ -48,7 +48,7 @@ import {
   customSlider,
   customNavSlider,
   customScrollSlider,
-} from './slider.data';
+} from "./slider.data";
 
 const MatchMaking = () => {
   const { rowStyle, colStyle, gutter } = basicStyle;
@@ -62,11 +62,7 @@ const MatchMaking = () => {
               <ContentHolder>
                 <SwiperBasic>
                   {basicSlider.map((item) => (
-                    <img
-                      key={`basic-slider--key${item.id}`}
-                      src={item.thumb_url}
-                      alt={item.title}
-                    />
+                    <img key={`basic-slider--key${item.id}`} src={item.thumb_url} alt={item.title} />
                   ))}
                 </SwiperBasic>
               </ContentHolder>
@@ -80,11 +76,7 @@ const MatchMaking = () => {
               <ContentHolder>
                 <SwiperPagination>
                   {bulletSlider.map((item) => (
-                    <img
-                      key={`bullet-slider--key${item.id}`}
-                      src={item.thumb_url}
-                      alt={item.title}
-                    />
+                    <img key={`bullet-slider--key${item.id}`} src={item.thumb_url} alt={item.title} />
                   ))}
                 </SwiperPagination>
               </ContentHolder>
@@ -98,11 +90,7 @@ const MatchMaking = () => {
               <ContentHolder>
                 <SwiperProgress>
                   {progressSlider.map((item) => (
-                    <img
-                      key={`progress-slider--key${item.id}`}
-                      src={item.thumb_url}
-                      alt={item.title}
-                    />
+                    <img key={`progress-slider--key${item.id}`} src={item.thumb_url} alt={item.title} />
                   ))}
                 </SwiperProgress>
               </ContentHolder>
@@ -116,11 +104,7 @@ const MatchMaking = () => {
               <ContentHolder>
                 <SwiperFractionPagination>
                   {fractionSlider.map((item) => (
-                    <img
-                      key={`fraction-slider--key${item.id}`}
-                      src={item.thumb_url}
-                      alt={item.title}
-                    />
+                    <img key={`fraction-slider--key${item.id}`} src={item.thumb_url} alt={item.title} />
                   ))}
                 </SwiperFractionPagination>
               </ContentHolder>
@@ -134,11 +118,7 @@ const MatchMaking = () => {
               <ContentHolder>
                 <SwiperNumberedPagination>
                   {numberedSlider.map((item) => (
-                    <img
-                      key={`numbered-slider--key${item.id}`}
-                      src={item.thumb_url}
-                      alt={item.title}
-                    />
+                    <img key={`numbered-slider--key${item.id}`} src={item.thumb_url} alt={item.title} />
                   ))}
                 </SwiperNumberedPagination>
               </ContentHolder>
@@ -152,11 +132,7 @@ const MatchMaking = () => {
               <ContentHolder>
                 <SwiperScroll>
                   {scrollSlider.map((item) => (
-                    <img
-                      key={`scroll-slider--key${item.id}`}
-                      src={item.thumb_url}
-                      alt={item.title}
-                    />
+                    <img key={`scroll-slider--key${item.id}`} src={item.thumb_url} alt={item.title} />
                   ))}
                 </SwiperScroll>
               </ContentHolder>
@@ -170,11 +146,7 @@ const MatchMaking = () => {
               <ContentHolder>
                 <SwiperVerticle>
                   {verticleSlider.map((item) => (
-                    <img
-                      key={`scroll-slider--key${item.id}`}
-                      src={item.thumb_url}
-                      alt={item.title}
-                    />
+                    <img key={`scroll-slider--key${item.id}`} src={item.thumb_url} alt={item.title} />
                   ))}
                 </SwiperVerticle>
               </ContentHolder>
@@ -184,17 +156,11 @@ const MatchMaking = () => {
 
         <Row style={rowStyle} gutter={gutter} justify="start">
           <Col md={24} sm={24} xs={24} style={colStyle}>
-            <Box
-              title={<IntlMessages id="Swiper.multiple.multipleGridTitle" />}
-            >
+            <Box title={<IntlMessages id="Swiper.multiple.multipleGridTitle" />}>
               <ContentHolder>
                 <SwiperMultiple>
                   {gridSlider.map((item) => (
-                    <img
-                      key={`grid-slider--key${item.id}`}
-                      src={item.thumb_url}
-                      alt={item.title}
-                    />
+                    <img key={`grid-slider--key${item.id}`} src={item.thumb_url} alt={item.title} />
                   ))}
                 </SwiperMultiple>
               </ContentHolder>
@@ -208,11 +174,7 @@ const MatchMaking = () => {
               <ContentHolder>
                 <SwiperFreeMode>
                   {freeModelider.map((item) => (
-                    <img
-                      key={`freeMode-slider--key${item.id}`}
-                      src={item.thumb_url}
-                      alt={item.title}
-                    />
+                    <img key={`freeMode-slider--key${item.id}`} src={item.thumb_url} alt={item.title} />
                   ))}
                 </SwiperFreeMode>
               </ContentHolder>
@@ -226,11 +188,7 @@ const MatchMaking = () => {
               <ContentHolder>
                 <SwiperMultipleItem>
                   {multipleRowslider.map((item) => (
-                    <img
-                      key={`multiRow-slider--key${item.id}`}
-                      src={item.thumb_url}
-                      alt={item.title}
-                    />
+                    <img key={`multiRow-slider--key${item.id}`} src={item.thumb_url} alt={item.title} />
                   ))}
                 </SwiperMultipleItem>
               </ContentHolder>
@@ -244,11 +202,7 @@ const MatchMaking = () => {
               <ContentHolder>
                 <SwiperCursor>
                   {gridSlider.map((item) => (
-                    <img
-                      key={`cursor-slider--key${item.id}`}
-                      src={item.thumb_url}
-                      alt={item.title}
-                    />
+                    <img key={`cursor-slider--key${item.id}`} src={item.thumb_url} alt={item.title} />
                   ))}
                 </SwiperCursor>
               </ContentHolder>
@@ -262,11 +216,7 @@ const MatchMaking = () => {
               <ContentHolder>
                 <SwiperInfiniteLoop>
                   {infiniteSlider.map((item) => (
-                    <img
-                      key={`infinite-slider--key${item.id}`}
-                      src={item.thumb_url}
-                      alt={item.title}
-                    />
+                    <img key={`infinite-slider--key${item.id}`} src={item.thumb_url} alt={item.title} />
                   ))}
                 </SwiperInfiniteLoop>
               </ContentHolder>
@@ -280,11 +230,7 @@ const MatchMaking = () => {
               <ContentHolder>
                 <SwiperMouseWheel>
                   {wheelSlider.map((item) => (
-                    <img
-                      key={`wheel-slider--key${item.id}`}
-                      src={item.thumb_url}
-                      alt={item.title}
-                    />
+                    <img key={`wheel-slider--key${item.id}`} src={item.thumb_url} alt={item.title} />
                   ))}
                 </SwiperMouseWheel>
               </ContentHolder>
@@ -298,11 +244,7 @@ const MatchMaking = () => {
               <ContentHolder>
                 <SwiperAutoPlay>
                   {autoSlider.map((item) => (
-                    <img
-                      key={`auto-slider--key${item.id}`}
-                      src={item.thumb_url}
-                      alt={item.title}
-                    />
+                    <img key={`auto-slider--key${item.id}`} src={item.thumb_url} alt={item.title} />
                   ))}
                 </SwiperAutoPlay>
               </ContentHolder>
@@ -316,10 +258,7 @@ const MatchMaking = () => {
               <ContentHolder>
                 <SwiperLazyLoad>
                   {lazySlider.map((item) => (
-                    <div
-                      className="lazy-item"
-                      key={`lazy-slider--key${item.id}`}
-                    >
+                    <div className="lazy-item" key={`lazy-slider--key${item.id}`}>
                       <img src={item.thumb_url} alt={item.title} />
                       <div className="swiper-lazy-preloader swiper-lazy-preloader-white" />
                     </div>
@@ -336,11 +275,7 @@ const MatchMaking = () => {
               <ContentHolder>
                 <SwiperWithBasicNav>
                   {customSlider.map((item) => (
-                    <img
-                      key={`custom-slider--key${item.id}`}
-                      src={item.thumb_url}
-                      alt={item.title}
-                    />
+                    <img key={`custom-slider--key${item.id}`} src={item.thumb_url} alt={item.title} />
                   ))}
                 </SwiperWithBasicNav>
               </ContentHolder>
@@ -354,11 +289,7 @@ const MatchMaking = () => {
               <ContentHolder>
                 <SwiperWithCustomNav>
                   {customNavSlider.map((item) => (
-                    <img
-                      key={`customnav-slider--key${item.id}`}
-                      src={item.thumb_url}
-                      alt={item.title}
-                    />
+                    <img key={`customnav-slider--key${item.id}`} src={item.thumb_url} alt={item.title} />
                   ))}
                 </SwiperWithCustomNav>
               </ContentHolder>
@@ -372,11 +303,7 @@ const MatchMaking = () => {
               <ContentHolder>
                 <SwiperWithCustomScroll>
                   {customScrollSlider.map((item) => (
-                    <img
-                      key={`customScroll-slider--key${item.id}`}
-                      src={item.thumb_url}
-                      alt={item.title}
-                    />
+                    <img key={`customScroll-slider--key${item.id}`} src={item.thumb_url} alt={item.title} />
                   ))}
                 </SwiperWithCustomScroll>
               </ContentHolder>

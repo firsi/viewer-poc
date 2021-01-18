@@ -1,7 +1,7 @@
 const todoActions = {
-  CHANGE_TODO: 'CHANGE_TODO',
-  ALL_COMPLETED: 'ALL_COMPLETED',
-  DELETE_COMPLETED: 'DELETE_COMPLETED',
+  CHANGE_TODO: "CHANGE_TODO",
+  ALL_COMPLETED: "ALL_COMPLETED",
+  DELETE_COMPLETED: "DELETE_COMPLETED",
 
   addTodo: (todo) => {
     return (dispatch, getState) => {

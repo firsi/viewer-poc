@@ -1,24 +1,16 @@
-import React from 'react';
-import InputNumber from '../uielements/InputNumber';
-import { notification } from '../index';
-import { CloseIcon } from '@iso/config/icon.config';
+import React from "react";
+import InputNumber from "../uielements/InputNumber";
+import { notification } from "../index";
+import { CloseIcon } from "@iso/config/icon.config";
 
-export default function ({
-  price,
-  quantity,
-  image,
-  objectID,
-  cancelQuantity,
-  changeQuantity,
-  _highlightResult,
-}) {
+export default function ({ price, quantity, image, objectID, cancelQuantity, changeQuantity, _highlightResult }) {
   const onChange = (value) => {
     if (!isNaN(value)) {
       if (value !== quantity) {
         changeQuantity(objectID, value);
       }
     } else {
-      notification('error', 'Please give valid number');
+      notification("error", "Please give valid number");
     }
   };
 
@@ -47,13 +39,7 @@ export default function ({
         {price.toFixed(2)}
       </td>
       <td className="isoItemQuantity">
-        <InputNumber
-          min={1}
-          max={1000}
-          value={quantity}
-          step={1}
-          onChange={onChange}
-        />
+        <InputNumber min={1} max={1000} value={quantity} step={1} onChange={onChange} />
       </td>
       <td className="isoItemPriceTotal">${totalPrice}</td>
     </tr>

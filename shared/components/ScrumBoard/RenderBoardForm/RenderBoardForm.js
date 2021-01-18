@@ -1,15 +1,15 @@
-import React from 'react';
-import { Form, Field } from 'formik';
-import { Button, Tooltip } from 'antd';
-import { AntInput, AntSelect, AntSwitch } from '../AntFields';
-import { isRequired } from '../ValidateFields';
-import ThumbIcon from './08-icon.svg';
-import { Wrapper } from './RenderBoardForm.style';
+import React from "react";
+import { Form, Field } from "formik";
+import { Button, Tooltip } from "antd";
+import { AntInput, AntSelect, AntSwitch } from "../AntFields";
+import { isRequired } from "../ValidateFields";
+import ThumbIcon from "./08-icon.svg";
+import { Wrapper } from "./RenderBoardForm.style";
 const formItemLayout = {
   labelCol: {
     sm: { span: 12 },
     md: { span: 12, push: 3 },
-    style: { textAlign: 'left' },
+    style: { textAlign: "left" },
   },
   wrapperCol: { sm: { span: 12 }, md: { span: 3, pull: 12 } },
   colon: false,
@@ -63,36 +63,22 @@ export default ({ handleSubmit, values, submitCount }) => (
 
       <div
         style={{
-          display: 'flex',
-          alignItems: 'center',
-          color: '#1890FF',
-          fontSize: '16px',
+          display: "flex",
+          alignItems: "center",
+          color: "#1890FF",
+          fontSize: "16px",
           fontWeight: 500,
         }}
-        className={'field-container'}
+        className={"field-container"}
       >
-        <img
-          src={ThumbIcon}
-          alt="Project"
-          width={40}
-          height={40}
-          style={{ marginRight: 10, borderRadius: 6 }}
-        />
-        <Tooltip
-          title="Please Implements Your Own Avatar Methods"
-          placement="right"
-        >
+        <img src={ThumbIcon} alt="Project" width={40} height={40} style={{ marginRight: 10, borderRadius: 6 }} />
+        <Tooltip title="Please Implements Your Own Avatar Methods" placement="right">
           <div>Select Avatar</div>
         </Tooltip>
       </div>
 
-      <Button
-        htmlType="submit"
-        type="primary"
-        style={{ width: '100%', marginTop: 20 }}
-        size="large"
-      >
-        {!values.editing ? 'Create Project' : 'Update Task'}
+      <Button htmlType="submit" type="primary" style={{ width: "100%", marginTop: 20 }} size="large">
+        {!values.editing ? "Create Project" : "Update Task"}
       </Button>
     </Form>
   </Wrapper>

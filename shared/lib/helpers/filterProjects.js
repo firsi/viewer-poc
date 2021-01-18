@@ -1,7 +1,7 @@
-import Fuse from 'fuse.js';
+import Fuse from "fuse.js";
 
-export const filterProjects = (boards = {}, searchText = '') => {
-  if (searchText !== '') {
+export const filterProjects = (boards = {}, searchText = "") => {
+  if (searchText !== "") {
     let boardLists = Object.values(boards);
     let fuse = new Fuse(boardLists, {
       shouldSort: true,
@@ -10,7 +10,7 @@ export const filterProjects = (boards = {}, searchText = '') => {
       distance: 100,
       maxPatternLength: 32,
       minMatchCharLength: 1,
-      keys: ['title'],
+      keys: ["title"],
     });
     let results = fuse.search(searchText);
     const filteredBoards = results

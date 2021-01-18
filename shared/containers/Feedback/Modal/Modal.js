@@ -1,17 +1,17 @@
-import React from 'react';
-import { Row, Col } from 'antd';
+import React from "react";
+import { Row, Col } from "antd";
 // import Modals from '@iso/components/Feedback/Modal';
-import Button from '@iso/components/uielements/button';
-import PageHeader from '@iso/components/utility/pageHeader';
-import Box from '@iso/components/utility/box';
-import LayoutWrapper from '@iso/components/utility/layoutWrapper';
-import ContentHolder from '@iso/components/utility/contentHolder';
-import IntlMessages from '@iso/components/utility/intlMessages';
-import Modals from '@iso/components/Feedback/Modal';
-import basicStyle from '@iso/assets/styles/constants';
+import Button from "@iso/components/uielements/button";
+import PageHeader from "@iso/components/utility/pageHeader";
+import Box from "@iso/components/utility/box";
+import LayoutWrapper from "@iso/components/utility/layoutWrapper";
+import ContentHolder from "@iso/components/utility/contentHolder";
+import IntlMessages from "@iso/components/utility/intlMessages";
+import Modals from "@iso/components/Feedback/Modal";
+import basicStyle from "@iso/assets/styles/constants";
 
-import ModalStyle, { ModalContent } from './Modal.styles';
-import WithDirection from '@iso/lib/helpers/rtl';
+import ModalStyle, { ModalContent } from "./Modal.styles";
+import WithDirection from "@iso/lib/helpers/rtl";
 
 const isoModal = ModalStyle(Modals);
 const Modal = WithDirection(isoModal);
@@ -24,63 +24,60 @@ function info() {
     content: (
       <ModalContent>
         <p>
-          Far far away, behind the word mountains, far from the countries
-          Vokalia and Consonantia, there live the blind texts. Separated they
-          live in Bookmarksgrove right at the coast of the Semantics, a large
-          language ocean.
+          Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind
+          texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.
         </p>
         <p>some messages...some messages...</p>
       </ModalContent>
     ),
     onOk() {},
-    okText: 'OK',
-    cancelText: 'Cancel',
+    okText: "OK",
+    cancelText: "Cancel",
   });
 }
 
 function success() {
   Modals.success({
-    title: 'This is a success message',
+    title: "This is a success message",
     content:
-      'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.',
-    okText: 'OK',
-    cancelText: 'Cancel',
+      "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.",
+    okText: "OK",
+    cancelText: "Cancel",
   });
 }
 
 function error() {
   Modals.error({
-    title: 'This is an error message',
+    title: "This is an error message",
     content:
-      'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.',
-    okText: 'OK',
-    cancelText: 'Cancel',
+      "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.",
+    okText: "OK",
+    cancelText: "Cancel",
   });
 }
 
 function warning() {
   Modals.warning({
-    title: 'This is a warning message',
+    title: "This is a warning message",
     content:
-      'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.',
-    okText: 'OK',
-    cancelText: 'Cancel',
+      "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.",
+    okText: "OK",
+    cancelText: "Cancel",
   });
 }
 
 function showConfirm() {
   confirm({
-    title: 'Want to delete these items?',
-    content:
-      'When clicked the OK button, this dialog will be closed after 1 second',
+    title: "Want to delete these items?",
+    content: "When clicked the OK button, this dialog will be closed after 1 second",
     onOk() {
       return new Promise((resolve, reject) => {
         setTimeout(Math.random() > 0.5 ? resolve : reject, 1000);
       }).catch(() => {});
     },
     onCancel() {},
-    okText: 'OK',
-    cancelText: 'Cancel',
+    okText: "OK",
+    cancelText: "Cancel",
   });
 }
 
@@ -104,13 +101,11 @@ export default function () {
     setState({ visible: false });
   };
   const { rowStyle, colStyle, gutter } = basicStyle;
-  const marginStyle = { marginRight: '5px', marginBottom: '5px' };
+  const marginStyle = { marginRight: "5px", marginBottom: "5px" };
 
   return (
     <LayoutWrapper>
-      <PageHeader>
-        {<IntlMessages id="feedback.alert.modalBlockTitle" />}
-      </PageHeader>
+      <PageHeader>{<IntlMessages id="feedback.alert.modalBlockTitle" />}</PageHeader>
 
       <Row style={rowStyle} gutter={gutter} justify="start">
         <Col md={12} sm={12} xs={24} style={colStyle}>
@@ -131,22 +126,15 @@ export default function () {
                   <Button key="back" size="large" onClick={handleCancel}>
                     Return
                   </Button>,
-                  <Button
-                    key="submit"
-                    type="primary"
-                    size="large"
-                    loading={state.loading}
-                    onClick={handleOk}
-                  >
+                  <Button key="submit" type="primary" size="large" loading={state.loading} onClick={handleOk}>
                     Submit
                   </Button>,
                 ]}
               >
                 <p>
-                  Far far away, behind the word mountains, far from the
-                  countries Vokalia and Consonantia, there live the blind texts.
-                  Separated they live in Bookmarksgrove right at the coast of
-                  the Semantics, a large language ocean.
+                  Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live
+                  the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large
+                  language ocean.
                 </p>
                 <p>Some contents...</p>
               </Modal>
@@ -169,9 +157,7 @@ export default function () {
               <Button onClick={error} style={marginStyle}>
                 {<IntlMessages id="feedback.alert.errorTitle" />}
               </Button>
-              <Button onClick={warning}>
-                {<IntlMessages id="feedback.alert.warningTitle" />}
-              </Button>
+              <Button onClick={warning}>{<IntlMessages id="feedback.alert.warningTitle" />}</Button>
             </ContentHolder>
           </Box>
         </Col>
@@ -183,9 +169,7 @@ export default function () {
             subtitle={<IntlMessages id="feedback.alert.modalSubTitle" />}
           >
             <ContentHolder>
-              <Button onClick={showConfirm}>
-                {<IntlMessages id="feedback.alert.confirmationModalDialogue" />}
-              </Button>
+              <Button onClick={showConfirm}>{<IntlMessages id="feedback.alert.confirmationModalDialogue" />}</Button>
             </ContentHolder>
           </Box>
         </Col>

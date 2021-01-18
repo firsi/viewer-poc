@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { palette } from 'styled-theme';
+import styled from "styled-components";
+import { palette } from "styled-theme";
 
 const Wrapper = styled.div``;
 
@@ -10,7 +10,7 @@ export const Banner = styled.div`
   height: 400px;
   position: relative;
   &::after {
-    content: '';
+    content: "";
     height: 160px;
     width: 100%;
     position: absolute;
@@ -102,7 +102,7 @@ export const Navigation = styled.div`
       margin: 0 15px;
       display: block;
       padding: 18px 15px 19px;
-      color: ${palette('secondary', 5)};
+      color: ${palette("secondary", 5)};
       font-size: 14px;
       font-weight: 400;
       cursor: pointer;
@@ -121,7 +121,7 @@ export const Navigation = styled.div`
         margin-right: 4px;
       }
       &.active {
-        border-bottom: 2px solid ${palette('secondary', 5)};
+        border-bottom: 2px solid ${palette("secondary", 5)};
       }
     }
   }

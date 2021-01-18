@@ -1,6 +1,6 @@
-import React from 'react';
-import Input from '@iso/components/uielements/input';
-import { InputBoxWrapper } from './Checkout.styles';
+import React from "react";
+import Input from "@iso/components/uielements/input";
+import { InputBoxWrapper } from "./Checkout.styles";
 
 export default function ({ label, placeholder, important }) {
   return (

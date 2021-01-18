@@ -1,6 +1,6 @@
-import { fakedata } from './config';
+import { fakedata } from "./config";
 const cardActions = {
-  CHANGE_CARDS: 'CHANGE_CARDS',
+  CHANGE_CARDS: "CHANGE_CARDS",
   addCard: (card) => {
     return (dispatch, getState) => {
       const cards = [card, ...getState().Cards.cards];

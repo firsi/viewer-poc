@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import { palette } from 'styled-theme';
-import { transition, borderRadius } from '@iso/lib/helpers/style_utils';
+import styled from "styled-components";
+import { palette } from "styled-theme";
+import { transition, borderRadius } from "@iso/lib/helpers/style_utils";
 
 const BasicMapWrapper = styled.div`
   .isoGoogleMap {
@@ -24,7 +24,7 @@ const BasicMapWrapper = styled.div`
       transform: scale(1);
       transform-origin: center center;
       ${transition()};
-      ${borderRadius('50%')};
+      ${borderRadius("50%")};
 
       &:hover {
         transform: scale(1.15);
@@ -38,8 +38,8 @@ const BasicMapWrapper = styled.div`
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        background-color: ${palette('primary', 0)};
-        ${borderRadius('50%')};
+        background-color: ${palette("primary", 0)};
+        ${borderRadius("50%")};
 
         i {
           color: #fff;
@@ -91,14 +91,14 @@ const BasicMapWrapper = styled.div`
         .isoHeading {
           font-size: 16px;
           font-weight: 500;
-          color: ${palette('text', 1)};
+          color: ${palette("text", 1)};
           margin: 0 0 5px;
         }
 
         .isoLocation {
           font-size: 12px;
           font-weight: 400;
-          color: ${palette('text', 1)};
+          color: ${palette("text", 1)};
           margin-bottom: 0px;
         }
       }

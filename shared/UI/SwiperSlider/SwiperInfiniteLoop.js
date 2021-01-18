@@ -1,5 +1,5 @@
-import React from 'react';
-import Swiper from 'react-id-swiper';
+import React from "react";
+import Swiper from "react-id-swiper";
 
 export default function SwiperInfiniteLoop(props) {
   const { children } = props;
@@ -8,12 +8,12 @@ export default function SwiperInfiniteLoop(props) {
     spaceBetween: 30,
     loop: true,
     pagination: {
-      el: '.swiper-pagination',
+      el: ".swiper-pagination",
       clickable: true,
     },
     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
     },
   };
 

@@ -1,5 +1,5 @@
-import defaultTheme from './default';
-import customTheme from './custom';
+import defaultTheme from "./default";
+import customTheme from "./custom";
 
 const themes = {
   defaultTheme,
@@ -7,9 +7,9 @@ const themes = {
 };
 
 export const themeConfig = {
-  topbar: 'defaultTheme',
-  sidebar: 'defaultTheme',
-  layout: 'defaultTheme',
-  theme: 'defaultTheme',
+  topbar: "defaultTheme",
+  sidebar: "defaultTheme",
+  layout: "defaultTheme",
+  theme: "defaultTheme",
 };
 export default themes;

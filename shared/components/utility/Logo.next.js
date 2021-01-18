@@ -1,7 +1,7 @@
-import React from 'react';
-import Link from 'next/link';
-import siteConfig from '@iso/config/site.config';
-import { IoIosFlash } from 'react-icons/io';
+import React from "react";
+import Link from "next/link";
+import siteConfig from "@iso/config/site.config";
+import { IoIosFlash } from "react-icons/io";
 
 export default function ({ collapsed }) {
   return (

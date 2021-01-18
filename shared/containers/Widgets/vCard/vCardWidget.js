@@ -1,15 +1,7 @@
-import React from 'react';
-import { VCardWidgetWrapper } from './vCardWidget.styles';
+import React from "react";
+import { VCardWidgetWrapper } from "./vCardWidget.styles";
 
-export default function ({
-  src,
-  alt,
-  name,
-  title,
-  description,
-  children,
-  style,
-}) {
+export default function ({ src, alt, name, title, description, children, style }) {
   return (
     <VCardWidgetWrapper className="isoVCardWidgetWrapper" style={style}>
       <div className="isoVCardImage">

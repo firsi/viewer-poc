@@ -1,4 +1,4 @@
-import { Tabs } from 'antd';
+import { Tabs } from "antd";
 // import AntTab from './Tab.style';
 
 // const WDTabs = AntTab(Tabs);

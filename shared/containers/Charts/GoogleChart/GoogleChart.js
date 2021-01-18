@@ -1,18 +1,18 @@
-import React, { Component } from 'react';
-import { Row, Col } from 'antd';
-import PageHeader from '@iso/components/utility/pageHeader';
-import Box from '@iso/components/utility/box';
-import LayoutWrapper from '@iso/components/utility/layoutWrapper';
-import ContentHolder from '@iso/components/utility/contentHolder';
-import basicStyle from '@iso/assets/styles/constants';
-import * as configs from './config';
-import GoogleChart from 'react-google-charts';
+import React, { Component } from "react";
+import { Row, Col } from "antd";
+import PageHeader from "@iso/components/utility/pageHeader";
+import Box from "@iso/components/utility/box";
+import LayoutWrapper from "@iso/components/utility/layoutWrapper";
+import ContentHolder from "@iso/components/utility/contentHolder";
+import basicStyle from "@iso/assets/styles/constants";
+import * as configs from "./config";
+import GoogleChart from "react-google-charts";
 
 export default class ReCharts extends Component {
   render() {
     const chartEvents = [
       {
-        eventName: 'select',
+        eventName: "select",
         callback(Chart) {},
       },
     ];

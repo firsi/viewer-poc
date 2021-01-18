@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import {
   data,
   autoDraw,
@@ -9,12 +9,12 @@ import {
   radius,
   strokeWidth,
   strokeLinecap,
-} from './config';
-import PageHeader from '@iso/components/utility/pageHeader';
-import LayoutWrapper from '@iso/components/utility/layoutWrapper';
-import Box from '@iso/components/utility/box';
+} from "./config";
+import PageHeader from "@iso/components/utility/pageHeader";
+import LayoutWrapper from "@iso/components/utility/layoutWrapper";
+import Box from "@iso/components/utility/box";
 
-import Trend from 'react-trend';
+import Trend from "react-trend";
 
 export default function () {
   return (

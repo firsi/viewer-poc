@@ -1,11 +1,7 @@
-import styled from 'styled-components';
-import { palette } from 'styled-theme';
-import {
-  transition,
-  borderRadius,
-  boxShadow,
-} from '@iso/lib/helpers/style_utils';
-import WithDirection from '@iso/lib/helpers/rtl';
+import styled from "styled-components";
+import { palette } from "styled-theme";
+import { transition, borderRadius, boxShadow } from "@iso/lib/helpers/style_utils";
+import WithDirection from "@iso/lib/helpers/rtl";
 
 const ProductsTable = styled.div`
   width: 100%;
@@ -21,7 +17,7 @@ const ProductsTable = styled.div`
     table {
       tbody {
         tr {
-          border-bottom: 1px solid ${palette('border', 0)};
+          border-bottom: 1px solid ${palette("border", 0)};
 
           &:last-child {
             border-bottom: 0;
@@ -39,7 +35,7 @@ const ProductsTable = styled.div`
     width: 100%;
     display: flex;
     flex-direction: column;
-    border: 1px solid ${palette('border', 0)};
+    border: 1px solid ${palette("border", 0)};
 
     @media only screen and (max-width: 767px) {
       width: 767px;
@@ -50,7 +46,7 @@ const ProductsTable = styled.div`
     thead {
       width: 100%;
       min-height: 50px;
-      border-bottom: 1px solid ${palette('border', 0)};
+      border-bottom: 1px solid ${palette("border", 0)};
 
       tr {
         width: 100%;
@@ -61,7 +57,7 @@ const ProductsTable = styled.div`
         th {
           font-size: 14px;
           font-weight: 500;
-          color: ${palette('text', 0)};
+          color: ${palette("text", 0)};
           line-height: 1.2;
           white-space: nowrap;
           padding: 15px 0;
@@ -101,8 +97,7 @@ const ProductsTable = styled.div`
 
           &.isoItemName {
             max-width: none;
-            text-align: ${(props) =>
-              props['data-rtl'] === 'rtl' ? 'right' : 'left'};
+            text-align: ${(props) => (props["data-rtl"] === "rtl" ? "right" : "left")};
             width: 45%;
 
             @media only screen and (max-width: 991px) {
@@ -131,14 +126,14 @@ const ProductsTable = styled.div`
           justify-content: center;
           font-size: 30px;
           font-weight: 300;
-          color: ${palette('grayscale', 1)};
+          color: ${palette("grayscale", 1)};
           line-height: 1.2;
         }
 
         td {
           font-size: 14px;
           font-weight: 500;
-          color: ${palette('text', 0)};
+          color: ${palette("text", 0)};
           line-height: 1.2;
           overflow: hidden;
           padding: 15px 0;
@@ -158,7 +153,7 @@ const ProductsTable = styled.div`
           h3 {
             font-size: 14px;
             font-weight: 500;
-            color: ${palette('text', 0)};
+            color: ${palette("text", 0)};
             line-height: 1.2;
             margin-bottom: 10px;
           }
@@ -166,14 +161,14 @@ const ProductsTable = styled.div`
           p {
             font-size: 12px;
             font-weight: 400;
-            color: ${palette('text', 2)};
+            color: ${palette("text", 2)};
             line-height: 1.5;
           }
 
           span {
             font-size: 14px;
             font-weight: 500;
-            color: ${palette('text', 0)};
+            color: ${palette("text", 0)};
           }
 
           &.isoItemRemove {
@@ -184,11 +179,11 @@ const ProductsTable = styled.div`
             margin-left: 15px;
 
             a {
-              color: ${palette('text', 0)};
+              color: ${palette("text", 0)};
               ${transition()};
 
               &:hover {
-                color: ${palette('primary', 0)};
+                color: ${palette("primary", 0)};
               }
             }
 
@@ -217,8 +212,7 @@ const ProductsTable = styled.div`
           }
 
           &.isoItemName {
-            text-align: ${(props) =>
-              props['data-rtl'] === 'rtl' ? 'right' : 'left'};
+            text-align: ${(props) => (props["data-rtl"] === "rtl" ? "right" : "left")};
             max-width: none;
             width: 45%;
 
@@ -247,7 +241,7 @@ const ProductsTable = styled.div`
         }
 
         &.isoTotalBill {
-          border-top: 1px solid ${palette('border', 0)};
+          border-top: 1px solid ${palette("border", 0)};
           padding-top: 10px;
           min-height: 100px;
 
@@ -279,13 +273,13 @@ const ProductsTable = styled.div`
 
         td {
           .ant-input {
-            ${borderRadius('2px')};
+            ${borderRadius("2px")};
           }
 
           .ant-btn {
             height: 42px;
             min-width: 125px;
-            ${borderRadius('2px')};
+            ${borderRadius("2px")};
           }
         }
       }

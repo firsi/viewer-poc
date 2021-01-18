@@ -1,9 +1,9 @@
-import styled from 'styled-components';
-import { colors, grid } from '@iso/assets/styles/constants';
+import styled from "styled-components";
+import { colors, grid } from "@iso/assets/styles/constants";
 
 export const getBackgroundColor = (isDragging, isGroupedOver) => {
   if (isDragging) {
-    return 'colors.green';
+    return "colors.green";
   }
 
   if (isGroupedOver) {
@@ -17,10 +17,8 @@ export const getBackgroundColor = (isDragging, isGroupedOver) => {
 //     isDraggingOver ? colors.grey.dark : 'inherit'};
 export const Container = styled.span`
   border-radius: 10px;
-  background-color: ${(props) =>
-    getBackgroundColor(props.isDragging, props.isGroupedOver)};
-  box-shadow: ${({ isDragging }) =>
-    isDragging ? `2px 2px 1px ${colors.shadow}` : 'none'};
+  background-color: ${(props) => getBackgroundColor(props.isDragging, props.isGroupedOver)};
+  box-shadow: ${({ isDragging }) => (isDragging ? `2px 2px 1px ${colors.shadow}` : "none")};
   min-height: 40px;
   margin-top: 20px;
   user-select: none;
@@ -98,7 +96,7 @@ export const AttachmentWrapper = styled.div`
 export const TaskName = styled.div`
   font-size: 20px;
   color: #323332;
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-weight: 500;
   margin-bottom: 30px;
 `;
@@ -106,7 +104,7 @@ export const TaskDescription = styled.div`
   font-size: 14px;
   line-height: 24px;
   color: #797979;
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-weight: 400;
 `;
 export const CardDetailsWrapper = styled.div`

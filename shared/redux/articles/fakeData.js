@@ -86,12 +86,12 @@ class fakeData {
   }
   getSortAsc(sortKey) {
     sortOption.sortKey = sortKey;
-    sortOption.sortDir = 'ASC';
+    sortOption.sortDir = "ASC";
     return this.datas.sort(this.sort);
   }
   getSortDesc(sortKey) {
     sortOption.sortKey = sortKey;
-    sortOption.sortDir = 'DESC';
+    sortOption.sortDir = "DESC";
     return this.datas.sort(this.sort);
   }
   sort(optionA, optionB) {
@@ -104,7 +104,7 @@ class fakeData {
     if (valueA < valueB) {
       sortVal = -1;
     }
-    if (sortVal !== 0 && sortOption.sortDir === 'DESC') {
+    if (sortVal !== 0 && sortOption.sortDir === "DESC") {
       return sortVal * -1;
     }
     return sortVal;

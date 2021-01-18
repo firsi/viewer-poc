@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
 const useWindowSize = () => {
-  const isClient = typeof window === 'object';
+  const isClient = typeof window === "object";
 
   const getSize = React.useCallback(
     () => ({
@@ -20,8 +20,8 @@ const useWindowSize = () => {
     const onHandleResize = () => {
       setSize(getSize);
     };
-    window.addEventListener('resize', onHandleResize);
-    return () => window.removeEventListener('resize', onHandleResize);
+    window.addEventListener("resize", onHandleResize);
+    return () => window.removeEventListener("resize", onHandleResize);
   }, [getSize, isClient]);
 
   return size;

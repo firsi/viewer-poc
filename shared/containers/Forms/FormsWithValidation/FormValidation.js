@@ -1,5 +1,5 @@
-import React from 'react';
-import { Form, Input, Checkbox, Button } from 'antd';
+import React from "react";
+import { Form, Input, Checkbox, Button } from "antd";
 
 const formItemLayout = {
   labelCol: {
@@ -36,7 +36,7 @@ const RegistrationForm = () => {
   const [form] = Form.useForm();
 
   const onFinish = (values) => {
-    console.log('Received values of form: ', values);
+    console.log("Received values of form: ", values);
   };
 
   return (
@@ -46,8 +46,8 @@ const RegistrationForm = () => {
       name="register"
       onFinish={onFinish}
       initialValues={{
-        residence: ['zhejiang', 'hangzhou', 'xihu'],
-        prefix: '86',
+        residence: ["zhejiang", "hangzhou", "xihu"],
+        prefix: "86",
       }}
       scrollToFirstError
     >
@@ -56,12 +56,12 @@ const RegistrationForm = () => {
         label="E-mail"
         rules={[
           {
-            type: 'email',
-            message: 'The input is not valid E-mail!',
+            type: "email",
+            message: "The input is not valid E-mail!",
           },
           {
             required: true,
-            message: 'Please input your E-mail!',
+            message: "Please input your E-mail!",
           },
         ]}
       >
@@ -74,7 +74,7 @@ const RegistrationForm = () => {
         rules={[
           {
             required: true,
-            message: 'Please input your password!',
+            message: "Please input your password!",
           },
         ]}
         hasFeedback
@@ -85,22 +85,20 @@ const RegistrationForm = () => {
       <Form.Item
         name="confirm"
         label="Confirm Password"
-        dependencies={['password']}
+        dependencies={["password"]}
         hasFeedback
         rules={[
           {
             required: true,
-            message: 'Please confirm your password!',
+            message: "Please confirm your password!",
           },
           ({ getFieldValue }) => ({
             validator(rule, value) {
-              if (!value || getFieldValue('password') === value) {
+              if (!value || getFieldValue("password") === value) {
                 return Promise.resolve();
               }
 
-              return Promise.reject(
-                'The two passwords that you entered do not match!'
-              );
+              return Promise.reject("The two passwords that you entered do not match!");
             },
           }),
         ]}
@@ -113,10 +111,7 @@ const RegistrationForm = () => {
         valuePropName="checked"
         rules={[
           {
-            validator: (_, value) =>
-              value
-                ? Promise.resolve()
-                : Promise.reject('Should accept agreement'),
+            validator: (_, value) => (value ? Promise.resolve() : Promise.reject("Should accept agreement")),
           },
         ]}
         {...tailFormItemLayout}

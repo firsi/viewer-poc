@@ -1,15 +1,8 @@
-import React from 'react';
-import TopbarCartWrapper from './SingleCartModal.style';
-import { CloseIcon } from '@iso/config/icon.config';
+import React from "react";
+import TopbarCartWrapper from "./SingleCartModal.style";
+import { CloseIcon } from "@iso/config/icon.config";
 
-export default function ({
-  price,
-  quantity,
-  image,
-  objectID,
-  cancelQuantity,
-  _highlightResult,
-}) {
+export default function ({ price, quantity, image, objectID, cancelQuantity, _highlightResult }) {
   return (
     <TopbarCartWrapper className="isoCartItems">
       <div className="isoItemImage">
@@ -26,11 +19,7 @@ export default function ({
           <span className="isoItemQuantity">{quantity}</span>
         </p>
       </div>
-      <a
-        className="isoItemRemove"
-        onClick={() => cancelQuantity(objectID)}
-        href="#!"
-      >
+      <a className="isoItemRemove" onClick={() => cancelQuantity(objectID)} href="#!">
         <CloseIcon />
       </a>
     </TopbarCartWrapper>

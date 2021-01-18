@@ -1,21 +1,13 @@
-import React, { Fragment } from 'react';
+import React, { Fragment } from "react";
 
-const Comments = ({
-  role,
-  avatar,
-  name,
-  content,
-  time,
-  handleLike,
-  handleReply,
-}) => {
+const Comments = ({ role, avatar, name, content, time, handleLike, handleReply }) => {
   const renderHtml = (data) => {
     return { __html: data };
   };
 
   return (
     <Fragment>
-      {role === 'author' && (
+      {role === "author" && (
         <div className="author comment">
           <div className="avatar">
             <img src={avatar} alt={name} />
@@ -29,7 +21,7 @@ const Comments = ({
           </div>
         </div>
       )}
-      {role === 'user' && (
+      {role === "user" && (
         <div className="visitor comment">
           <div className="avatar">
             <img src={avatar} alt={name} />

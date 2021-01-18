@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   IoMdMenu,
   IoIosSearch,
@@ -53,7 +53,7 @@ import {
   IoMdMic,
   IoIosSquare,
   IoMdCreate,
-} from 'react-icons/io';
+} from "react-icons/io";
 
 // TopBar Icons
 export const TopbarMenuIcon = IoMdMenu; // Menu icon

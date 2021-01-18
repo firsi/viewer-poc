@@ -1,17 +1,15 @@
-import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { timeDifference } from '@iso/lib/helpers/utility';
-import { MessageSingle, MessageChatWrapper } from './Messages.styles';
-import chatActions from '@iso/redux/chat/actions';
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { timeDifference } from "@iso/lib/helpers/utility";
+import { MessageSingle, MessageChatWrapper } from "./Messages.styles";
+import chatActions from "@iso/redux/chat/actions";
 const { toggleViewProfile, toggleMobileProfile } = chatActions;
 export default function Messages() {
   const dispatch = useDispatch();
-  const { user, userId, selectedChatRoom, messages } = useSelector(
-    (state) => state.Chat
-  );
+  const { user, userId, selectedChatRoom, messages } = useSelector((state) => state.Chat);
 
   const scrollToBottom = () => {
-    const messageChat = document.getElementById('messageChat');
+    const messageChat = document.getElementById("messageChat");
     messageChat.scrollTop = messageChat.scrollHeight;
   };
   React.useEffect(() => {
@@ -69,9 +67,5 @@ export default function Messages() {
       );
     }
   };
-  return (
-    <MessageChatWrapper id="messageChat">
-      {messages.map(renderMessage)}
-    </MessageChatWrapper>
-  );
+  return <MessageChatWrapper id="messageChat">{messages.map(renderMessage)}</MessageChatWrapper>;
 }
