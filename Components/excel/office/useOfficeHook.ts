@@ -18,40 +18,6 @@ const useOfficeHook = (mainPageRendered) => {
   const [hostIsExcel, setHostIsExcel] = useState<boolean>(false);
   const dispatch = useDispatch();
  
-  useEffect (() => {
-    console.log(`officeWrapper - mainPageRendered:${mainPageRendered}`);
-    if (mainPageRendered) {
-      loadOffice(() => {
-        try {
-          Office.onReady(() => {
-            if (mainPageRendered) {
-              const { host } = Office.context;
-              const excel = Office.HostType.Excel;
-              console.log(`host is: ${host}`);
-              console.log("inside office.OnReady on officeWrapper");
-              if (host === excel) {
-                setHostIsExcel(true);
-                ensureStateInitialized(false);
-                setOfficeInitialized(true);
-                console.log("office initialized");
-              } else {
-                fetchPlace({ identifier: "https://gid.is/City/Reykjavik" });
-              }
-            }
-          });
-        } catch (e) {
-          console.error("failed to load office");
-        }
-      });
-      on("EntityAdded", (entity) => {
-        fetchEntity(entity);
-      });
-      on("SelectionChanged", () => {
-        fetchEntityOnChange();
-      });
-    }
-  }, [fetchEntity, fetchEntityOnChange, fetchPlace, mainPageRendered]);
-
   const getPlace = useCallback(
     (identifier: string) => {
       try {
@@ -153,6 +119,41 @@ const useOfficeHook = (mainPageRendered) => {
       console.log(error);
     });
   }, [fetchPlace]);
+  useEffect (() => {
+    console.log(`officeWrapper - mainPageRendered:${mainPageRendered}`);
+    if (mainPageRendered) {
+      loadOffice(() => {
+        try {
+          Office.onReady(() => {
+            if (mainPageRendered) {
+              const { host } = Office.context;
+              const excel = Office.HostType.Excel;
+              console.log(`host is: ${host}`);
+              console.log("inside office.OnReady on officeWrapper");
+              if (host === excel) {
+                setHostIsExcel(true);
+                ensureStateInitialized(false);
+                setOfficeInitialized(true);
+                console.log("office initialized");
+              } else {
+                fetchPlace({ identifier: "https://gid.is/City/Reykjavik" });
+              }
+            }
+          });
+        } catch (e) {
+          console.error("failed to load office");
+        }
+      });
+      on("EntityAdded", (entity) => {
+        fetchEntity(entity);
+      });
+      on("SelectionChanged", () => {
+        fetchEntityOnChange();
+      });
+    }
+  }, [fetchEntity, fetchEntityOnChange, fetchPlace, mainPageRendered]);
+
+ 
 
   return { isOfficeInitialized, hostIsExcel }
 }

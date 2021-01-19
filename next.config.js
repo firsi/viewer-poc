@@ -40,6 +40,9 @@ const nextConfig = {
     GOOGLE_MAP_KEY : "AIzaSyDLJ3EJc4IbB5qTrIoGSfwdMCWfv1O-Ufk",
   },
   //   devtool: "source-map",
+  typescript: {
+    ignoreBuildErrors: true,
+  },
 };
 
 module.exports = withPlugins(

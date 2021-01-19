@@ -5,7 +5,7 @@ const { TabPane } = Tabs;
 
 interface ITabbedCards {
   children: React.ReactNode;
-  tabHeight: string;
+  tabHeight?: string;
   title: string;
 }
 

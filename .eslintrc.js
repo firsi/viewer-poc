@@ -32,6 +32,8 @@ module.exports = {
     "jsx-a11y/anchor-is-valid": "off",
     "react/jsx-props-no-spreading": ["error", { custom: "ignore" }],
     "react/no-unescaped-entities": "off",
+    "import/no-unresolved": "off",
+    "no-plusplus": "off",
     "import/no-cycle": [0, { ignoreExternal: true }],
     "prefer-const": "off",
     // needed because of https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-use-before-define.md#how-to-use & https://stackoverflow.com/questions/63818415/react-was-used-before-it-was-defined
