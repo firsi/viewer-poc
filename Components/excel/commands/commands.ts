@@ -3,35 +3,31 @@
 import {
     ensureStateInitialized,
     SetStartupBehaviorHelper,
-  SetRuntimeVisibleHelper,
-  updateRibbon,
-  connectService,
-  monitorSheetChanges
+    SetRuntimeVisibleHelper,
+    updateRibbon,
+    connectService,
+    monitorSheetChanges
 } from '../utilities/office-apis-helpers';
 
-export function getGlobal() {
-
-    return typeof self !== 'undefined'
-      ? self
-      : typeof window !== 'undefined'
-      ? window
-      : typeof global !== 'undefined'
-      ? global
-      : undefined;
+export function getGlobal(): any {
+  if (typeof self !== 'undefined') return self;
+  if (typeof window !== 'undefined') return window;  
+  if(typeof global !== 'undefined') return global
+  return undefined;
   }
 
 
 const g = getGlobal() as any;
 
 // the add-in command functions need to be available in global scope
-//g.btnenableaddinstart = btnEnableAddinStart;
-//g.btndisableaddinstart = btnDisableAddinStart;
-//g.btninsertdata = btnInsertData;
+// g.btnenableaddinstart = btnEnableAddinStart;
+// g.btndisableaddinstart = btnDisableAddinStart;
+// g.btninsertdata = btnInsertData;
 g.btnopentaskpane = btnOpenTaskpane;
 g.btnclosetaskpane = btnCloseTaskpane;
-//g.btnconnectservice = btnConnectService;
-//g.btndisconnectservice = btnDisconnectService;
-//g.btnsumdata = btnSumData;
+// g.btnconnectservice = btnConnectService;
+// g.btndisconnectservice = btnDisconnectService;
+// g.btnsumdata = btnSumData;
 
 export function btnConnectService(event: Office.AddinCommands.Event) {
     ensureStateInitialized(false);
@@ -110,7 +106,7 @@ export async function btnSumData(event: Office.AddinCommands.Event) {
     let range = sheet.getRange(address);
     range.load('values');
 
-    let sum: number = 0;
+    let sum = 0;
     return ctx.sync().then(() => {
       range.values.forEach(v => {
         let vnumber: number = +v.toString();
@@ -181,8 +177,8 @@ export async function lookupByIdentifier(identifier: string, propertyName : stri
         range.load("address");
 
         // Update the fill color
-        //range.format.fill.color = "yellow";
-        range.values = [['=QL.LOOKUP(' + g.state.selectedEntity.cellAddress + ',"' + propertyName + '")']];
+        // range.format.fill.color = "yellow";
+        range.values = [[`=QL.LOOKUP(${  g.state.selectedEntity.cellAddress  },"${  propertyName  }")`]];
 
         await ctx.sync();
         console.log(`The range address was ${range.address}.`);
@@ -204,8 +200,8 @@ export async function timeseriesByIdentifier(identifier: string, propertyName : 
         range.load("address");
 
         // Update the fill color
-        //range.format.fill.color = "yellow";
-        range.values = [['=QL.TIMESERIES("' + identifier + '","' + propertyName + '")']];
+        // range.format.fill.color = "yellow";
+        range.values = [[`=QL.TIMESERIES("${  identifier  }","${  propertyName  }")`]];
 
         await ctx.sync();
         console.log(`The range address was ${range.address}.`);

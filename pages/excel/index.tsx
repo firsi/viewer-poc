@@ -7,13 +7,14 @@ import dynamic from "next/dynamic";
 import { emit } from "jetemit";
 
 // components
+// import basicStyle from "@iso/assets/styles/constants";
 import {
   ensureStateInitialized,
   monitorSheetChanges,
   removeSetting,
   updateRibbon,
 } from "../../Components/excel/utilities/office-apis-helpers";
-import ExcelLayout from "../../containers-ql/DashBoardLayout/ExcelLayout";
+import ExcelLayout from "../../layout/dashboardLayout/ExcelLayout";
 import ExcelLayoutWrapper from "../../Components/excel/excelLayoutWrapper/excelLayoutWrapper";
 import {
   fuzzy,
@@ -28,7 +29,6 @@ import { getGlobal } from "../../Components/excel/commands/commands";
 import loadOffice from "../../Components/excel/office/loadOffice";
 
 // styles
-import basicStyle from "@iso/assets/styles/constants";
 
 // dynamic imports
 const OfficeWrapper = dynamic(() => import("../../Components/excel/office/officeWrapper"), {
@@ -36,19 +36,19 @@ const OfficeWrapper = dynamic(() => import("../../Components/excel/office/office
   ssr: false,
 });
 
-const index = () => {
+const Index = () => {
   const [mainPageRendered, setMainPageRendered] = useState(false);
-  const { colStyle, gutter, rowStyle } = basicStyle;
+  // const { colStyle, gutter, rowStyle } = basicStyle;
 
   useEffect(() => {
     setMainPageRendered(true);
-  });
+  }, [setMainPageRendered]);
 
   return (
     <>
       <ExcelLayout>
         <ExcelLayoutWrapper>
-          <OfficeWrapper mainPageRendered={mainPageRendered} rowStyle={rowStyle} colStyle={colStyle}></OfficeWrapper>
+          <OfficeWrapper mainPageRendered={mainPageRendered} />
         </ExcelLayoutWrapper>
       </ExcelLayout>
     </>
@@ -56,29 +56,29 @@ const index = () => {
 };
 
 function addHandlers() {
-  Excel.run(function (ctx) {
+  Excel.run((ctx) => {
     console.log("registering handler");
     ctx.workbook.worksheets.onSelectionChanged.add(onWorksheetCollectionSelectionChange);
     ctx.workbook.worksheets.onChanged.add(onWorksheetCollectionChanged);
     console.log("finished registering handler");
-    return ctx.sync().then(function () {
+    return ctx.sync().then(() => {
       console.log("Done registering handlers");
     });
   }).catch(errorHandlerFunction);
 }
 
 async function onWorksheetCollectionChanged(args: Excel.WorksheetChangedEventArgs) {
-  Excel.run(function (ctx) {
-    var worksheet = ctx.workbook.worksheets.getItem(args.worksheetId).load("name");
-    return ctx.sync().then(function () {
-      var g = getGlobal() as any;
-      console.log("onChanged: " + JSON.stringify(args));
+  Excel.run((ctx) => {
+    let worksheet = ctx.workbook.worksheets.getItem(args.worksheetId).load("name");
+    return ctx.sync().then(() => {
+      let g = getGlobal() as any;
+      console.log(`onChanged: ${JSON.stringify(args)}`);
       if (args.details != null && args.details.valueTypeAfter == "Empty") {
-        console.log("removing settings for " + worksheet.name + "!" + args.address);
-        removeSetting(worksheet.name + "!" + args.address);
+        console.log(`removing settings for ${worksheet.name}!${args.address}`);
+        removeSetting(`${worksheet.name}!${args.address}`);
       }
     });
-  }).catch(function (error) {
+  }).catch((error) => {
     console.log(error);
   });
 }
@@ -92,9 +92,9 @@ async function onWorksheetCollectionSelectionChange(args: Excel.WorksheetSelecti
 
 function errorHandlerFunction(error) {
   if (error instanceof OfficeExtension.Error) {
-    console.log("Error code and message: " + error.toString());
+    console.log(`Error code and message: ${error.toString()}`);
   } else {
-    console.log("Error code and message: " + error);
+    console.log(`Error code and message: ${error}`);
   }
 }
 
@@ -102,10 +102,10 @@ loadOffice(() => {
   console.log("index.tsx - loading office");
   Office.onReady(() => {
     console.log("inside Office.onReady");
-    let host = Office.context.host;
+    let { host } = Office.context;
 
     if (host === Office.HostType.Excel) {
-      //g.btnsumdata = btnSumData;
+      // g.btnsumdata = btnSumData;
       ensureStateInitialized(true);
       console.log("2. ensure state initialized from the office.initialize");
       monitorSheetChanges();
@@ -129,4 +129,4 @@ loadOffice(() => {
   });
 });
 
-export default index;
+export default Index;
