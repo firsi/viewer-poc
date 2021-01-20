@@ -19,7 +19,7 @@
     "jsx": "preserve",
       "baseUrl": ".",
       "paths": {
-          "@iso/*": ["./shared/*"],
+          "@iso/*": ["shared/*"],
           "@react/": ["./node_modules/@react/"],
           "@react/*": ["./node_modules/@react/*"],
       }

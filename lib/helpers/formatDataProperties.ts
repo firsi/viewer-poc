@@ -1,10 +1,7 @@
 import { checkNull } from "./utils";
+import { IDataProperties } from '../../types';
 
-interface IDataProperties {
-   name: string,
-   key: string,
-   value: Date | number | string
-}
+
 
 export function identifierListData(data): IDataProperties[] {
     return [

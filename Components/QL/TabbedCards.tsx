@@ -12,14 +12,12 @@ interface ITabbedCards {
 const TabbedCards: React.FC<ITabbedCards> = ({ title, tabHeight = "auto", children }): JSX.Element => {
   const [position, setPosition] = useState(["left", "right"]);
 
-  const OperationsSlot = {
-    left: <div className="tab-bar-title">{title}</div>,
-  };
-
-  const slot = React.useMemo(
-    () => position.reduce((acc, direction) => ({ ...acc, [direction]: OperationsSlot[direction] }), {}),
-    [position]
-  );
+  const slot = React.useMemo(() => {
+    const operationsSlot = {
+      left: <div className="tab-bar-title">{title}</div>,
+    };
+    return position.reduce((acc, direction) => ({ ...acc, [direction]: operationsSlot[direction] }), {});
+  }, [position, title]);
 
   return (
     <Tabs defaultActiveKey="1" type="card" tabBarExtraContent={slot} animated={false} style={{ height: tabHeight }}>

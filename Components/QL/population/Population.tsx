@@ -12,8 +12,8 @@ import { populationData } from "../../../lib/helpers/formatDataProperties";
 
 const Population: React.FC = (): JSX.Element => {
   const data = useSelector((state) => state.place.data);
-
   const dataProperties = () => populationData(data);
+
   return (
     <TabbedCards title="Population 1900-2020">
       <PopulationInstance />

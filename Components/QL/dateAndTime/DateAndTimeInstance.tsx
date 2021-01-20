@@ -8,14 +8,16 @@ import { useSelector } from "react-redux";
 import { Card, Col, Row, Space, Typography } from "antd";
 
 // Icons
-import VeturImage from "@iso/assets/images/dateTime/vetur.png";
-import SagitariusImage from "@iso/assets/images/dateTime/sagitarius.png";
-import Group198Image from "@iso/assets/images/dateTime/Group198@2x.png"; // TODO: group? What does this icon show?
-import DifferenceImage from "@iso/assets/images/dateTime/Difference.png";
-import SunriseImage from "@iso/assets/images/dateTime/Sunrise.png";
-import SunsetImage from "@iso/assets/images/dateTime/Sunset.png";
-import DayLengthImage from "@iso/assets/images/dateTime/day-length.png";
-import MoonStateImage from "@iso/assets/images/dateTime/Moon.png";
+import {
+  VeturImage,
+  SagitariusImage,
+  Group198Image,
+  DifferenceImage,
+  SunriseImage,
+  SunsetImage,
+  DayLengthImage,
+  MoonStateImage,
+} from "@iso/assets";
 
 // helpers
 import { getTimeDifference } from "../../../lib/helpers/utils";

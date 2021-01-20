@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
+
+// UI Libraries
+import { CaretLeftOutlined, CaretRightOutlined } from "@ant-design/icons";
 import { Tabs, Typography } from "antd";
 
-import { CaretLeftOutlined, CaretRightOutlined } from "@ant-design/icons";
-import { checkNull } from "../../lib/helpers/utils";
+// Icons
 import GenericDataComponent from "./genericData/GenericDataComponent";
 
 const { TabPane } = Tabs;

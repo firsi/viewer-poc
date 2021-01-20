@@ -1,15 +1,17 @@
-import { useEffect, useState } from "react"
+import { useCallback, useEffect, useState } from "react"
+import { IDataProperties } from "types";
 
-const useGenericDataHook = (data, dataProperties, nestedArrays) => {
+const useGenericDataHook = (data: any, dataProperties:(e?) => IDataProperties[], nestedArrays: Array<string>) :Array<any> => {
     const [dataSource, setDataSource] = useState([]);
 
-  function pushValues(properties) {
+  const pushValues = useCallback((properties) => {
     let arr = [];
+    let propertiesCopy = [...properties];
     for (let i = 0; i < properties.length; i++) {
       if (nestedArrays) {
         if (nestedArrays.includes(properties[i].name) && typeof properties[i] === "object") {
           if (Array.isArray(properties[i].value)) {
-            properties[i].value = properties[i].value.map((n) => 
+            propertiesCopy[i].value = properties[i].value.map((n) => 
                `${n.name  },` // TODO: Remove the trailing comma (,)
             );
           }
@@ -19,20 +21,24 @@ const useGenericDataHook = (data, dataProperties, nestedArrays) => {
       arr.push({
         key: Math.random() + i,
         name: properties[i].name,
-        value: properties[i],
-        excelAction: [data.identifier, typeof properties[i].key === "string" ? properties[i].key : properties[i].name],
+        value: propertiesCopy[i],
+        excelAction: [
+          data.identifier, typeof properties[i].key === "string" ? 
+          properties[i].key : properties[i].name
+        ],
       });
     }
     return arr;
-  }
+  }, [nestedArrays, data.identifier]);
 
   useEffect(() => {
     let ds = [];
     if (data) {
       if (Array.isArray(data)) {
-        data.map((e) => {
+         data.map((e) => {
           let properties = dataProperties(e);
-         ds = [...ds, ...pushValues(properties)];
+          ds = [...ds, ...pushValues(properties)];
+           return ds;
         });
       } else {
         let properties = dataProperties();
@@ -41,7 +47,7 @@ const useGenericDataHook = (data, dataProperties, nestedArrays) => {
 
       setDataSource(ds);
     }
-  }, [data]);
+  }, [data, pushValues, dataProperties]);
 
   return dataSource;
 }

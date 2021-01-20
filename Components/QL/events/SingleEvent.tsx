@@ -24,14 +24,6 @@ const SingleEvent: React.FC<IEvent> = ({ dayOfMonth, description, image, name, n
       <Row justify="start">
         <Text>{description}</Text>
       </Row>
-      {/* TODO: Fix but until fixed removed! This used to work but broke! */}
-      {/* <Row justify="start">
-            {event.about &&
-              event.about.map((about) => {
-                return <Text type="secondary" key={about.name}>{about.name}</Text>;
-              })
-            }
-         </Row> */}
     </Col>
     <Col span={8}>
       <Row justify="start">

@@ -1,24 +1,27 @@
+// Libraries
 import React from "react";
 import { useSelector } from "react-redux";
 import { Col, Row, Space, Typography } from "antd";
 
+// Styles
 import basicStyle from "@iso/assets/styles/constants";
 
 // Icons
-import SunImage from "@iso/assets/images/weather/Sun-Blue.png";
-import WindRainCloudImage from "@iso/assets/images/weather/Wind-Rain-cloud-Blue.png";
-import SunRainCloudImage from "@iso/assets/images/weather/Sun-rain-cloud-Blue@2x.png";
-import selectedCelsiusImage from "@iso/assets/images/temperature/celsiusSelected.png";
-import unselectedFarenheitImage from "@iso/assets/images/temperature/farenheitUnselected.png";
-import unselectedKelvinImage from "@iso/assets/images/temperature/kelvinUnselected-2.png";
+import {
+  SunImage,
+  WindRainCloudImage,
+  SunRainCloudImage,
+  SelectedCelsiusImage,
+  UnselectedFarenheitImage,
+  UnselectedKelvinImage,
+} from "@iso/assets";
 
-const WeatherInstance = () => {
+const WeatherInstance: React.FC = (): JSX.Element => {
   let data = useSelector((state) => state.place.data);
   const { Title, Text } = Typography;
   const { rowStyle, colStyle, gutter } = basicStyle;
-  const titleStyle = { fontSize: "large", fontWeight: "bolder" };
+  const titleStyle = { fontSize: "large", fontWeight: 700 };
   const heatStyle = { marginBottom: 0 };
-  const noBrake = { whiteSpace: "nowrap" };
   return (
     <>
       <div style={{ backgroundColor: "white", padding: 15 }}>
@@ -27,11 +30,11 @@ const WeatherInstance = () => {
             <Row style={rowStyle} gutter={gutter}>
               <Col span={24} style={colStyle}>
                 <Row>
-                  <Col span={12} align="center" justify="center">
+                  <Col span={12}>
                     ,
-                    <img src={SunRainCloudImage} />
+                    <img alt="" src={SunRainCloudImage} />
                   </Col>
-                  <Col span={12} align="start">
+                  <Col span={12}>
                     <Space size={1} direction="vertical" align="start">
                       <Text style={titleStyle}>Current Temperature</Text>
                       <Title level={1} style={heatStyle}>
@@ -41,7 +44,7 @@ const WeatherInstance = () => {
                         Hi: {data.weather_Temperature_High_Today} Lo: {data.weather_Temperature_Low_Today}
                       </Text>
                       <Text type="secondary">Rain 24h {data.weather_Rain_Next_24h}</Text>
-                      <Text type="secondary" style={noBrake}>
+                      <Text type="secondary" style={{ whiteSpace: "nowrap" }}>
                         Wind (24h avg) {data.weather_Wind_Avg_Today}
                       </Text>
                     </Space>
@@ -74,13 +77,13 @@ const WeatherInstance = () => {
 
             <Row style={rowStyle} gutter={gutter}>
               <Col>
-                <img alt="" src={selectedCelsiusImage} />
+                <img alt="" src={SelectedCelsiusImage} />
               </Col>
               <Col>
-                <img alt="" src={unselectedFarenheitImage} />
+                <img alt="" src={UnselectedFarenheitImage} />
               </Col>
               <Col>
-                <img alt="" src={unselectedKelvinImage} />
+                <img alt="" src={UnselectedKelvinImage} />
               </Col>
             </Row>
           </>

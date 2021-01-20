@@ -41,7 +41,7 @@ const nextConfig = {
   },
   //   devtool: "source-map",
   typescript: {
-    ignoreBuildErrors: true,
+    
   },
 };
 

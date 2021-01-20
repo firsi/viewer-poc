@@ -5,7 +5,7 @@ import { Card } from "antd";
 
 const AreaChartComponent = dynamic(() => import("../../Charts/Rechart/AreaChartComponent"), { ssr: false });
 
-export default function PopulationInstance() {
+const PopulationInstance: React.FC = (): JSX.Element => {
   const data = useSelector((state) => state.place.data);
 
   return (
@@ -15,4 +15,6 @@ export default function PopulationInstance() {
       </Card>
     </>
   );
-}
+};
+
+export default PopulationInstance;

@@ -5,10 +5,7 @@ import { useSelector } from "react-redux";
 import { Card, Typography } from "antd";
 
 // Icons
-import newbornImage from "@iso/assets/images/demographics/baby.png";
-import growthImage from "@iso/assets/images/demographics/Growth-icon.png";
-import genderImage from "@iso/assets/images/demographics/gender.png";
-import ageImage from "@iso/assets/images/demographics/age.png";
+import { NewbornImage, GrowthImage, GenderImage, AgeImage } from "@iso/assets";
 
 // Components
 import SymmetricBarChart from "../../Charts/AntDesign/SymmetricBarChart";
@@ -24,7 +21,7 @@ const DemographicsInstance: React.FC = (): JSX.Element => {
         <Title level={4} style={{ textAlign: "center" }}>
           Age & Gender
         </Title>
-        <img alt="" src={ageImage} style={{ display: "block", marginLeft: "auto", marginRight: "auto" }} />
+        <img alt="" src={AgeImage} style={{ display: "block", marginLeft: "auto", marginRight: "auto" }} />
 
         <div style={{ margin: "auto", width: "50%" }}>
           <SymmetricBarChart />
@@ -32,12 +29,12 @@ const DemographicsInstance: React.FC = (): JSX.Element => {
         <Title level={4} style={{ textAlign: "center" }}>
           Growth Rate
         </Title>
-        <img alt="" src={newbornImage} style={{ display: "block", marginLeft: "auto", marginRight: "auto" }} />
+        <img alt="" src={NewbornImage} style={{ display: "block", marginLeft: "auto", marginRight: "auto" }} />
         <div style={{ margin: "auto", width: "50%" }}>
-          <img alt="" src={growthImage} />
+          <img alt="" src={GrowthImage} />
           {data && data.demographicsGrowthRate && <Text strong>{data.demographicsGrowthRate}</Text>}
         </div>
-        <img alt="" src={genderImage} style={{ display: "block", marginLeft: "auto", marginRight: "auto" }} />
+        <img alt="" src={GenderImage} style={{ display: "block", marginLeft: "auto", marginRight: "auto" }} />
         <Title level={4} style={{ textAlign: "center" }}>
           Genders
         </Title>

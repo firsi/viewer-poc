@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
 import { Tabs, Typography } from "antd";
 
 import { CaretLeftOutlined, CaretRightOutlined } from "@ant-design/icons";
-import { checkNull } from "../../lib/helpers/utils"; // will be used once the staticsViewerInstance is added
 import GenericDataComponent from "./genericData/GenericDataComponent";
 
 const { TabPane } = Tabs;

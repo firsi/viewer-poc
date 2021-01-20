@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import { Image, Divider, Card, Row, Col, Collapse, Typography, Space } from "antd";
 import basicStyle from "@iso/assets/styles/constants";
 
+// Icons
 import {
   PhoneIcon,
   EmailIcon,
@@ -15,6 +16,8 @@ import {
   LinkedInIcon,
   InstagramIcon,
 } from "./MainTileInstanceIcons";
+
+// Components
 import MainTileInstanceMore from "./MainTileInstanceMore";
 
 const MainTileInstance: React.FC = (): JSX.Element => {
@@ -42,12 +45,12 @@ const MainTileInstance: React.FC = (): JSX.Element => {
             <Row style={{ padding: "0 0 10px 0" }}>
               <Image src={data.image} />
             </Row>
-            <Row type="flex" gutter={gutter} align="middle" justify="start">
+            <Row gutter={gutter} align="middle" justify="start">
               <Col span={5} flex={1}>
                 <Image src={data.logo} />
               </Col>
               <Col span={1} />
-              <Col align="start">
+              <Col>
                 <Row>
                   <Space size={1} direction="vertical" align="start">
                     <Space size={1} direction="vertical" align="start">

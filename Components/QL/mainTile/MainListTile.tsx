@@ -2,11 +2,6 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { Card, Image, Typography } from "antd";
 
-// import LayoutWrapper from '@iso/components/utility/layoutWrapper';
-// import TableWrapper from '@iso/containers/Tables/AntTables/AntTables.styles';
-// import Scrollbars from '@iso/components/utility/customScrollBar';
-// import Box from '@iso/components/utility/box';
-
 const { Title } = Typography;
 
 /* const tableColumns = () => {
@@ -56,7 +51,7 @@ const MainListTile: React.FC = (): JSX.Element => {
   return (
     <>
       <Title level={3}>MainListTile</Title>
-      <Card hoverable >
+      <Card hoverable>
         {false && (
           <>
             {/* TODO: Add data and use Table from antd */}

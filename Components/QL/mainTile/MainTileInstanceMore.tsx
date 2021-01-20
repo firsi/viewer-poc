@@ -97,7 +97,7 @@ const MainTileInstanceMore: React.FC = (): JSX.Element => {
           <Row>
             <Divider />
             <Space size={1} direction="vertical" align="start">
-              <Title level={3} strong>
+              <Title level={3} style={{ fontWeight: 700 }}>
                 Government
               </Title>
               <Space size={1} direction="horizontal" align="start">
