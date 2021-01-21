@@ -1,13 +1,15 @@
 // Library
 import React, { useState } from "react";
+import styled from "styled-components";
 import { useSelector } from "react-redux";
 
 // UI Library
-import { Image, Divider, Card, Row, Col, Collapse, Typography, Space } from "antd";
-import basicStyle from "@iso/assets/styles/constants";
+import { Card, Row, Col, Collapse, Space } from "antd";
 
 // Icons
+import Icon from "@ant-design/icons";
 import {
+  DownArrowIcon,
   PhoneIcon,
   EmailIcon,
   FaxIcon,
@@ -19,13 +21,24 @@ import {
 
 // Components
 import MainTileInstanceMore from "./MainTileInstanceMore";
+import MainTileHeader from "./MainTileHeader";
+
+const CustomCollapse = styled(Collapse)`
+  &.ant-collapse-icon-position-right > .ant-collapse-item > .ant-collapse-header {
+    padding-left: 0px;
+    padding-right: 0px;
+    & .ant-collapse-arrow {
+      right: 0px;
+    }
+  }
+`;
+
+const DownArrow = (props) => <Icon component={DownArrowIcon} {...props} />;
 
 const MainTileInstance: React.FC = (): JSX.Element => {
   const data = useSelector((state) => state.place.data);
   const [displayIcons, setDisplayIcons] = useState({ show: true, style: { display: "inline" } });
   const { Panel } = Collapse;
-  const { Text } = Typography;
-  const { gutter } = basicStyle;
 
   const onChange = () => {
     if (displayIcons.show) {
@@ -42,32 +55,22 @@ const MainTileInstance: React.FC = (): JSX.Element => {
       <Card>
         {data && (
           <>
-            <Row style={{ padding: "0 0 10px 0" }}>
-              <Image src={data.image} />
-            </Row>
-            <Row gutter={gutter} align="middle" justify="start">
-              <Col span={5} flex={1}>
-                <Image src={data.logo} />
-              </Col>
-              <Col span={1} />
-              <Col>
-                <Row>
-                  <Space size={1} direction="vertical" align="start">
-                    <Space size={1} direction="vertical" align="start">
-                      <Text className="ql-entity-name">{data.name}</Text>
-                    </Space>
-                    <Space size={-4} direction="vertical" align="start">
-                      <Text className="ql-entity-description">{data.description}</Text>
-                      <Text type="secondary">{data.alternateName}</Text>
-                    </Space>
-                  </Space>
-                </Row>
-              </Col>
-            </Row>
-            <Divider style={{}} />
+            <MainTileHeader
+              alternateName={data.alternateName}
+              image={data.image}
+              logo={data.logo}
+              name={data.name}
+              description={data.description}
+            />
             <Row>
               <Col span={24}>
-                <Collapse bordered={false} ghost expandIconPosition="right" onChange={onChange}>
+                <CustomCollapse
+                  bordered={false}
+                  ghost
+                  expandIconPosition="right"
+                  expandIcon={() => <DownArrow />}
+                  onChange={onChange}
+                >
                   <Panel
                     header={
                       <span style={displayIcons.style}>
@@ -86,7 +89,7 @@ const MainTileInstance: React.FC = (): JSX.Element => {
                   >
                     <MainTileInstanceMore />
                   </Panel>
-                </Collapse>
+                </CustomCollapse>
               </Col>
             </Row>
           </>

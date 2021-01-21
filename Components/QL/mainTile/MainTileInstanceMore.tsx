@@ -1,7 +1,9 @@
 import React from "react";
+import styled from "styled-components";
 import { useSelector } from "react-redux";
 
-import { Col, Divider, Row, Space, Typography } from "antd";
+import { Col, Divider, Row, Space, Tooltip, Typography } from "antd";
+import { formatSocialLink, formatUrl } from "lib/helpers/utils";
 import {
   PhoneIcon,
   EmailIcon,
@@ -12,89 +14,125 @@ import {
   InstagramIcon,
 } from "./MainTileInstanceIcons";
 
+const { Link, Paragraph, Title, Text } = Typography;
+
+const CustomLink = styled(Link)`
+  &.ant-typography {
+    color: ${(props) => props.theme.palette.text[0]};
+    overflow-wrap: break-word;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 110px;
+    display: inline-block;
+  }
+`;
+
+const CustomText = styled(Text)`
+  @media screen and (max-width: 380px) {
+    max-width: 100px;
+  }
+`;
+
+const FixSizeRow = styled(Row)`
+  overflow: auto;
+  max-height: 150px;
+`;
+
+const styles = {
+  addressContainer: {
+    marginTop: "20px",
+  },
+};
 const MainTileInstanceMore: React.FC = (): JSX.Element => {
   const data = useSelector((state) => state.place.data);
-  const { Title, Text } = Typography;
 
   return (
     <>
       {data && (
         <>
-          {/* The figmadesign displays this information in two columns in a row but that doesn´t display nice in excel. Remove this code if we will stick with current implementation */}
-          {/* <Row>
-                        <Col span={2}><PhoneIcon /></Col>
-                        <Col span={10}>{data.geo.address.telephone}</Col>
-                        <Col span={2}><WebIcon /></Col>
-                        <Col span={10}>{data.url}</Col>
-                    </Row>
-                    <Row>
-                        <Col span={2}><EmailIcon /></Col>
-                        <Col span={10}>{data.geo.address.email}</Col>
-                        <Col span={2}><FacebookIcon /></Col>
-                        <Col span={10}>{data.contactInfo_facebook}</Col>
-                    </Row>
-                    <Row>
-                        <Col span={2}><FaxIcon /></Col>
-                        <Col span={10}>{data.geo.address.faxNumber}</Col>
-                        <Col span={2}><LinkedInIcon /></Col>
-                        <Col span={10}>{data.contactInfo_linkedIn}</Col>
-                    </Row>
-                    <Row>
-                        {data.contactInfo_instagram &&
-                            <>
-                                <Col span={2}><InstagramIcon /></Col>
-                                <Col span={10}>{data.contactInfo_instagram}</Col>
-                            </>
-                        }
-                    </Row> */}
           {data.geo && (
-            <Row>
+            <Row style={styles.addressContainer}>
               {data.geo.address && (
-                <Space size={1} direction="vertical" align="start">
-                  <Space size={2} direction="horizontal" align="start">
-                    <PhoneIcon />
-                    {data.geo.address.telephone}
-                  </Space>
-                  <Space size={2} direction="horizontal" align="start">
-                    <WebIcon />
-                    {data.url}
-                  </Space>
-                  <Space size={2} direction="horizontal" align="start">
-                    <EmailIcon />
-                    {data.geo.address.email}
-                  </Space>
-                  <Space size={2} direction="horizontal" align="start">
-                    <FacebookIcon />
-                    {data.contactInfo_facebook}
-                  </Space>
-                  <Space size={2} direction="horizontal" align="start">
-                    <FaxIcon />
-                    {data.geo.address.faxNumber}
-                  </Space>
-                  <Space size={2} direction="horizontal" align="start">
-                    <LinkedInIcon />
-                    {data.contactInfo_linkedIn}
-                  </Space>
-                </Space>
+                <>
+                  <Col xs={12}>
+                    <Space direction="vertical" size={1}>
+                      {data.geo.address.telephone && (
+                        <Space size={10} direction="horizontal" align="start">
+                          <PhoneIcon />
+                          <Tooltip title={data.geo.address.telephone}>
+                            <CustomText ellipsis>{data.geo.address.telephone}</CustomText>
+                          </Tooltip>
+                        </Space>
+                      )}
+                      {data.geo.address.email && (
+                        <Space size={10} direction="horizontal" align="start">
+                          <EmailIcon />
+                          <Tooltip title={data.geo.address.email}>
+                            <CustomText ellipsis>{data.geo.address.email}</CustomText>
+                          </Tooltip>
+                        </Space>
+                      )}
+                      {data.geo.address.faxNumber && (
+                        <Space size={10} direction="horizontal" align="start">
+                          <FaxIcon />
+                          <Tooltip title={data.geo.address.faxNumber}>
+                            <CustomText ellipsis>{data.geo.address.faxNumber}</CustomText>
+                          </Tooltip>
+                        </Space>
+                      )}
+                    </Space>
+                  </Col>
+                  <Col xs={12}>
+                    <Space size={1} direction="vertical">
+                      {data.url && (
+                        <Space size={10} direction="horizontal" align="start">
+                          <WebIcon />
+                          <CustomLink href={data.url} underline target="_blank">
+                            {formatUrl(data.url)}
+                          </CustomLink>
+                        </Space>
+                      )}
+                      {data.contactInfo_facebook && (
+                        <Space size={10} direction="horizontal" align="start">
+                          <FacebookIcon />
+                          <CustomLink href={data.contactInfo_facebook} underline target="_blank">
+                            facebook/{formatSocialLink(data.contactInfo_facebook)}
+                          </CustomLink>
+                        </Space>
+                      )}
+                      {data.contactInfo_linkedIn && (
+                        <Space size={10} direction="horizontal" align="start">
+                          <LinkedInIcon />
+                          <CustomLink href={data.contactInfo_linkedIn} underline target="_blank">
+                            linkedin/{formatSocialLink(data.contactInfo_linkedIn)}
+                          </CustomLink>
+                        </Space>
+                      )}
+                    </Space>
+                  </Col>
+                </>
               )}
             </Row>
           )}
           <Row>
             {data.contactInfo_instagram && (
               <>
-                <Col span={2}>
+                <Space size={2} direction="horizontal" align="start">
                   <InstagramIcon />
-                </Col>
-                <Col span={10}>{data.contactInfo_instagram}</Col>
+                  <CustomLink href={data.contactInfo_instagram} underline target="_blank">
+                    instagram/{formatSocialLink(data.contactInfo_instagram)}
+                  </CustomLink>
+                </Space>
               </>
             )}
           </Row>
 
-          <Row>
+          <FixSizeRow>
             <Divider />
-            {data.disambiguatingDescription}
-          </Row>
-          <Row>
+            <Paragraph>{data.disambiguatingDescription}</Paragraph>
+          </FixSizeRow>
+          <FixSizeRow>
             <Divider />
             <Space size={1} direction="vertical" align="start">
               <Title level={3} style={{ fontWeight: 700 }}>
@@ -106,8 +144,8 @@ const MainTileInstanceMore: React.FC = (): JSX.Element => {
               </Space>
               {/* <Text type="secondary">...and some data that is missing from the json!</Text> */}
             </Space>
-          </Row>
-          <Row>
+          </FixSizeRow>
+          <FixSizeRow>
             <Divider />
             <Space size={1} direction="vertical" align="start">
               <Space size={1} direction="horizontal" align="start">
@@ -120,21 +158,21 @@ const MainTileInstanceMore: React.FC = (): JSX.Element => {
               </Space>
               {/* <Text type="secondary">...and some more data that is missing from the json!</Text> */}
             </Space>
-          </Row>
-          <Row>
+          </FixSizeRow>
+          <FixSizeRow>
             <Divider />
             <Space size={1} direction="vertical" align="start">
-              <Space size={1} direction="horizontal" align="start">
+              <div>
                 <Text strong>Colleges and Universities: </Text>
                 <Text>Reykjavik Universitiy </Text>
-              </Space>
-              <Space size={1} direction="horizontal" align="start">
+              </div>
+              <div>
                 <Text strong>Neighborhoods: </Text>
                 <Text>Centre, Staðir, Hlemmur, Bryggjuhverfið </Text>
-              </Space>
+              </div>
               {/* <Text type="secondary">...and some more data that is missing from the json!</Text> */}
             </Space>
-          </Row>
+          </FixSizeRow>
         </>
       )}
     </>

@@ -32,13 +32,13 @@ const OfficeWrapper: React.FC<OfficeWrapperProps> = ({ mainPageRendered }): JSX.
       {data && (
         <>
           <MainTile />
-          <Weather />
           <GeoLocation />
-          <Events />
-          <Demographics />
           <Population />
+          <Demographics />
           <DateAndTime />
+          <Weather />
           <UpcomingSignificantDates />
+          <Events />
         </>
       )}
     </>
