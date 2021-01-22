@@ -20,35 +20,59 @@ import {
 } from "@iso/assets";
 
 // helpers
+import BorderedContainer from "Components/shared/BorderedContainer";
 import { getTimeDifference } from "../../../lib/helpers/utils";
 
-// TODO: Move styles to CSS when ready...
-const qlBlue = "#3F6587";
-const qlGray = "#F2F2F2";
-const borderRadius = "5px";
-const rowBottomMargin = 0;
-const rowTopMargin = 0;
-const textLeftMargin = 5;
-const gutter = 4;
-const lightColor = { color: "white" };
-const darkColor = { color: qlBlue };
+const { Text, Title } = Typography;
 
+const gutter = 4;
 const DarkRow = styled(Row)`
   border: 1px solid;
   border-radius: 5px;
-  background: ${qlBlue};
+  background: ${({ theme }) => theme.palette.primary[0]};
   color: white;
   width: 100%;
+  & .today-container .ant-space-item {
+    margin-left: 5px;
+  }
+  & .month-year-container .ant-space-item {
+    margin-bottom: 0px !important;
+    & strong {
+      font-size: 16px;
+      line-height: 1;
+    }
+  }
+  & .day {
+    line-height: 0.9;
+    font-size: 46px;
+    font-weight: 700;
+  }
 `;
 const GrayRow = styled(Row)`
   border-radius: 5px;
-  background: ${qlGray};
-  color: ${qlBlue};
+  background: ${({ theme }) => theme.palette.grayscale[4]};
+  color: ${({ theme }) => theme.palette.primary[0]};
   width: 100%;
 `;
 
+const NoMarginRow = styled(Row)`
+  margin-top: 0;
+  margin-bottom: 0;
+`;
+
+const LightText = styled(Text)`
+  color: white;
+`;
+
+const LightTitle = styled(Title)`
+  color: white;
+`;
+
+const DarkText = styled(Text)`
+  color: ${({ theme }) => theme.palette.primary[0]};
+`;
+
 const DateAndTimeInstance: React.FC = (): JSX.Element => {
-  const { Text, Title } = Typography;
   let data = useSelector((state) => state.place.data);
   const { plusMinus, hoursDiff } = getTimeDifference(data.toDay_Time_UTC_24h);
   data.toDay_timeDifference_between_clients_location_and_this_place = hoursDiff;
@@ -56,47 +80,40 @@ const DateAndTimeInstance: React.FC = (): JSX.Element => {
   const showRow1 = (): JSX.Element => (
     <Row gutter={gutter}>
       <Col span={16}>
-        <DarkRow>
-          <Col span={10}>
-            {/* TODO: Make this title larger and stretch (flex-it) it down to content in the next col */}
-            <Title level={1} style={{ color: "white", marginLeft: textLeftMargin }}>
-              {data.toDay_Number_Of_Day_In_Month}
-            </Title>
-          </Col>
-          <Col span={14}>
-            <Row>
-              <Space size={5} direction="vertical" align="start">
-                <Title level={5} style={lightColor}>
+        <DarkRow align="center">
+          <Col span={24}>
+            <Space size={1} className="today-container" align="center">
+              <LightText className="day">{data.toDay_Number_Of_Day_In_Month}</LightText>
+              <Space className="month-year-container" direction="vertical">
+                <LightText className="month" strong>
                   {data.toDay_Day_Month_Text}
-                </Title>
-                <Title level={5} style={lightColor}>
-                  {data.toDay_Year_Number}
-                </Title>
+                </LightText>
+                <LightText strong>{data.toDay_Year_Number}</LightText>
               </Space>
-            </Row>
+            </Space>
           </Col>
         </DarkRow>
       </Col>
       <Col span={8}>
         <DarkRow style={{ height: "50%" }} justify="center" align="middle">
-          Week {data.toDay_Week_Number}
+          <LightText>Week</LightText>&nbsp; <LightText strong>{data.toDay_Week_Number}</LightText>
         </DarkRow>
         <DarkRow style={{ height: "50%" }} justify="center" align="middle">
-          Day {data.toDay_Day_Year_Number}
+          <LightText>Day </LightText>&nbsp; <LightText strong>{data.toDay_Day_Year_Number}</LightText>
         </DarkRow>
       </Col>
     </Row>
   );
   const showRow2 = (): JSX.Element => (
-    <Row gutter={gutter} style={{ marginTop: rowTopMargin, marginBottom: rowBottomMargin }}>
+    <NoMarginRow gutter={gutter}>
       <Col span={16}>
-        <GrayRow justify="center" align="middle" style={{ height: "35px" }}>
-          <div style={{ marginLeft: textLeftMargin }}>
+        <Row align="middle" style={{ height: "35px" }}>
+          <div style={{ marginLeft: 5 }}>
             <Text strong>
               {data.toDay_Day_FullName_En}/{data.toDay_Day_FullName_CurrentCulture}
             </Text>
           </div>
-        </GrayRow>
+        </Row>
       </Col>
       <Col span={4}>
         <GrayRow justify="center" style={{ height: "35px" }}>
@@ -114,64 +131,55 @@ const DateAndTimeInstance: React.FC = (): JSX.Element => {
           {/* {data.toDay_Zodiac} */}
         </GrayRow>
       </Col>
-    </Row>
+    </NoMarginRow>
   );
   const showRow3 = (): JSX.Element => (
-    <Row gutter={gutter} style={{ marginTop: rowTopMargin, marginBottom: rowBottomMargin }}>
+    <NoMarginRow gutter={gutter}>
       <Col span={16}>
         <DarkRow justify="start">
-          <Space size={0} style={{ marginLeft: textLeftMargin }} direction="vertical" align="start">
-            <Text style={lightColor}>{data.name} Time</Text>
+          <Space size={0} style={{ marginLeft: 5 }} direction="vertical" align="start">
+            <LightText>{data.name} Time</LightText>
             <Title style={{ color: "white", marginBottom: 0 }}>{data.toDay_Time_UTC_24h}</Title>
-            <Text style={lightColor}> UTC/GMT/EST</Text>
+            <LightText> UTC/GMT/EST</LightText>
           </Space>
         </DarkRow>
       </Col>
       <Col span={8}>
-        <Row style={{ borderRadius, background: qlGray, marginBottom: 5, height: "50%" }} justify="center">
+        <GrayRow style={{ marginBottom: 5, height: "50%" }} justify="center">
           <Space size={2} direction="horizontal" align="center">
             <img alt="" src={Group198Image} />
-            {data.toDay_DaylightSavings === "true" ? (
-              <Text style={darkColor}> Has DLS</Text>
-            ) : (
-              <Text style={darkColor}> No DLS</Text>
-            )}
+            {data.toDay_DaylightSavings === "true" ? <DarkText> Has DLS</DarkText> : <DarkText> No DLS</DarkText>}
           </Space>
-        </Row>
-        <Row
+        </GrayRow>
+        <GrayRow
           gutter={gutter}
           style={{
-            borderRadius,
-            background: qlGray,
             marginLeft: 0.1,
             marginRight: 0.1,
-            marginBottom: rowBottomMargin,
+            marginBottom: 0,
             height: "45%",
           }}
           justify="center"
         >
           <Space size={2} direction="horizontal" align="center">
             <img alt="" src={DifferenceImage} />
-            <Text style={darkColor}>
+            <DarkText>
               {plusMinus}
               {data.toDay_timeDifference_between_clients_location_and_this_place}
-            </Text>
+            </DarkText>
           </Space>
-        </Row>
+        </GrayRow>
       </Col>
-    </Row>
+    </NoMarginRow>
   );
   const showRow4 = (): JSX.Element => (
-    <Row
-      gutter={gutter}
-      style={{ borderRadius, background: qlGray, marginBottom: 0, marginLeft: 0.1, marginRight: 0.1 }}
-    >
+    <GrayRow gutter={gutter} style={{ marginBottom: 0, marginLeft: 0.1, marginRight: 0.1 }}>
       <Col span={6}>
         <Row justify="center" align="middle">
           <img alt="" src={SunriseImage} />
         </Row>
         <Row justify="center" align="middle">
-          <Text style={darkColor}>{data.toDay_Sun_Rise}</Text>
+          <DarkText>{data.toDay_Sun_Rise}</DarkText>
         </Row>
       </Col>
       <Col span={6}>
@@ -179,7 +187,7 @@ const DateAndTimeInstance: React.FC = (): JSX.Element => {
           <img alt="" src={SunsetImage} />
         </Row>
         <Row justify="center" align="middle">
-          <Text style={darkColor}>{data.toDay_Sun_Set}</Text>
+          <DarkText>{data.toDay_Sun_Set}</DarkText>
         </Row>
       </Col>
       <Col span={6}>
@@ -187,7 +195,7 @@ const DateAndTimeInstance: React.FC = (): JSX.Element => {
           <img alt="" src={DayLengthImage} />
         </Row>
         <Row justify="center" align="middle">
-          <Text style={darkColor}>{data.toDay_Sun_Duration}</Text>
+          <DarkText>{data.toDay_Sun_Duration}</DarkText>
         </Row>
       </Col>
       <Col span={6}>
@@ -195,21 +203,21 @@ const DateAndTimeInstance: React.FC = (): JSX.Element => {
           <img alt="" src={MoonStateImage} />
         </Row>
         <Row justify="center" align="middle">
-          <Text style={darkColor}>{data.toDay_MoonState_Number}</Text>
+          <DarkText>{data.toDay_MoonState_Number}</DarkText>
         </Row>
       </Col>
-    </Row>
+    </GrayRow>
   );
 
   return (
-    <>
+    <BorderedContainer>
       <Card>
         {showRow1()}
         {showRow2()}
         {showRow3()}
         {showRow4()}
       </Card>
-    </>
+    </BorderedContainer>
   );
 };
 

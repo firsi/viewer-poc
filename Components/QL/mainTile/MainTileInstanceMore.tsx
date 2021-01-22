@@ -12,7 +12,7 @@ import {
   FacebookIcon,
   LinkedInIcon,
   InstagramIcon,
-} from "./MainTileInstanceIcons";
+} from "../../shared/CustomIcons";
 
 const { Link, Paragraph, Title, Text } = Typography;
 
@@ -58,7 +58,7 @@ const MainTileInstanceMore: React.FC = (): JSX.Element => {
                   <Col xs={12}>
                     <Space direction="vertical" size={1}>
                       {data.geo.address.telephone && (
-                        <Space size={10} direction="horizontal" align="start">
+                        <Space size={5} direction="horizontal" align="start">
                           <PhoneIcon />
                           <Tooltip title={data.geo.address.telephone}>
                             <CustomText ellipsis>{data.geo.address.telephone}</CustomText>
@@ -66,7 +66,7 @@ const MainTileInstanceMore: React.FC = (): JSX.Element => {
                         </Space>
                       )}
                       {data.geo.address.email && (
-                        <Space size={10} direction="horizontal" align="start">
+                        <Space size={5} direction="horizontal" align="start">
                           <EmailIcon />
                           <Tooltip title={data.geo.address.email}>
                             <CustomText ellipsis>{data.geo.address.email}</CustomText>
@@ -74,7 +74,7 @@ const MainTileInstanceMore: React.FC = (): JSX.Element => {
                         </Space>
                       )}
                       {data.geo.address.faxNumber && (
-                        <Space size={10} direction="horizontal" align="start">
+                        <Space size={5} direction="horizontal" align="start">
                           <FaxIcon />
                           <Tooltip title={data.geo.address.faxNumber}>
                             <CustomText ellipsis>{data.geo.address.faxNumber}</CustomText>
@@ -86,7 +86,7 @@ const MainTileInstanceMore: React.FC = (): JSX.Element => {
                   <Col xs={12}>
                     <Space size={1} direction="vertical">
                       {data.url && (
-                        <Space size={10} direction="horizontal" align="start">
+                        <Space size={5} direction="horizontal" align="start">
                           <WebIcon />
                           <CustomLink href={data.url} underline target="_blank">
                             {formatUrl(data.url)}
@@ -94,7 +94,7 @@ const MainTileInstanceMore: React.FC = (): JSX.Element => {
                         </Space>
                       )}
                       {data.contactInfo_facebook && (
-                        <Space size={10} direction="horizontal" align="start">
+                        <Space size={5} direction="horizontal" align="start">
                           <FacebookIcon />
                           <CustomLink href={data.contactInfo_facebook} underline target="_blank">
                             facebook/{formatSocialLink(data.contactInfo_facebook)}
@@ -102,7 +102,7 @@ const MainTileInstanceMore: React.FC = (): JSX.Element => {
                         </Space>
                       )}
                       {data.contactInfo_linkedIn && (
-                        <Space size={10} direction="horizontal" align="start">
+                        <Space size={5} direction="horizontal" align="start">
                           <LinkedInIcon />
                           <CustomLink href={data.contactInfo_linkedIn} underline target="_blank">
                             linkedin/{formatSocialLink(data.contactInfo_linkedIn)}

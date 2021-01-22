@@ -1,15 +1,11 @@
 // Library
 import React, { useState } from "react";
-import styled from "styled-components";
 import { useSelector } from "react-redux";
 
 // UI Library
 import { Card, Row, Col, Collapse, Space } from "antd";
 
-// Icons
-import Icon from "@ant-design/icons";
 import {
-  DownArrowIcon,
   PhoneIcon,
   EmailIcon,
   FaxIcon,
@@ -17,23 +13,12 @@ import {
   FacebookIcon,
   LinkedInIcon,
   InstagramIcon,
-} from "./MainTileInstanceIcons";
+} from "../../shared/CustomIcons";
 
 // Components
+import CustomCollapse from "../../shared/CustomCollapse";
 import MainTileInstanceMore from "./MainTileInstanceMore";
 import MainTileHeader from "./MainTileHeader";
-
-const CustomCollapse = styled(Collapse)`
-  &.ant-collapse-icon-position-right > .ant-collapse-item > .ant-collapse-header {
-    padding-left: 0px;
-    padding-right: 0px;
-    & .ant-collapse-arrow {
-      right: 0px;
-    }
-  }
-`;
-
-const DownArrow = (props) => <Icon component={DownArrowIcon} {...props} />;
 
 const MainTileInstance: React.FC = (): JSX.Element => {
   const data = useSelector((state) => state.place.data);
@@ -42,10 +27,8 @@ const MainTileInstance: React.FC = (): JSX.Element => {
 
   const onChange = () => {
     if (displayIcons.show) {
-      console.log(`Show: ${displayIcons.show}`);
       setDisplayIcons({ show: false, style: { display: "none" } });
     } else {
-      console.log(`Show: ${displayIcons.show}`);
       setDisplayIcons({ show: true, style: { display: "inline" } });
     }
   };
@@ -64,13 +47,7 @@ const MainTileInstance: React.FC = (): JSX.Element => {
             />
             <Row>
               <Col span={24}>
-                <CustomCollapse
-                  bordered={false}
-                  ghost
-                  expandIconPosition="right"
-                  expandIcon={() => <DownArrow />}
-                  onChange={onChange}
-                >
+                <CustomCollapse onChange={onChange}>
                   <Panel
                     header={
                       <span style={displayIcons.style}>

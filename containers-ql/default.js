@@ -63,7 +63,7 @@ theme.palette = {
     "#c1c1c1", // 1: GreyDark
     "#D8D8D8", // 2: Grey
     "#f1f1f1", // 3: GreyAlt
-    "#F3F3F3", // 4: GreyLight
+    "#F2F2F2", // 4: GreyLight
     "#fafafa", // 5: DarkWhite
     "#F9F9F9", // 6: DarkerWhite
     "#fcfcfc", // 7: #fff Darken 1%

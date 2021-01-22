@@ -9,7 +9,7 @@ const BidirectionalBar = dynamic(
 
 // https://charts.ant.design/demos/bidirectional-bar/#%E5%9F%BA%E7%A1%80%E5%9E%82%E7%9B%B4%E6%96%B9%E5%90%91%E5%AF%B9%E7%A7%B0%E6%9D%A1%E5%BD%A2%E5%9B%BE
 const SymmetricBarChart = () => {
-  var data = [
+  let data = [
     {
       age: '0',
       'Male': 72.9,
@@ -57,12 +57,12 @@ const SymmetricBarChart = () => {
     }
   ];
 
-  //Massive customization API https://charts.ant.design/demos/bidirectional-bar/?type=api
-  var config = {
-    data: data,
+  // Massive customization API https://charts.ant.design/demos/bidirectional-bar/?type=api
+  let config = {
+    data,
     width: 200,
     height: 100,
-    //autoFit: true,
+    // autoFit: true,
     xField: 'age',
     xAxis: { position: 'bottom' },
     interactions: [{ type: 'active-region' }],

@@ -1,6 +1,7 @@
 // Libraries
 import React from "react";
 import { useSelector } from "react-redux";
+import { useTheme } from "styled-components";
 import { Col, Row, Space, Typography } from "antd";
 
 // Styles
@@ -15,15 +16,17 @@ import {
   UnselectedFarenheitImage,
   UnselectedKelvinImage,
 } from "@iso/assets";
+import BorderedContainer from "Components/shared/BorderedContainer";
 
 const WeatherInstance: React.FC = (): JSX.Element => {
   let data = useSelector((state) => state.place.data);
+  const theme = useTheme();
   const { Title, Text } = Typography;
   const { rowStyle, colStyle, gutter } = basicStyle;
   const titleStyle = { fontSize: "large", fontWeight: 700 };
   const heatStyle = { marginBottom: 0 };
   return (
-    <>
+    <BorderedContainer>
       <div style={{ backgroundColor: "white", padding: 15 }}>
         {data && (
           <>
@@ -89,7 +92,7 @@ const WeatherInstance: React.FC = (): JSX.Element => {
           </>
         )}
       </div>
-    </>
+    </BorderedContainer>
   );
 };
 

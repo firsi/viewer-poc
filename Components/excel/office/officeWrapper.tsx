@@ -34,7 +34,6 @@ const OfficeWrapper: React.FC<OfficeWrapperProps> = ({ mainPageRendered }): JSX.
           <MainTile />
           <GeoLocation />
           <Population />
-          <Demographics />
           <DateAndTime />
           <Weather />
           <UpcomingSignificantDates />
